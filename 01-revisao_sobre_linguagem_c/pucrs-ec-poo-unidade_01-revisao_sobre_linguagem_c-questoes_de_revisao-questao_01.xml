@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <question type="category">
+    <category>
+      <text>$module$/top/POO-01-QuestoesDeRevisao-Questao01</text>
+    </category>
+    <info format="moodle_auto_format">
+      <text></text>
+    </info>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Questões de Revisão - Questão 01 - Versão 001</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p align="justify">O número de Fibonacci de ordem <code>n</code> pode ser definido como a soma dos dois números de Fibonacci anteriores. Ou seja:<br/>
+Fibonacci(n) = Fibonacci(n-1) + Fibonacci(n-2)<br/>
+e, por definição, Fibonacci(1) = 0 e Fibonacci(2) = 1.</p>
+<align="justify">Considere a função recursiva em Linguagem C a seguir, que calcula o número de Fibonacci de ordem <code>n</code>,</p>
+<pre>
+int fibonacci(int n) {
+  if (n <= 1)
+    return 0;
+  if (n == 2)
+    return 1;
+  return fibonacci(n-1) + fibonacci(n-2);
+}
+</pre>
+<p align="justify">E, caso seja necessário usar esta função para calcular <b>o número de Fibonacci de ordem 6</b>, identifique:</p>
+<ol type="a">
+    <li>Quantas vezes a função <code>fibonacci</code> será chamada? &nbsp; {1:SHORTANSWER:=15}</li>
+    <li>Quantas vezes a função <code>fibonacci</code> será chamada para <code>n</code> valendo 2? &nbsp; {1:SHORTANSWER:=5}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Questões de Revisão - Questão 01 - Versão 002</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p align="justify">O número de Fibonacci de ordem <code>n</code> pode ser definido como a soma dos dois números de Fibonacci anteriores. Ou seja:<br/>
+Fibonacci(n) = Fibonacci(n-1) + Fibonacci(n-2)<br/>
+e, por definição, Fibonacci(1) = 0 e Fibonacci(2) = 1.</p>
+<align="justify">Considere a função recursiva em Linguagem C a seguir, que calcula o número de Fibonacci de ordem <code>n</code>,</p>
+<pre>
+int fibonacci(int n) {
+  if (n <= 1)
+    return 0;
+  if (n == 2)
+    return 1;
+  return fibonacci(n-1) + fibonacci(n-2);
+}
+</pre>
+<p align="justify">E, caso seja necessário usar esta função para calcular <b>o número de Fibonacci de ordem 6</b>, identifique:</p>
+<ol type="a">
+    <li>Quantas vezes a função <code>fibonacci</code> será chamada? &nbsp; {1:SHORTANSWER:=15}</li>
+    <li>Quantas vezes a função <code>fibonacci</code> será chamada para <code>n</code> valendo 3? &nbsp; {1:SHORTANSWER:=3}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Questões de Revisão - Questão 01 - Versão 003</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p align="justify">O número de Fibonacci de ordem <code>n</code> pode ser definido como a soma dos dois números de Fibonacci anteriores. Ou seja:<br/>
+Fibonacci(n) = Fibonacci(n-1) + Fibonacci(n-2)<br/>
+e, por definição, Fibonacci(1) = 0 e Fibonacci(2) = 1.</p>
+<align="justify">Considere a função recursiva em Linguagem C a seguir, que calcula o número de Fibonacci de ordem <code>n</code>,</p>
+<pre>
+int fibonacci(int n) {
+  if (n <= 1)
+    return 0;
+  if (n == 2)
+    return 1;
+  return fibonacci(n-1) + fibonacci(n-2);
+}
+</pre>
+<p align="justify">E, caso seja necessário usar esta função para calcular <b>o número de Fibonacci de ordem 6</b>, identifique:</p>
+<ol type="a">
+    <li>Quantas vezes a função <code>fibonacci</code> será chamada? &nbsp; {1:SHORTANSWER:=15}</li>
+    <li>Quantas vezes a função <code>fibonacci</code> será chamada para <code>n</code> valendo 4? &nbsp; {1:SHORTANSWER:=2}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Questões de Revisão - Questão 01 - Versão 004</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p align="justify">O número de Fibonacci de ordem <code>n</code> pode ser definido como a soma dos dois números de Fibonacci anteriores. Ou seja:<br/>
+Fibonacci(n) = Fibonacci(n-1) + Fibonacci(n-2)<br/>
+e, por definição, Fibonacci(1) = 0 e Fibonacci(2) = 1.</p>
+<align="justify">Considere a função recursiva em Linguagem C a seguir, que calcula o número de Fibonacci de ordem <code>n</code>,</p>
+<pre>
+int fibonacci(int n) {
+  if (n <= 1)
+    return 0;
+  if (n == 2)
+    return 1;
+  return fibonacci(n-1) + fibonacci(n-2);
+}
+</pre>
+<p align="justify">E, caso seja necessário usar esta função para calcular <b>o número de Fibonacci de ordem 7</b>, identifique:</p>
+<ol type="a">
+    <li>Quantas vezes a função <code>fibonacci</code> será chamada? &nbsp; {1:SHORTANSWER:=25}</li>
+    <li>Quantas vezes a função <code>fibonacci</code> será chamada para <code>n</code> valendo 3? &nbsp; {1:SHORTANSWER:=5}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Questões de Revisão - Questão 01 - Versão 005</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p align="justify">O número de Fibonacci de ordem <code>n</code> pode ser definido como a soma dos dois números de Fibonacci anteriores. Ou seja:<br/>
+Fibonacci(n) = Fibonacci(n-1) + Fibonacci(n-2)<br/>
+e, por definição, Fibonacci(1) = 0 e Fibonacci(2) = 1.</p>
+<align="justify">Considere a função recursiva em Linguagem C a seguir, que calcula o número de Fibonacci de ordem <code>n</code>,</p>
+<pre>
+int fibonacci(int n) {
+  if (n <= 1)
+    return 0;
+  if (n == 2)
+    return 1;
+  return fibonacci(n-1) + fibonacci(n-2);
+}
+</pre>
+<p align="justify">E, caso seja necessário usar esta função para calcular <b>o número de Fibonacci de ordem 7</b>, identifique:</p>
+<ol type="a">
+    <li>Quantas vezes a função <code>fibonacci</code> será chamada? &nbsp; {1:SHORTANSWER:=25}</li>
+    <li>Quantas vezes a função <code>fibonacci</code> será chamada para <code>n</code> valendo 4? &nbsp; {1:SHORTANSWER:=3}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Questões de Revisão - Questão 01 - Versão 006</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p align="justify">O número de Fibonacci de ordem <code>n</code> pode ser definido como a soma dos dois números de Fibonacci anteriores. Ou seja:<br/>
+Fibonacci(n) = Fibonacci(n-1) + Fibonacci(n-2)<br/>
+e, por definição, Fibonacci(1) = 0 e Fibonacci(2) = 1.</p>
+<align="justify">Considere a função recursiva em Linguagem C a seguir, que calcula o número de Fibonacci de ordem <code>n</code>,</p>
+<pre>
+int fibonacci(int n) {
+  if (n <= 1)
+    return 0;
+  if (n == 2)
+    return 1;
+  return fibonacci(n-1) + fibonacci(n-2);
+}
+</pre>
+<p align="justify">E, caso seja necessário usar esta função para calcular <b>o número de Fibonacci de ordem 7</b>, identifique:</p>
+<ol type="a">
+    <li>Quantas vezes a função <code>fibonacci</code> será chamada? &nbsp; {1:SHORTANSWER:=25}</li>
+    <li>Quantas vezes a função <code>fibonacci</code> será chamada para <code>n</code> valendo 5? &nbsp; {1:SHORTANSWER:=2}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Questões de Revisão - Questão 01 - Versão 007</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p align="justify">O número de Fibonacci de ordem <code>n</code> pode ser definido como a soma dos dois números de Fibonacci anteriores. Ou seja:<br/>
+Fibonacci(n) = Fibonacci(n-1) + Fibonacci(n-2)<br/>
+e, por definição, Fibonacci(1) = 0 e Fibonacci(2) = 1.</p>
+<align="justify">Considere a função recursiva em Linguagem C a seguir, que calcula o número de Fibonacci de ordem <code>n</code>,</p>
+<pre>
+int fibonacci(int n) {
+  if (n <= 1)
+    return 0;
+  if (n == 2)
+    return 1;
+  return fibonacci(n-1) + fibonacci(n-2);
+}
+</pre>
+<p align="justify">E, caso seja necessário usar esta função para calcular <b>o número de Fibonacci de ordem 8</b>, identifique:</p>
+<ol type="a">
+    <li>Quantas vezes a função <code>fibonacci</code> será chamada? &nbsp; {1:SHORTANSWER:=41}</li>
+    <li>Quantas vezes a função <code>fibonacci</code> será chamada para <code>n</code> valendo 3? &nbsp; {1:SHORTANSWER:=8}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Questões de Revisão - Questão 01 - Versão 008</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p align="justify">O número de Fibonacci de ordem <code>n</code> pode ser definido como a soma dos dois números de Fibonacci anteriores. Ou seja:<br/>
+Fibonacci(n) = Fibonacci(n-1) + Fibonacci(n-2)<br/>
+e, por definição, Fibonacci(1) = 0 e Fibonacci(2) = 1.</p>
+<align="justify">Considere a função recursiva em Linguagem C a seguir, que calcula o número de Fibonacci de ordem <code>n</code>,</p>
+<pre>
+int fibonacci(int n) {
+  if (n <= 1)
+    return 0;
+  if (n == 2)
+    return 1;
+  return fibonacci(n-1) + fibonacci(n-2);
+}
+</pre>
+<p align="justify">E, caso seja necessário usar esta função para calcular <b>o número de Fibonacci de ordem 8</b>, identifique:</p>
+<ol type="a">
+    <li>Quantas vezes a função <code>fibonacci</code> será chamada? &nbsp; {1:SHORTANSWER:=41}</li>
+    <li>Quantas vezes a função <code>fibonacci</code> será chamada para <code>n</code> valendo 4? &nbsp; {1:SHORTANSWER:=5}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Questões de Revisão - Questão 01 - Versão 009</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p align="justify">O número de Fibonacci de ordem <code>n</code> pode ser definido como a soma dos dois números de Fibonacci anteriores. Ou seja:<br/>
+Fibonacci(n) = Fibonacci(n-1) + Fibonacci(n-2)<br/>
+e, por definição, Fibonacci(1) = 0 e Fibonacci(2) = 1.</p>
+<align="justify">Considere a função recursiva em Linguagem C a seguir, que calcula o número de Fibonacci de ordem <code>n</code>,</p>
+<pre>
+int fibonacci(int n) {
+  if (n <= 1)
+    return 0;
+  if (n == 2)
+    return 1;
+  return fibonacci(n-1) + fibonacci(n-2);
+}
+</pre>
+<p align="justify">E, caso seja necessário usar esta função para calcular <b>o número de Fibonacci de ordem 8</b>, identifique:</p>
+<ol type="a">
+    <li>Quantas vezes a função <code>fibonacci</code> será chamada? &nbsp; {1:SHORTANSWER:=41}</li>
+    <li>Quantas vezes a função <code>fibonacci</code> será chamada para <code>n</code> valendo 5? &nbsp; {1:SHORTANSWER:=3}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+</quiz>

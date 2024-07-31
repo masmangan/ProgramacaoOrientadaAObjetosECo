@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <question type="category">
+    <category>
+      <text>$module$/top/POO-01-QuestoesDeRevisao-Questao02</text>
+    </category>
+    <info format="moodle_auto_format">
+      <text></text>
+    </info>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Questões de Revisão - Questão 02 - Versão 001</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p align="justify">Considere uma função que implementa o cálculo do número de Fibonacci de ordem <code>n</code>, conforme descrito na questão anterior, e crie um programa em C que leia valores inteiros enquanto estes valores forem maiores ou iguais a um, calculando, para cada valor maior ou igual a um, o número de Fibonacci correspondente. Contabilize quantos dos valores calculados eram pares (lembre-se que 0 é par), quantos eram ímpares e quantas vezes o resultado foi zero.</p>
+            <p align="justify">Por exemplo, para a seguinte sequência de entrada:</p>
+<pre>
+1
+2
+3
+4
+5
+1
+2
+3
+0
+</pre>
+<p align="justify">O resultado será 3 pares (números de Fibonacci de 1, 4 e 1), 5 ímpares (números de Fibonacci de 2, 3, 5, 2 e 3) e 2 zeros (números de Fibonacci de 1 e 1).</p>
+<p align="justify">Submeta a seguinte sequência de valores de entrada ao seu programa:</p>
+<pre>
+1
+3
+14
+24
+13
+17
+15
+25
+2
+6
+23
+27
+26
+14
+22
+4
+14
+27
+22
+8
+2
+2
+13
+23
+21
+16
+19
+25
+6
+1
+27
+8
+13
+8
+14
+28
+18
+20
+16
+2
+10
+7
+12
+2
+28
+23
+6
+5
+6
+3
+0
+</pre>
+<p align="justify">E responda:</p>
+<ol type="a">
+    <li>Quantos resultados são pares? &nbsp; {1:SHORTANSWER:=17}</li>
+    <li>Quantos resultados são ímpares? &nbsp; {1:SHORTANSWER:=33}</li>
+    <li>Quantos resultados são zeros? &nbsp; {1:SHORTANSWER:=2}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Questões de Revisão - Questão 02 - Versão 002</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p align="justify">Considere uma função que implementa o cálculo do número de Fibonacci de ordem <code>n</code>, conforme descrito na questão anterior, e crie um programa em C que leia valores inteiros enquanto estes valores forem maiores ou iguais a um, calculando, para cada valor maior ou igual a um, o número de Fibonacci correspondente. Contabilize quantos dos valores calculados eram pares (lembre-se que 0 é par), quantos eram ímpares e quantas vezes o resultado foi zero.</p>
+            <p align="justify">Por exemplo, para a seguinte sequência de entrada:</p>
+<pre>
+1
+2
+3
+4
+5
+1
+2
+3
+0
+</pre>
+<p align="justify">O resultado será 3 pares (números de Fibonacci de 1, 4 e 1), 5 ímpares (números de Fibonacci de 2, 3, 5, 2 e 3) e 2 zeros (números de Fibonacci de 1 e 1).</p>
+<p align="justify">Submeta a seguinte sequência de valores de entrada ao seu programa:</p>
+<pre>
+10
+28
+6
+29
+13
+1
+16
+27
+15
+12
+6
+5
+14
+27
+28
+16
+1
+18
+30
+20
+29
+5
+9
+18
+24
+25
+4
+9
+3
+5
+30
+29
+24
+8
+27
+29
+16
+15
+28
+11
+4
+21
+9
+7
+17
+22
+26
+9
+20
+29
+0
+</pre>
+<p align="justify">E responda:</p>
+<ol type="a">
+    <li>Quantos resultados são pares? &nbsp; {1:SHORTANSWER:=15}</li>
+    <li>Quantos resultados são ímpares? &nbsp; {1:SHORTANSWER:=35}</li>
+    <li>Quantos resultados são zeros? &nbsp; {1:SHORTANSWER:=2}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Questões de Revisão - Questão 02 - Versão 003</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p align="justify">Considere uma função que implementa o cálculo do número de Fibonacci de ordem <code>n</code>, conforme descrito na questão anterior, e crie um programa em C que leia valores inteiros enquanto estes valores forem maiores ou iguais a um, calculando, para cada valor maior ou igual a um, o número de Fibonacci correspondente. Contabilize quantos dos valores calculados eram pares (lembre-se que 0 é par), quantos eram ímpares e quantas vezes o resultado foi zero.</p>
+            <p align="justify">Por exemplo, para a seguinte sequência de entrada:</p>
+<pre>
+1
+2
+3
+4
+5
+1
+2
+3
+0
+</pre>
+<p align="justify">O resultado será 3 pares (números de Fibonacci de 1, 4 e 1), 5 ímpares (números de Fibonacci de 2, 3, 5, 2 e 3) e 2 zeros (números de Fibonacci de 1 e 1).</p>
+<p align="justify">Submeta a seguinte sequência de valores de entrada ao seu programa:</p>
+<pre>
+8
+22
+12
+1
+11
+22
+20
+26
+7
+5
+22
+27
+18
+8
+26
+15
+9
+20
+28
+4
+10
+7
+27
+28
+5
+27
+12
+6
+2
+11
+20
+23
+15
+22
+15
+29
+1
+7
+29
+4
+18
+2
+6
+21
+28
+1
+26
+7
+12
+5
+0
+</pre>
+<p align="justify">E responda:</p>
+<ol type="a">
+    <li>Quantos resultados são pares? &nbsp; {1:SHORTANSWER:=17}</li>
+    <li>Quantos resultados são ímpares? &nbsp; {1:SHORTANSWER:=33}</li>
+    <li>Quantos resultados são zeros? &nbsp; {1:SHORTANSWER:=3}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Questões de Revisão - Questão 02 - Versão 004</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p align="justify">Considere uma função que implementa o cálculo do número de Fibonacci de ordem <code>n</code>, conforme descrito na questão anterior, e crie um programa em C que leia valores inteiros enquanto estes valores forem maiores ou iguais a um, calculando, para cada valor maior ou igual a um, o número de Fibonacci correspondente. Contabilize quantos dos valores calculados eram pares (lembre-se que 0 é par), quantos eram ímpares e quantas vezes o resultado foi zero.</p>
+            <p align="justify">Por exemplo, para a seguinte sequência de entrada:</p>
+<pre>
+1
+2
+3
+4
+5
+1
+2
+3
+0
+</pre>
+<p align="justify">O resultado será 3 pares (números de Fibonacci de 1, 4 e 1), 5 ímpares (números de Fibonacci de 2, 3, 5, 2 e 3) e 2 zeros (números de Fibonacci de 1 e 1).</p>
+<p align="justify">Submeta a seguinte sequência de valores de entrada ao seu programa:</p>
+<pre>
+15
+13
+19
+5
+11
+24
+30
+27
+13
+9
+1
+4
+7
+19
+25
+24
+20
+23
+23
+1
+12
+30
+16
+22
+12
+4
+1
+30
+22
+8
+23
+1
+15
+23
+3
+1
+23
+17
+23
+19
+15
+1
+17
+22
+19
+15
+23
+27
+1
+11
+0
+</pre>
+<p align="justify">E responda:</p>
+<ol type="a">
+    <li>Quantos resultados são pares? &nbsp; {1:SHORTANSWER:=21}</li>
+    <li>Quantos resultados são ímpares? &nbsp; {1:SHORTANSWER:=29}</li>
+    <li>Quantos resultados são zeros? &nbsp; {1:SHORTANSWER:=7}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Questões de Revisão - Questão 02 - Versão 005</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p align="justify">Considere uma função que implementa o cálculo do número de Fibonacci de ordem <code>n</code>, conforme descrito na questão anterior, e crie um programa em C que leia valores inteiros enquanto estes valores forem maiores ou iguais a um, calculando, para cada valor maior ou igual a um, o número de Fibonacci correspondente. Contabilize quantos dos valores calculados eram pares (lembre-se que 0 é par), quantos eram ímpares e quantas vezes o resultado foi zero.</p>
+            <p align="justify">Por exemplo, para a seguinte sequência de entrada:</p>
+<pre>
+1
+2
+3
+4
+5
+1
+2
+3
+0
+</pre>
+<p align="justify">O resultado será 3 pares (números de Fibonacci de 1, 4 e 1), 5 ímpares (números de Fibonacci de 2, 3, 5, 2 e 3) e 2 zeros (números de Fibonacci de 1 e 1).</p>
+<p align="justify">Submeta a seguinte sequência de valores de entrada ao seu programa:</p>
+<pre>
+25
+22
+11
+17
+5
+8
+25
+24
+19
+25
+20
+19
+26
+10
+5
+8
+23
+5
+3
+25
+28
+23
+20
+24
+17
+28
+10
+13
+26
+15
+2
+20
+25
+9
+14
+24
+17
+23
+10
+9
+13
+17
+29
+13
+20
+16
+12
+1
+13
+23
+0
+</pre>
+<p align="justify">E responda:</p>
+<ol type="a">
+    <li>Quantos resultados são pares? &nbsp; {1:SHORTANSWER:=19}</li>
+    <li>Quantos resultados são ímpares? &nbsp; {1:SHORTANSWER:=31}</li>
+    <li>Quantos resultados são zeros? &nbsp; {1:SHORTANSWER:=1}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+</quiz>

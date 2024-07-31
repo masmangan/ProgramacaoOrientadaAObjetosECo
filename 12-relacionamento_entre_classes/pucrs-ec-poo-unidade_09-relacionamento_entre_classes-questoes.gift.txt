@@ -1,0 +1,50 @@
+$CATEGORY: $course$/POO-09-RelacionamentoEntreClasses-Questoes
+
+::POO - 09 - Relacionamento entre Classes - Questões -  001 - Versão 001::[html]<p>Em um relacionamento entre as classes Cliente e Endereço, foi definido que Cliente tem multiplicidade 1 e Endereço tem multiplicidade *. Isto significa que:</p>{
+	=Cliente pode ter vários endereços e um endereço pode pertencer a um único cliente.#
+	~Cliente pode ter um endereço e um endereço pode pertencer a um único cliente.#
+	~Cliente pode ter um único endereço e um endereço pode pertencer a mais de um cliente.#
+	~Cliente pode ter vários endereços e um endereço pode pertencer a mais de um cliente.#
+}
+
+::POO - 09 - Relacionamento entre Classes - Questões -  002 - Versão 001::[html]<p>Qual relacionamento indica que um objeto depende da especificação de outro sem envolver necessariamente o tipo de um atributo?</p>{
+	=Dependência#
+	~Associação#
+	~Agregação#
+	~Composição#
+}
+
+::POO - 09 - Relacionamento entre Classes - Questões -  003 - Versão 001::[html]<p>Quando um objeto de uma classe contém um objeto de outra classe, qual a relação entre eles?</p>{
+	=Associação#
+	~Generalização#
+	~Especialização#
+	~Dependência#
+}
+
+::POO - 09 - Relacionamento entre Classes - Questões -  004 - Versão 001::[html]<p>Quais são os dois tipos de Associação?</p>{
+	=Agregação e Composição#
+	~Dependência e Generalização#
+	~Especialização e Composição#
+	~Agregação e Generalização#
+}
+
+::POO - 09 - Relacionamento entre Classes - Questões -  005 - Versão 001::[html]<p>Qual tipo de associação existe entre objetos de classes que podem ser usadas fora do contexto desse relacionamento?</p>{
+	=Agregação#
+	~Composição#
+	~Generalização#
+	~Especialização#
+}
+
+::POO - 09 - Relacionamento entre Classes - Questões -  006 - Versão 001::[html]<p>Qual tipo de associação existe entre objetos de classes que NÃO tem sentido de existir fora do contexto desse relacionamento (ou seja, uma classe só existe para resolver um problema específico da outra)?</p>{
+	=Composição#
+	~Agregação#
+	~Generalização#
+	~Especialização#
+}
+
+::POO - 09 - Relacionamento entre Classes - Questões -  007 - Versão 001::[html]<p>Quando se cria uma classe que procura resolver todos os problemas ela mesma, sem depender de outras classes, isto significa que a modelagem apresenta</p>{
+	=baixa coesão.#
+	~alta coesão.#
+	~alto nível de epsecialização.#
+	~baixo nível de especialização.#
+}

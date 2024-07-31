@@ -1,0 +1,302 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{ragged2e}
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{gensymb}
+\usepackage{multirow}
+\usepackage{xcolor,colortbl}
+\definecolor{verde}{rgb}{0,0.5,0}
+\usepackage{listings}
+\lstset{
+  language=C++,
+  basicstyle=\ttfamily,
+  keywordstyle=\color{blue},
+  stringstyle=\color{verde},
+  commentstyle=\color{red},
+  extendedchars=true,
+  showspaces=false,
+  showstringspaces=false,
+%  numbers=left,
+%  numberstyle=\tiny,
+  breaklines=true,
+  backgroundcolor=\color{green!10},
+  breakautoindent=true,
+  captionpos=b,
+  xleftmargin=0pt
+}
+\newcommand\setItemnumber[1]{\setcounter{enumi}{\numexpr#1-1\relax}}
+
+\usetheme{AnnArbor}
+\usecolortheme{orchid}
+\usefonttheme[onlymath]{serif}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+\title[\sc{Sobrecarga de Operadores}]{Sobrecarga de Operadores}
+\author[Roland Teodorowitsch]{Roland Teodorowitsch}
+%\institute[LP2 - EC - PUCRS]{Laboratório de Programação II - Curso de Engenharia de Computação - PUCRS}
+\institute[POO - EC - PUCRS]{Programação Orientada a Objetos - ECo - Curso de Engenharia de Computação - PUCRS}
+\date{11 de setembro de 2023}
+
+\begin{document}
+\justifying
+
+%-------------------------------------------------------
+\begin{frame}
+	\titlepage
+\end{frame}
+
+%=======================================================
+\section{Sobrecarga de Operadores}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Sobrecarga de Operadores}
+\begin{itemize}
+	\item A sobrecarga de um operador deve ser feita criando-se uma função ou método cujo nome deve iniciar pela palavra \texttt{operator}
+	\item Exemplos:
+	\begin{itemize}
+		\item Para sobrecarregar o comportamento do operador de soma o nome da função/método deve ser \texttt{operator+}
+		\item Para sobrecarregar o operador ``\textgreater'' a função seria operator\textgreater
+	\end{itemize}
+	\item A sobrecarga de um operador para objetos de determinada classe pode ser feita \textbf{dentro} (com métodos) ou \textbf{fora} (com funções) da respectiva classe
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Sobrecarga de Operadores com Funções}
+\begin{itemize}
+	\item Quando a sobrecarga for feita com uma função, ou seja, \textbf{fora de uma classe}, esta função deverá ter:
+	\begin{itemize}
+		\item 2 parâmetros caso o operador seja binário
+		\item 1 parâmetro caso o operador seja unário
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Sobrecarga de Operadores Binários com Funções}
+\begin{itemize}
+	\item No caso de um operador \textbf{binário}, como o de multiplicação (\texttt{*}), o primeiro parâmetro desta função representará o operando que fica à esquerda do operador e o segundo representará o operando que fica à direita
+	\item No exemplo a seguir, o operador \texttt{+} é sobrecarregado através de uma função, para operar sobre dois objetos da classe \texttt{Ponto}
+	\item O tipo do retorno da função deve corresponder ao tipo de dados a ser gerado pela operação. O tipo deste retorno pode ser inclusive \texttt{void}, caso o operador nada retorne
+\begin{lstlisting}[language=C++,basicstyle=\ttfamily\small]
+Ponto operator+ (Ponto &p1, Ponto &p2){
+  Ponto temp;
+  temp.setX(p1.getX()+p2.getX());
+  temp.setY(p1.getY()+p2.getY());
+  return temp;
+}
+\end{lstlisting}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Sobrecarga de Operadores Unários com Funções}
+\begin{itemize}
+	\item No caso de um operador \textbf{unário}, como o de \texttt{!}, o primeiro parâmetro desta função representará o operando que fica à direita do operador
+	\item No exemplo a seguir, o operador \texttt{!} é sobrecarregado através de uma função, para zerar os atributos de objetos da classe \texttt{Ponto}
+	\item Neste caso o retorno é \texttt{void}, mas poderia ser de outro tipo caso fosse necessário
+\begin{lstlisting}[language=C++,basicstyle=\ttfamily\small]
+void operator! (Ponto &p1){
+  p1.setX(0);
+  p1.setY(0);
+}
+\end{lstlisting}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Sobrecarga de Operadores com Métodos}
+\begin{itemize}
+	\item Quando a sobrecarga for feita com um método de uma classe, ou seja, quando ela faz parte da definição da classe (é definida \textbf{internamente}), esta função deverá ter:
+	\begin{itemize}
+		\item 1 parâmetros caso o operador seja binário
+		\item nenhum parâmetro caso o operador seja unário
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Sobrecarga de Operadores Binários com Métodos}
+\begin{itemize}
+	\item No caso de um operador \textbf{binário}, como o de multiplicação (\texttt{*}), o parâmetro desta função representará o operando que fica à direita do operador. O operando que fica à esquerda é representado pelos atributos da classe
+	\item No exemplo a seguir, o operador \texttt{+} é sobrecarregado através de um método, para operar sobre dois objetos da classe \texttt{Ponto}
+	\item O tipo do retorno da função deve corresponder ao tipo de dados a ser gerado pela operação
+\begin{lstlisting}[language=C++,basicstyle=\ttfamily\small]
+Ponto Ponto::operator+(const Ponto &p) const {
+  return Ponto(x+p.obtemX(), y+p.obtemY());
+}
+\end{lstlisting}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Sobrecarga de Operadores Unários com Métodos}
+\begin{itemize}
+	\item No caso de um operador \textbf{unário}, como o de \texttt{!}, o método não terá parâmetros, sendo que os atributos da classe representarão o operando que fica à direita do operador
+	\item No exemplo a seguir, o operador \texttt{!} é sobrecarregado através de um método para zerar os atributos de objetos da classe \texttt{Ponto}
+	\item Neste caso o retorno é \texttt{void}, mas poderia ser de outro tipo caso fosse necessário
+\begin{lstlisting}[language=C++,basicstyle=\ttfamily\small]
+void Ponto::operator! (){
+  this->x = 0;
+  this->y = 0;
+}
+\end{lstlisting}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Sobrecarga com \texttt{cin} e \texttt{cout}}
+\begin{itemize}
+	\item A sobrecarga do operador \texttt{\textless{}\textless} permite definir como um objeto será mostrado em \texttt{cout}, que é um objeto da classe \texttt{ostream}
+	\item A sobrecarga do operador \texttt{\textgreater{}\textgreater} permite especificar como um objeto será lido de \texttt{cin}, que é um objeto da classe \texttt{istream}
+	\item No exemplo da página a seguir, os dois operadores são sobrecarregados para operarem com objetos da classe \texttt{Ponto}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Sobrecarga com \texttt{cin} e \texttt{cout}}
+\begin{lstlisting}[language=C++,basicstyle=\ttfamily]
+ostream &operator<<(ostream &out,const Ponto &p) {
+  out << p.str();
+  return out;
+}
+
+istream &operator>>(istream &in,Ponto &p) {
+  cout << "X: ";
+  in >> p.x;
+  cout << "Y: ";
+  in >> p.y;
+  return in;
+}
+\end{lstlisting}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Operadores que podem ser sobrecarregados}
+\begin{itemize}
+	\item É possível sobrecarregar os seguintes operadores:
+	\begin{itemize}
+		\item Unários:\\
+		\texttt{+ ~ - ~ * ~ \& ~ \~{} ~ ! ~ ++ ~ -{}- ~ -\textgreater ~ -\textgreater{}*}
+		\item Binários:\\
+		\texttt{+ ~ - ~ * ~ / ~ \% ~ \^{} ~ \& ~ | ~ \textless{}\textless ~ \textgreater{}\textgreater{}\\
+		+= ~ -= ~ *= ~ /= ~ \%= ~ \^{}= ~ \&= ~ |= ~ \textless{}\textless= ~ \textgreater{}\textgreater=\\
+		\textless ~ \textless= ~ \textgreater ~ \textgreater= ~ == ~ != ~ \&\& ~ ||\\
+		, ~ [] ~ ()\\
+		new ~ new[] ~ delete ~ delete[]}
+	\end{itemize}
+	\item A  maioria  dos  operadores  em  C++ podem  ser  sobrecarregados,  exceto  os  seguintes operadores: \texttt{:: ~ . ~ .* ~ ?: ~ sizeof()}
+	\item Os seguintes operadores \textbf{não} podem ser sobrecarregados como funções amigas (só como funções membro): \texttt{= ~ () ~ [] ~ -> ~ new ~ delete}
+\end{itemize}
+\end{frame}
+
+%=======================================================
+\section{Exemplo: Classe \texttt{Ponto}}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{\texttt{Ponto.hpp}}
+\fontsize{6pt}{6pt}\selectfont{
+\lstinputlisting{src/Ponto/Ponto.hpp}
+}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{\texttt{Ponto.cpp}}
+\fontsize{6pt}{6pt}\selectfont{
+\lstinputlisting[firstline=1,lastline=32]{src/Ponto/Ponto.cpp}
+}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{\texttt{Ponto.cpp} (continuação)}
+\fontsize{6pt}{6pt}\selectfont{
+\lstinputlisting[firstline=33]{src/Ponto/Ponto.cpp}
+}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{\texttt{PontoMain.cpp}}
+\begin{columns}
+\begin{column}{0.5\linewidth}
+\fontsize{6pt}{6pt}\selectfont{
+\lstinputlisting[firstline=1,lastline=32]{src/Ponto/PontoMain.cpp}
+}
+\end{column}
+\begin{column}{0.5\linewidth}
+\fontsize{6pt}{6pt}\selectfont{
+\lstinputlisting[firstline=34	]{src/Ponto/PontoMain.cpp}
+}
+\end{column}
+\end{columns}
+\end{frame}
+
+%=======================================================
+\section{Exercício}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Exercício 1}
+\begin{enumerate}
+	\setItemnumber{1}
+	\item Definir uma classe que represente um círculo e que apresente as seguintes características:
+	\begin{itemize}
+		\item Métodos Privados para calcular: área do círculo ($\pi{}r^2$), circunferência do círculo ($2\pi{}r$)
+		\item Construtores: \texttt{Circulo()} com centro em (0,0) e raio 1, \texttt{Circulo(double raio)} com centro em (0,0), \texttt{Circulo (double x, double y)} com raio 1, \texttt{Circulo (double x, double y, double raio)}
+		\item Métodos Públicos para: obter posição X do centro do círculo, obter posição Y do centro do círculo, definir posição X do centro do círculo, definir posição Y do centro do círculo, definir o raio R do círculo, multiplicar o raio R do círculo por determinado fator (de escala), obter o raio do círculo, obter uma cadeia de caracteres com as informações básicas do círculo, obter a área do círculo, obter a circunferência do círculo
+		\item Método para sobrecarregar o operador \texttt{\textless{}\textless} para imprimir os dados de um círculo
+		\item Método para sobrecarregar o operador \texttt{\textgreater{}\textgreater{}} para ler os dados de um círculo do terminal
+		\item Métodos para sobrecarregar os operadores \texttt{\textgreater{}} e \texttt{\textless{}} para comparar a área de dois círculos
+	\end{itemize}
+	Criar um programa principal para testar a classe.
+\end{enumerate}
+\end{frame}
+
+%=======================================================
+\section{Créditos}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Créditos}
+\begin{itemize}
+	\item Estas lâminas contêm trechos de materiais disponibilizados pelos professores Rafael Garibotti e Márcio Pinho.
+\end{itemize}
+\end{frame}
+
+%=======================================================
+\section{Soluções}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{\texttt{Circulo.hpp}}
+\fontsize{6pt}{6pt}\selectfont{
+\lstinputlisting{src/Circulo/Circulo.hpp}
+}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{\texttt{Circulo.cpp}}
+\fontsize{6pt}{6pt}\selectfont{
+\lstinputlisting[firstline=1,lastline=32]{src/Circulo/Circulo.cpp}
+}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{\texttt{CirculoMain.cpp}}
+\fontsize{6pt}{6pt}\selectfont{
+\lstinputlisting[firstline=1,lastline=32]{src/Circulo/CirculoMain.cpp}
+}
+\end{frame}
+
+%-------------------------------------------------------
+\end{document}
+

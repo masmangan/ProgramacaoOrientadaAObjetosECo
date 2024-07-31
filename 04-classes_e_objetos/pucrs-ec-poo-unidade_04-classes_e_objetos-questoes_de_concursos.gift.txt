@@ -1,0 +1,10 @@
+$CATEGORY: $course$/Programação Orientada a Objetos - Classes e Objetos - Questões de Concursos
+
+::POO - Classes e Objetos - Questões de Concursos - 001::[html]<p align="justify"><b>(MPE/MG - 2012 - Analista do MP/Tecnologia da Informação/Administração de Redes - FUNDEP/UFMG - 59)</b> Qual recurso da linguagem <i>Java</i> permite ao programador criar métodos com o mesmo nome desde que eles tenham assinaturas diferentes?</p>{
+	~Herança#
+	~Polimorfismo#
+	=Sobrecarga#
+	~<i>Public</i>#
+}
+
+

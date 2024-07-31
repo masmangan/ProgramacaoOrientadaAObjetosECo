@@ -1,0 +1,373 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{ragged2e}
+\usepackage{booktabs}
+\usepackage{menukeys}
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage{tikz}
+%\usetikzlibrary{shadows}
+
+\newcommand*\keystroke[1]{%
+  \tikz[baseline=(key.base)]
+    \node[%
+      draw,
+      fill=white,
+      drop shadow={shadow xshift=0.25ex,shadow yshift=-0.25ex,fill=black,opacity=0.75},
+      rectangle,
+      rounded corners=2pt,
+      inner sep=1pt,
+      line width=0.5pt,
+      font=\scriptsize\sffamily
+    ](key) {#1\strut}
+  ;
+}
+
+\usetheme{AnnArbor}
+\usecolortheme{orchid}
+\usefonttheme[onlymath]{serif}
+
+\title[\sc{Comandos Básicos do Unix}]{Comandos Básicos do Unix}
+\author[Roland Teodorowitsch]{Roland Teodorowitsch}
+%\institute[PSB - ES - PUCRS]{Programação de Software Básico - Curso de Engenharia de Software - PUCRS}
+%\institute[FPROG - EP - PUCRS]{Fundamentos de Programação - Escola Politécnica - PUCRS}
+\institute[POO - EC - PUCRS]{Programação Orientada a Objetos - ECo - Curso de Engenharia de Computação - PUCRS}
+\date{7 de março de 2023}
+
+\begin{document}
+\justifying
+
+%-------------------------------------------------------
+\begin{frame}
+	\titlepage
+\end{frame}
+
+%=======================================================
+\section{Introdução}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Frases}
+\emph{``With a PC, I always felt limited by the software available.\\On Unix, I am limited only by my knowledge.''} (Peter J. Schoenster)\\
+~\\
+\emph{``UNIX is simple and coherent, but it takes a genius (or at any rate, a programmer)\\to understand and appreciate its simplicity.''} (Dennis Ritchie)\\
+~\\
+\emph{``Pretty much everything on the web uses those two things: C and UNIX.\\	The browsers are written in C.\\The UNIX kernel --- that pretty much the entire Internet runs on --- is written in C.''} (Rob Pike)\\
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Principais características}
+\begin{itemize}
+	\item Multiusuário e multitarefa
+	\item Grande variedade de ferramentas, incluindo interpretadores de comandos programáveis e interfaces gráficas
+	\item Flexibilidade e simplicidade
+	\item Orientado a arquivos e fluxos
+	\item Eficiência
+	\item Portabilidade
+	\item Padronização
+	\item Configurabilidade
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Histórico}
+\begin{itemize}
+	\item Em 1969, Ken Thompson, na Bell Laboratories/AT\&T, escreve um SO em \emph{assembly} para o DEC PDP­7
+	\item O nome Unix surgiu como um trocadilho para outro SO muito popular na época: o Multics (\emph{Multiplexed Information and Computing Service})
+	\item Originalmente, o Unix foi chamado de ``Unics'' (\emph{UNiplexed Information and Computing System})
+	\item Em 1973, Ken Thompson e Denis Ritchie, reescreveram o Unix em C (10.000 linhas, das quais 80 \% eram em C)
+	\item Em 1975, o seu código foi foi cedido para universidades, quando começou a ser bastante utilizado
+	\item Veja: \href{https://www.youtube.com/watch?v=cN00SbyoHiQ}{\emph{Unix History Project}}
+	\item Outros destaques: System V, GNU, MINIX, Linux, etc.
+\end{itemize}
+\end{frame}
+
+%=======================================================
+\section{Sessão}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Sessões}
+\begin{itemize}
+	\item Pode-se usar o Unix através de um gerenciador de janelas (comum, mas opcional) ou diretamente de um terminal (\emph{shell})
+	\item Iniciando uma sessão
+	\begin{itemize}
+		\item Acesso via \emph{user name} (único) e senha
+		\item O \emph{shell} indica que está apto a receber comandos através de um \emph{prompt} (\texttt{\$})
+	\end{itemize}
+	\item Encerrando uma sessão (no \emph{shell})
+	\begin{itemize}
+		\item O comando \texttt{exit} encerra uma sessão
+		\item Também pode-se usar \keystroke{Ctrl}+\keystroke{D}
+		\item \texttt{logout} pode ser usado para terminais onde houve ``\emph{login}''
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+%=======================================================
+\section{Comandos}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Formato dos comandos}
+\begin{itemize}
+	\item Comandos geralmente são mnemônicos (por exemplo, \texttt{ls} ou \texttt{cp}) e são seguidos de opções e argumentos
+	\item Podem aparecer opções de dois tipos:
+	\begin{itemize}
+		\item menos e letra: \texttt{-a} (formato original)
+		\item menos-menos e palavra: \texttt{-{}-all} (formato GNU)
+	\end{itemize}
+	\item Argumentos podem, por exemplo, ser arquivos e diretórios sobre os quais o comando será executado
+	\item ``Filosofia'':
+	\begin{itemize}
+		\item Se um comando funciona sobre um arquivo e o arquivo não é especificado, então o usuário deve fornecer o conteúdo do arquivo pelo teclado
+		\item Por exemplo:\\\texttt{cat arquivo.txt\\cat}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Para saber mais...}
+\begin{itemize}
+	\item Há páginas de ajuda para comandos, chamadas de sistema, arquivos de configuração, etc.
+	\item O comando \texttt{man} é usado para acessar as páginas de ajuda:\\
+\begin{tabular}{lp{5cm}r}
+\texttt{man man} & & \tiny{(mostra a página de ajuda do comando \texttt{man})}\\\hline
+\texttt{man ls} & & \tiny{(mostra a página de ajuda do comando \texttt{help})}\\\hline
+\texttt{man cat} & & \tiny{(mostra a página de ajuda do comando \texttt{cat})}\\\hline
+\texttt{man sleep} & & \tiny{(mostram a página de ajuda do comando \texttt{sleep})}\\\hline
+\texttt{man 1 sleep} & & \tiny{(idem)}\\\hline
+\texttt{man 3 sleep} & & \tiny{(mostra a página de ajuda da chamada \texttt{sleep})}\\\hline
+\texttt{man 5 passwd} & & \tiny{(mostra a página de ajuda para o arquivo \texttt{/etc/passwd})}\\\hline
+\texttt{man fopen} & & \tiny{(mostra a página de ajuda para a chamada \texttt{fopen})}\\\hline
+\texttt{man 3 fopen} & & \tiny{	(idem)}\\
+\end{tabular}
+	\item Alguns comandos aceitam também a opção \texttt{-{}-help}\\
+\begin{tabular}{lp{3.4cm}r}
+\texttt{ls -{}-help} & & \tiny{(faz com que o próprio comando \texttt{ls} mostre informações sobre suas opções)}\\
+\end{tabular}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Comandos para data e hora}
+\begin{tabular}{lp{1cm}r}
+\texttt{cal} & & \tiny{(mostra o calendário do mês atual)}\\\hline
+\texttt{cal 2022} & & \tiny{(mostra o calendário do ano 2022)}\\\hline
+\texttt{cal 12 2022} & & \tiny{(mostra o calendário do mês 12 do ano 2022)}\\\hline
+\texttt{ncal} & & \tiny{(mostra o calendário do mês atual em formato alternativo)}\\\hline
+\texttt{ncal 2022} & & \tiny{(mostra o calendário do ano 2022 em formato alernativo)}\\\hline
+\texttt{ncal 12 2022} & & \tiny{(mostra o calendário do mês 12 do ano 2022 em formato alternativo)}\\\hline
+\texttt{date} & & \tiny{(mostra a data e hora corrente)}\\\hline
+\texttt{date '+\%d/\%m/\%Y - \%H:\%I:\%M'} & & \tiny{(mostra a data e hora corrente no formato especificado)}\\
+\end{tabular}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Verificando quem está logado}
+\begin{tabular}{lp{2cm}r}	
+\texttt{who} & & \tiny{(mostra usuários acessando o sistema)}\\\hline
+\texttt{who am i} & & \tiny{(mostra acesso do usuário corrrente)}\\\hline
+\texttt{finger} & & \tiny{(mostra informações sobre usuários acessando o sistema -- nem sempre está disponível)}\\\hline
+\texttt{finger roland} & & \tiny{(mostra informações sobre um usuário específico -- nem sempre está disponível)}\\\hline
+\texttt{last} & & \tiny{(mostra últimos acessos de usuários ao sistema)}\\
+\end{tabular}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Manipulação de diretórios}
+\begin{tabular}{lp{2cm}r}
+\texttt{pwd} & & \tiny{mostra diretório corrente()}\\\hline
+\texttt{cd} & & \tiny{(vai para o diretório base do usuário -- diretório \emph{home})}\\\hline
+\texttt{cd \~{}} & & \tiny{(idem)}\\\hline
+\texttt{cd Downloads} & & \tiny{(entra no diretório \texttt{Downloads})}\\\hline
+\texttt{cd -} & & \tiny{(retorna para o diretório visitado anteriormente)}\\\hline
+\texttt{cd ..} & & \tiny{(vai para o diretório superior -- diretório-pai)}\\\hline
+\texttt{ls} & & \tiny{(mostra arquivos no diretório corrente)}\\\hline
+\texttt{ls -l} & & \tiny{(mostra detalhes dos arquivos no diretório corrente)}\\\hline
+\texttt{ls -l -a} & & \tiny{(mostra detalhes de todos os arquivos no diretório corrente -- incluindo arquivos ocultos)}\\\hline
+\texttt{ls -la} & & \tiny{(idem)}\\\hline
+\texttt{ls -l -{}-all} & & \tiny{(idem)}\\\hline
+\texttt{ls /tmp} & & \tiny{(vai para o diretório \texttt{/tmp})}\\\hline
+\texttt{mkdir \~{}/dir} & & \tiny{(cria o diretório \texttt{dir} no diretório base)}\\\hline
+\texttt{rmdir \~{}/dir} & & \tiny{(remove o diretório \texttt{dir} -- que deve estar vazio -- no diretório base)}\\
+\end{tabular}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Movimentação, cópia e remoção de arquivos e diretórios}
+\begin{tabular}{lp{0.5cm}r}
+\texttt{mv arqOrigem arqDestino} & & \tiny{(troca o nome do arquivo de \texttt{arqOrigem} para \texttt{arqDestino})}\\\hline
+\texttt{mv -i arqOrigem arqDestino} & & \tiny{(idem, porém pedindo confirmação se for preciso sobrescrever \texttt{arqDestino})}\\\hline
+\texttt{cp arqOrigem arqDestino} & & \tiny{(copia o arquivo \texttt{arqOrigem} sobre \texttt{arqDestino})}\\\hline
+\texttt{cp -i arqOrigem arqDestino} & & \tiny{(idem, porém pedindo confirmação se for preciso sobrescrever \texttt{arqDestino})}\\\hline
+\texttt{cp -r dir destino} & & \tiny{(copia o diretório \texttt{dir} e todos os seus conteúdos para o destino especificado)}\\\hline
+\texttt{rm arq} & & \tiny{(remove o arquivo \texttt{arq}, sem confirmação)}\\\hline
+\texttt{rm -i arq} & & \tiny{(remove o arquivo \texttt{arq}, pedindo uma confirmação)}\\\hline
+\texttt{rm -r dir} & & \tiny{(remove o diretório \texttt{dir} e todos os seus conteúdos)}\\
+\end{tabular}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Visualização de arquivos}
+\begin{tabular}{lp{2cm}r}
+\multicolumn{3}{l}{\texttt{cd \~{} ; for i in `seq 1 1 50` ; do echo linha \$i ;  done \textgreater{} arq.txt}}\\
+& & \tiny{(cria o arquivo \texttt{arq.txt} com 50 linhas para teste)}\\\hline
+\texttt{cat arq.txt} & & \tiny{(mostra o arquivo \texttt{arq.txt})}\\\hline
+\texttt{more arq.txt} & & \tiny{(mostra o arquivo \texttt{arq.txt}, de forma paginada e controlada do início para o fim)}\\\hline
+\texttt{less arq.txt} & & \tiny{(funciona como o comando \texttt{more}, podendo voltar em direção ao início do arquivos)}\\\hline
+\texttt{head arq.txt} & & \tiny{(mostra o início de um arquivo, ou seja, suas 10 primeiras linhas)}\\\hline
+\texttt{head -5 arq.txt} & & \tiny{(mostra as 5 primeiras linhas de um arquivo)}\\\hline
+\texttt{tail arq.txt} & & \tiny{(mostra o final de um arquivo, ou seja, suas 10 últimas linhas)}\\\hline
+\texttt{tail -5 arq.txt} & & \tiny{(mostra as 5 últimas linhas de um arquivo)}\\
+\end{tabular}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Comandos diversos}
+\begin{tabular}{lp{0.5cm}r}
+\texttt{echo "Oi!"} & & \tiny{(mostra a mensagem ``Oi!'')}\\\hline
+\texttt{echo \$PATH} & & \tiny{(mostra o conteúdo da variável de ambiente \texttt{PATH})}\\\hline
+\texttt{tty} & & \tiny{(mostra o nome do terminal que está conectado à saída padrão)}\\\hline
+\texttt{ls -l arq.txt} & & \tiny{(mostra informações completas sobre o arquivo \texttt{arq.txt})}\\\hline
+\texttt{touch arq.txt} & & \tiny{(atualiza a data e hora de alteração do arquivo \texttt{arq.txt}}\\\hline
+\texttt{ls -l arq.txt} & & \tiny{(mostra informações completas sobre o arquivo \texttt{arq.txt}, que agora tem nova data e hora)}\\\hline
+\texttt{touch novo\_arq.txt} & & \tiny{(cria um arquivo \texttt{novo\_arq.txt}, sem conteúdo)}\\\hline
+\end{tabular}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Permissões de acesso a arquivos (1/2)}
+\begin{tabular}{lp{0.1cm}r}
+\texttt{touch arq.txt} & & \tiny{(altera data/hora ou cria o arquivo \texttt{arq.txt})}\\\hline
+\texttt{ls -l arq.txt} & & \tiny{(mostra as informações do arquivo \texttt{arq.txt})}\\\hline
+\texttt{chmod a+x arq.txt} & & \tiny{(define permissões de execução para dono, grupo e outros no arquivo \texttt{arq.txt})}\\\hline
+\texttt{ls -l arq.txt} & & \tiny{(mostra as informações do arquivo \texttt{arq.txt})}\\\hline
+\texttt{chmod go-rwx arq.txt} & & \tiny{(remove permissões de leitura, escrita e execução de grupo e outros)}\\\hline
+\texttt{ls -l arq.txt} & & \tiny{(mostra as informações do arquivo \texttt{arq.txt})}\\\hline
+\texttt{chmod 751 arq.txt} & & \tiny{(define as permissões do arquivo para rwx r-x -{}-r)}\\\hline
+\texttt{ls -l arq.txt} & & \tiny{(mostra as informações do arquivo \texttt{arq.txt})}\\\hline
+\texttt{chown roland.users arq.txt} & & \tiny{(troca dono e grupo do arquivo -- só parar \texttt{root}/administrador)}\\
+\end{tabular}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Permissões de acesso a arquivos (2/2)}
+\begin{tabular}{lp{1.5	cm}r}
+\texttt{rm arq.txt} & & \tiny{(remove o arquivo \texttt{arq.txt})}\\\hline
+\texttt{umask 137} & & \tiny{(define a máscara de permissões para criação de novos arquivos como u=rwx,g=rx,o=rx)}\\\hline
+\texttt{umask -S} & & \tiny{(mostra a máscara de permissões para criação de novos arquivos)}\\\hline
+\texttt{ls -l arq.txt} & & \tiny{(mostra as informações do arquivo \texttt{arq.txt})}\\\hline
+\texttt{rm arq.txt} & & \tiny{(remove o arquivo \texttt{arq.txt})}\\\hline
+\texttt{umask 333} & & \tiny{(define a máscara de permissões para criação de novos arquivos como u=r,g=r,o=r)}\\\hline
+\texttt{ls -l arq.txt} & & \tiny{(mostra as informações do arquivo \texttt{arq.txt})}\\\hline
+\texttt{rm arq.txt} & & \tiny{(remove o arquivo \texttt{arq.txt})}\\\hline
+\texttt{umask 337} & & \tiny{(define a máscara de permissões para criação de novos arquivos como u=r,g=r,o=)}\\\hline
+\texttt{ls -l arq.txt} & & \tiny{(mostra as informações do arquivo \texttt{arq.txt})}\\\hline
+\end{tabular}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{\texttt{expr}}
+\begin{itemize}
+	\item É utilizado para fazer cálculos simples
+	\item Deve-se usar sempre ``\texttt{\textbackslash}'' antes de símbolos (exceto ``\texttt{+}'' e ``\texttt{-}'')
+	\item Exemplos:\\
+\begin{tabular}{lp{2.5cm}r}
+\texttt{expr 14 + \textbackslash( 10 \textbackslash* 4 \textbackslash)} & & \tiny{(retorna 54, ou seja, o resultado de $14 + 10 \times 4$)}\\\hline
+\texttt{expr 5 \textbackslash$>$ 1} & & \tiny{(retorna 1, pois 5 é maior do que 1)}\\\hline
+\texttt{expr 5 \textbackslash$<$ 1} & & \tiny{(retorna 0, pois 5 NÃO é menor do que 1)}\\
+\end{tabular}
+\end{itemize}
+\end{frame}
+
+%=======================================================
+\section{Redirecionamento de E/S}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Entrada}
+\begin{itemize}
+	\item No Unix, a entrada para um comando pode ser obtida de várias formas:\\
+	\begin{itemize}
+		\item Do próprio terminal:\\
+\texttt{sort}
+		\item De um arquivo aberto pelo próprio comando:\\
+\texttt{sort /etc/passwd}
+		\item De um arquivo aberto pelo \emph{shell} e passado para o comando por redirecionamento da entrada:\\
+\texttt{sort $<$ /etc/passwd}
+	\end{itemize}
+	\item Portanto, em vez de esperar que o usuário digite o que deve ser processado, pode-se especificar o que deve ser processado a partir de um arquivo
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Saída}
+\begin{itemize}
+	\item A saída dos programas pode ser redirecionada para um arquivo com ``\texttt{$>$}'':\\
+\texttt{ls $>$ arquivo.txt}
+	\item Neste caso, o arquivo será criado (ou recriado) sem nenhum conteúdo e a saída do comando será salva neste arquivo
+	\item Para acrescentar no final do arquivo, sem recriá-lo, usa-se ``\texttt{$>>$}'':\\
+\texttt{ls /etc $>>$ arquivo.txt}
+	\item Existem 2 tipos de saídas
+	\begin{itemize}
+		\item Saída padrão: gerada por \texttt{printf(...)} ou \texttt{fprintf(stdout,...)}
+		\item Saída de erro: gerada por \texttt{fprintf(stderr,...)}
+	\end{itemize}
+	\item Operadores de redirecionamento:
+	\begin{itemize}
+		\item ``\texttt{$>$}'' e ``\texttt{$>>$}'': redirecionam apenas a saída padrão
+		\item ``\texttt{\&$>$}'': redireciona as duas saídas
+		\item ``\texttt{1$>$}'': redireciona apenas a saída padrão
+		\item ``\texttt{2$>$}'': redireciona apenas a saída de erro
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Testes (1/2)}
+\begin{itemize}
+	\item \texttt{gedit aplic.c}
+\begin{block}{}
+\begin{lstlisting}[language=C,basicstyle=\ttfamily,keywordstyle=\color{red}]
+#include <stdio.h>
+
+int main() {
+   fprintf(stdout,"informacao\n");
+   fprintf(stderr,"erro\n");
+   return 0;
+}
+\end{lstlisting}
+\end{block}
+	\item \texttt{cc aplic.c -o aplic}
+	\item \texttt{./aplic}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Testes (2/2)}
+\begin{itemize}
+	\item \texttt{./aplic $>$ saida.txt}
+	\item \texttt{cat saida.txt}
+	\item \texttt{./aplic $>>$ saida.txt}
+	\item \texttt{cat saida.txt}
+	\item \texttt{rm saida.txt}
+	\item \texttt{./aplic $>$ /dev/null}
+	\item \texttt{./aplic \&$>$ /dev/null}
+	\item \texttt{./aplic 1$>$ /dev/null}
+	\item \texttt{./aplic 2$>$ /dev/null}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Questões}
+\begin{enumerate}
+	\item Qual a diferença entre os dois comandos a seguir?\\
+\texttt{expr 5 $>$ 1\\
+expr 5 \textbackslash$>$ 1}
+	\item Qual a diferença entre a execução dos seguintes comandos?\\
+\texttt{cat arq.txt | sort\\
+sort arq.txt\\
+sort $<$ arq.txt}
+\end{enumerate}
+\end{frame}
+
+\end{document}

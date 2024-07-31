@@ -1,0 +1,611 @@
+$CATEGORY: $course$/Programação Orientada a Objetos - Revisão sobre Linguagem C - Questões de Concursos
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 001::[html]<p align="justify"><b>(ITEP/RN - 2017 - Perito Criminal - Ciências da Computação - Instituto AOCP - 4)</b> Sobre o funcionamento e as características dos compiladores e interpretadores, assinale a alternativa correta.</p>{
+	~Um compilador lê, linha por linha, o código do programa, executando a instrução específica de cada linha.#
+	~O interpretador converte o código todo para um código-objeto. Esse código objeto é uma tradução do código para uma linguagem que o computador entende.#
+	=Uma vez que um compilador gera com sucesso um código-objeto, este último pode ser executado diretamente pelo computador.#
+	~O código-objeto é a entrada para o interpretador, o qual executa o programa.#
+	~O código-objeto é a entrada para o compilador, o qual compila esse código-objeto gerando um arquivo binário.#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 002::[html]<p align="justify"><b>(ITEP/RN - 2017 - Perito Criminal - Ciências da Computação - Instituto AOCP - 41)</b> Em relação às principais caraterísticas da linguagem C, assinale a alternativa correta.</p>{
+	~Por ser uma linguagem de alto nível, não permite a manipulação de bits, bytes e endereços.#
+	~Os códigos em C desenvolvidos para um determinado tipo de sistema operacional não são portáveis para outro sistema. Em outras palavras, a linguagem C não possui portabilidade.#
+	~A linguagem C é estruturada em blocos, de modo que permite a criação de funções dentro de funções.#
+ 	=A linguagem C permite a compartimentalização de código, escondendo do resto do programa as informações necessárias para realizar uma tarefa específica.#
+	~É uma linguagem orientada a objeto.#
+}
+ 
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 003::[html]<p align="justify"><b>(Câmara Municipal de Rio Pardo de Minas/MG - 2018 - Técnico em Informática - COTEC - 5)</b> A modularização de algoritmos consiste no agrupamento de um conjunto de comandos, conceitualmente relacionados entre si e que executam uma determinada função em uma sub-rotina criada para esse propósito. Assinale a alternativa <b>INCORRETA</b>.</p>{
+	=Quando uma variável é passada como parâmetro para uma sub-rotina, essa passagem pode ser por valor, referência ou ambos.#
+	~As variáveis locais, declaradas dentro de uma sub-rotina, não são acessíveis por códigos fora de seu escopo de atuação.#
+	~Na linguagem C, as funções do tipo void são tipos específicos de sub-rotinas que não retornam valor à rotina chamadora.#
+	~Na passagem de parâmetros por valor, o conteúdo do parâmetro real (rotina chamadora) é copiado para o parâmetro formal (sub-rotina) no momento da chamada da sub-rotina.#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 004::[html]<p align="justify"><b>(ITEP/RN - 2017 - Perito Criminal - Ciências da Computação - Instituto AOCP - 43)</b> Qual das alternativas a seguir apresenta somente tipos de dados básicos da linguagem C?</p>{
+	=<code>char</code>, <code>int</code> e <code>float</code>.#
+	~<code>string</code>, <code>double</code> e <code>int</code>.#
+	~<code>boolean</code>, <code>string</code> e <code>float</code>.#
+	~<code>char</code>, <code>boolean</code> e <code>int</code>.#
+	~<code>string</code>, <code>float</code> e <code>int</code>.#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 005::[html]<p align="justify"><b>(UFRN - 2016.2 - Técnico de Tecnologia da Informação - COMPERVE - 35)</b> Na linguagem C, para manipular um número real com 8 <i>bytes</i> de tamanho que possa assumir valores negativos, é preciso declarar uma variável do tipo</p>{
+	=<code>double</code>.#
+	~<code>signed float</code>.#
+	~<code>unsigned int</code>.#
+	~<code>long</code>.#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 006::[html]<p align="justify"><b>(UFMS - 2020 - Técnico-Administrativo em Educação - Técnico de Tecnologia da Informação - FAPEC - 35)</b> Considere o código a seguir, utilizando a linguagem de programação C.   Assinale a alternativa correta.</p>
+<pre>
+#include &lt;stdio.h&gt;
+int main() \{
+&nbsp;&nbsp;&nbsp;int x = 1, y, z;
+&nbsp;&nbsp;&nbsp;y = ++x;
+&nbsp;&nbsp;&nbsp;z = y++;
+&nbsp;&nbsp;&nbsp;y = 2;
+&nbsp;&nbsp;&nbsp;printf("%%%d, %d, %d%%", x, y, z);
+&nbsp;&nbsp;&nbsp;return 0;
+\}
+</pre>{
+	~Será impresso: <code>%1, 2, 3%</code>.#
+	~Será impresso: <code>2, 2, 3</code>.#
+	=Será impresso: <code>%2, 2, 2%</code>.#
+	~Será impresso: <code>1, 2, 3</code>.#
+	~Ocorrerá o seguinte erro: <code>incompatible type for argument 1 of 'printf'</code>.#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 007::[html]<p align="justify"><b>(UFRN - 2016.1 - Técnico de Tecnologia da Informação - COMPERVE - 21 [adaptado])</b> Observe o trecho do código em C a seguir.</p>
+<pre>
+\#include &lt;stdio.h&gt;\n
+int mult (int n) \{
+&nbsp;&nbsp;&nbsp;if (n==1)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return n;
+&nbsp;&nbsp;&nbsp;return mult(n-1) * n;
+\}\n
+int main (void) \{
+&nbsp;&nbsp;&nbsp;int n, i;
+&nbsp;&nbsp;&nbsp;i = 10;
+&nbsp;&nbsp;&nbsp;n = 2 * mult (i/2);
+&nbsp;&nbsp;&nbsp;printf("%d", n);
+&nbsp;&nbsp;&nbsp;return 0;
+\}
+</pre>
+<p align="justify">Esse trecho de código, ao ser executado, imprime na tela</p>{
+	~10#
+	~25#
+	~120#
+	=240#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 008::[html]<p align="justify"><b>(UFRN - 2016.1 - Técnico de Tecnologia da Informação - COMPERVE - 22 [adaptado])</b> Analise o trecho de código em C++ a seguir.</p>
+<pre>
+\#include &lt;stdio.h&gt;\n
+int comp(int a,int b) \{
+&nbsp;&nbsp;&nbsp;if (b == 0)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return a;
+&nbsp;&nbsp;&nbsp;else
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return comp (b, a%b);
+\}\n
+int main() \{
+&nbsp;&nbsp;&nbsp;printf("%d", comp(15, 20));
+&nbsp;&nbsp;&nbsp;return 0;
+\}
+</pre>
+<p align="justify">O valor a ser impresso após a execução desse código é</p>{
+	~20#
+	~15#
+	=5#
+	~1#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 009::[html]<p align="justify"><b>(UFRN - 2016.1 - Técnico de Tecnologia da Informação - COMPERVE - 23)</b> Observe o código a seguir.</p>
+<pre>
+\#include &lt;stdio.h&gt;
+\#include &lt;stdlib.h&gt;\n
+void complexo2 (float *r, float *t) \{
+&nbsp;&nbsp;&nbsp;float real;
+&nbsp;&nbsp;&nbsp;real = (*r * *r) - (*t * *t);
+&nbsp;&nbsp;&nbsp;*t = 2 * *r * *t;
+&nbsp;&nbsp;&nbsp;*r = real;
+\}\n
+int main () \{
+&nbsp;&nbsp;&nbsp;float a=3.0, b=5.7;\n
+&nbsp;&nbsp;&nbsp;// chamar a funcao complexo2\n
+&nbsp;&nbsp;&nbsp;printf("O número complexo ao quadrado é %f + i %f\\n", a, b);
+&nbsp;&nbsp;&nbsp;return0;
+\}
+</pre>
+<p align="justify">Para que o resultado desse programa seja a impressão:</p>
+<pre>O número complexo ao quadrado é -23.489998 + i 34.199997</pre>
+<p align="justify">A forma de chamar a função que deve substituir o comentário "<code>chamar a funcao complexo2</code>" é</p>{
+	~<code>complexo2(*a, *b);</code>#
+	~<code>complexo2(a, b);</code>#
+	~<code>complexo2(&amp;a, &amp;*&amp;b);</code>#
+	~<code>complexo2(&amp;b, &amp;a);</code>#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 010::[html]<p align="justify"><b>(UFRN - 2016.2 - Técnico de Tecnologia da Informação - COMPERVE - 37)</b> Considere o seguinte programa escrito na linguagem C:</p>
+<pre>
+\#include &lt;stdio.h&gt;\n
+int f(int n) \{
+&nbsp;&nbsp;&nbsp;if (n)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return n*f(n-1);
+&nbsp;&nbsp;&nbsp;else
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 1;
+\}\n
+int main() \{
+&nbsp;&nbsp;&nbsp;int x = 1, y = 2;
+&nbsp;&nbsp;&nbsp;printf("%d\\n", f(x+y));
+&nbsp;&nbsp;&nbsp;return 0;
+\}
+</pre>
+<p align="justify">Ao final de sua execução, o programa exibirá</p>{
+	~3#
+	~0#
+	~1#
+	=6#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 011::[html]<p align="justify"><b>(UFMS - 2015 - Técnico-Administrativo em Educação - Técnico de Tecnologia da Informação - UFMS - 42 [adaptado])</b> Ao  final  da  execução  do  código  do  programa  abaixo  exibido,  quais  os  valores  impressos  (método  <code>printf</code>) pelas variáveis <code>x</code> e <code>p</code>, respectivamente?</p>
+<pre>
+\#include &lt;stdio.h&gt;\n
+int metodo(int v[], int tam, int y) \{
+&nbsp;&nbsp;&nbsp;int k=0;
+&nbsp;&nbsp;&nbsp;for (int i=0; i&lt;tam; i++)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (i%2 == 0) \{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v[i] = v[i]*2;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k += v[i];
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else \{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y++;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return k;
+\}\n
+int main(void) \{
+&nbsp;&nbsp;&nbsp;int i, x, p=0, v[] = \{1,2,3\};
+&nbsp;&nbsp;&nbsp;x = metodo(v,3,p);
+&nbsp;&nbsp;&nbsp;printf("Valor de x: %d\\nValor de p: %d\\n",x,p);
+&nbsp;&nbsp;&nbsp;return 0;
+\}
+</pre>{
+	~10 e 0#
+	~8 e 1#
+	=8 e 0#
+	~10 e 1#
+	~10 e 3#
+}
+
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 012::[html]<p align="justify"><b>(Câmara Municipal de Rio Pardo de Minas/MG - 2018 - Técnico em Informática - COTEC - 6)</b> Analise o código a seguir, escrito na linguagem de programação C.</p>
+<pre>
+\#include &lt;stdio.h&gt;\n
+void sub (int *x, int y) \{
+&nbsp;&nbsp;&nbsp;*x = 3;
+&nbsp;&nbsp;&nbsp;y = *x + 1;
+\}\n
+int main() \{
+&nbsp;&nbsp;&nbsp;int a, b, z;
+&nbsp;&nbsp;&nbsp;a = 1;
+&nbsp;&nbsp;&nbsp;b = 2;
+&nbsp;&nbsp;&nbsp;sub(&a,b);
+&nbsp;&nbsp;&nbsp;z = a + b;
+&nbsp;&nbsp;&nbsp;printf ("%d",z);
+&nbsp;&nbsp;&nbsp;return 0;
+\}
+</pre>
+<p>O valor de <code>z</code>, a ser mostrado na saída padrão, é:</p>{
+	~3.#
+	~4.#
+	=5.#
+	~7.#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 013::[html]<p align="justify">As linguagens C e C++ permitem a produção de uma gama de programas bastante abrangente, incluindo desde a programação de elementos de <i>hardware</i> e dispositivos até a expressão de conceitos abstratos em aplicações de tratamento do conhecimento. Acerca dessas linguagens de programação, julgue <u>o item que segue</u><s> os itens que se seguem</s>.</p><p><b>(INPE - 2004 - Tecnologista Pleno I - CESPE - 107)</b> As linguagens C e C++ dispõem do operador unário <code>sizeof</code> para determinar o tamanho, em <i>bytes</i>, de qualquer tipo de dado durante a execução do programa.</p>{
+	~Certo#
+	=Errado#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 014::[html]<p align="justify"><b>(UFES - 2018 - Técnico em Tecnologia da Informação - UFES - 27)</b> O trecho de código em C abaixo implementa uma função <code>f1</code> para imprimir, na saída padrão, a sigla de um estado, composta por dois caracteres e recebida por meio do parâmetro <code>sigla</code>, e, em seguida, imprimir um caractere de quebra de linha.</p>
+<pre>
+void f1(char * sigla)\{
+&nbsp; &nbsp; char lSigla[2];
+&nbsp; &nbsp; lSigla[0] \= sigla[0];
+&nbsp; &nbsp; lSigla[1] \= sigla[1];
+&nbsp; &nbsp; printf("%s\\n", lSigla);
+\}
+</pre>
+<p align="justify">Analise as afirmativas a seguir, acerca do trecho de código acima:</p>
+<ol type="I">
+<li>Os dois caracteres da sigla do estado passada como argumento serão impressos e serão seguidos imediatamente por um caractere de quebra de linha.</li>
+<li>A troca da linha <code>printf("%c%c\\n", lSigla[0],lSigla[1]);</code> pela linha original <code>printf("%s\\n", lSigla);</code> produziria o resultado desejado.</li>
+<li>Os dois caracteres da sigla do estado passada como argumento serão impressos primeiramente, mas não se pode prever o que será impresso entre a segunda letra da sigla e o caractere de quebra de linha.</li>
+<lil>Não se pode prever nenhum dos caracteres que serão impressos, mesmo que se conheça a sigla do estado passada como argumento.</li>
+</ol>
+<p align="justify">É CORRETO o que se afirma em</p>{
+	=II e III, apenas.#
+	~II, apenas.#
+	~IV, apenas.#
+	~III, apenas.#
+	~I e IV, apenas.#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 015::[html]<p align="justify"><b>(UFES - 2018 - Técnico em Tecnologia da Informação - UFES - 31)</b> Observe o trecho de código em C abaixo, que implementa uma função <code>f1</code> que tem uma <i>string</i> como parâmetro.</p>
+<pre>
+void f1(char * str)\{
+&nbsp; &nbsp; while(*str)\{
+&nbsp; &nbsp; &nbsp; &nbsp; if (*str \=\= ' ')\{
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *str \= '-';
+&nbsp; &nbsp; &nbsp; &nbsp; \}
+&nbsp; &nbsp; &nbsp; &nbsp; str++;
+&nbsp; &nbsp; \}
+\}
+</pre>
+<p align="justify">Assumindo que a chamada da função foi feita passando uma <i>string</i> válida qualquer como argumento, é CORRETO afirmar sobre o código acima:</p>{
+	~O código da função entrará em laço infinito ao ser executado, pois, considerando-se uma <i>string</i> na linguagem C, a condição de parada está errada.#
+	=O objetivo da função é substituir os caracteres do tipo espaço (i.e., ' ') da <i>string</i> recebida por meio do parâmetro str por caracteres do tipo traço (i.e., '-').#
+	~O código da função acessará uma posição inválida de memória ao ser executado, pois, considerando-se uma <i>string</i> na linguagem C, o incremento está errado.#
+	~A função não fará nenhuma alteração na <i>string</i> recebida pelo parâmetro str, pois a execução nunca entrará no comando de laço.#
+	~O objetivo da função é verificar se existem caracteres do tipo espaço e responder "verdadeiro", caso haja, ou "falso", em caso contrário.#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 016::[html]<pre>
+<u>0 &nbsp; \#include &lt;stdio.h&gt;</u>
+1 &nbsp; typedef char BYTE;
+2
+3 &nbsp; void proc1(BYTE in, float *pout)
+4 &nbsp; \{
+5 &nbsp; &nbsp; *pout \= in^2;
+6 &nbsp; \}
+7
+8 &nbsp; void proc2(float *pin, float *pout, int sizein)
+9 &nbsp; \{
+10&nbsp; &nbsp; int i;
+11 
+12&nbsp; &nbsp; pout[0] \= *pin;
+13&nbsp; &nbsp; for(i\=1;i&lt;sizein;++i)\{
+14&nbsp; &nbsp; &nbsp; pout[i] \= pout[i-1]*(*pin);
+15&nbsp; &nbsp; \}
+16&nbsp; \}
+17
+18&nbsp; void main(void)
+19&nbsp; \{
+20&nbsp; &nbsp; float a;
+21&nbsp; &nbsp; float b[3];
+22
+23&nbsp; &nbsp; proc1(5, &nbsp;a);
+24&nbsp; &nbsp; printf("\\n a\=%f",a);
+25
+26&nbsp; &nbsp; a \= 2.0;
+27&nbsp; &nbsp; proc2(&nbsp;a, b, 3);
+28&nbsp; &nbsp; printf("\\n b[0]\=%f, b[1]\=%f, b[2]\=%f", b[0], b[1],b[2]);
+29&nbsp; \}
+</pre>
+<p align="justify">O código acima foi escrito em linguagem C para um processador de 32 <i>bits</i>. Considerando que, nesse código, <code>char</code> possui 1 <i>byte</i> de tamanho, enquanto que <code>float</code> possui 4 <i>bytes</i>, julgue <u>o item seguinte</u><s> os itens seguintes</s>.</p>
+<br/>
+<p><b>(INPE - 2009 - Tecnologista da Carreira de Desenvolvimento Tecnológico / Tecnologista Júnior Padrão I - CESPE - 39)</b> <code>char</code> é um novo tipo de variável definido a partir do tipo <code>BYTE</code>.</p>{
+	~Certo#
+	=Errado#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 017::[html]<pre>
+<u>0 &nbsp; \#include &lt;stdio.h&gt;</u>
+1 &nbsp; typedef char BYTE;
+2
+3 &nbsp; void proc1(BYTE in, float *pout)
+4 &nbsp; \{
+5 &nbsp; &nbsp; *pout \= in^2;
+6 &nbsp; \}
+7
+8 &nbsp; void proc2(float *pin, float *pout, int sizein)
+9 &nbsp; \{
+10&nbsp; &nbsp; int i;
+11 
+12&nbsp; &nbsp; pout[0] \= *pin;
+13&nbsp; &nbsp; for(i\=1;i&lt;sizein;++i)\{
+14&nbsp; &nbsp; &nbsp; pout[i] \= pout[i-1]*(*pin);
+15&nbsp; &nbsp; \}
+16&nbsp; \}
+17
+18&nbsp; void main(void)
+19&nbsp; \{
+20&nbsp; &nbsp; float a;
+21&nbsp; &nbsp; float b[3];
+22
+23&nbsp; &nbsp; proc1(5, &nbsp;a);
+24&nbsp; &nbsp; printf("\\n a\=%f",a);
+25
+26&nbsp; &nbsp; a \= 2.0;
+27&nbsp; &nbsp; proc2(&nbsp;a, b, 3);
+28&nbsp; &nbsp; printf("\\n b[0]\=%f, b[1]\=%f, b[2]\=%f", b[0], b[1],b[2]);
+29&nbsp; \}
+</pre>
+<p align="justify">O código acima foi escrito em linguagem C para um processador de 32 <i>bits</i>. Considerando que, nesse código, <code>char</code> possui 1 <i>byte</i> de tamanho, enquanto que <code>float</code> possui 4 <i>bytes</i>, julgue <u>o item seguinte</u><s> os itens seguintes</s>.</p>
+<br/>
+<p><b>(INPE - 2009 - Tecnologista da Carreira de Desenvolvimento Tecnológico / Tecnologista Júnior Padrão I - CESPE - 40)</b> É correto afirmar que, após a execução da linha 24, <code>a\=7.0</code>.</p>{
+	=Certo#
+	~Errado#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 018::[html]<pre>
+<u>0 &nbsp; \#include &lt;stdio.h&gt;</u>
+1 &nbsp; typedef char BYTE;
+2
+3 &nbsp; void proc1(BYTE in, float *pout)
+4 &nbsp; \{
+5 &nbsp; &nbsp; *pout \= in^2;
+6 &nbsp; \}
+7
+8 &nbsp; void proc2(float *pin, float *pout, int sizein)
+9 &nbsp; \{
+10&nbsp; &nbsp; int i;
+11 
+12&nbsp; &nbsp; pout[0] \= *pin;
+13&nbsp; &nbsp; for(i\=1;i&lt;sizein;++i)\{
+14&nbsp; &nbsp; &nbsp; pout[i] \= pout[i-1]*(*pin);
+15&nbsp; &nbsp; \}
+16&nbsp; \}
+17
+18&nbsp; void main(void)
+19&nbsp; \{
+20&nbsp; &nbsp; float a;
+21&nbsp; &nbsp; float b[3];
+22
+23&nbsp; &nbsp; proc1(5, &nbsp;a);
+24&nbsp; &nbsp; printf("\\n a\=%f",a);
+25
+26&nbsp; &nbsp; a \= 2.0;
+27&nbsp; &nbsp; proc2(&nbsp;a, b, 3);
+28&nbsp; &nbsp; printf("\\n b[0]\=%f, b[1]\=%f, b[2]\=%f", b[0], b[1],b[2]);
+29&nbsp; \}
+</pre>
+<p align="justify">O código acima foi escrito em linguagem C para um processador de 32 <i>bits</i>. Considerando que, nesse código, <code>char</code> possui 1 <i>byte</i> de tamanho, enquanto que <code>float</code> possui 4 <i>bytes</i>, julgue <u>o item seguinte</u><s> os itens seguintes</s>.</p>
+<br/>
+<p><b>(INPE - 2009 - Tecnologista da Carreira de Desenvolvimento Tecnológico / Tecnologista Júnior Padrão I - CESPE - 41)</b> É correto afirmar que, após a execução da linha 28, <code>b[0]\=2.0</code> e <code>b[1]\=4.0</code> e <code>b[2]\=8.0</code>.</p>{
+	=Certo#
+	~Errado#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 019::[html]<pre>
+<u>0 &nbsp; \#include &lt;stdio.h&gt;</u>
+1 &nbsp; typedef char BYTE;
+2
+3 &nbsp; void proc1(BYTE in, float *pout)
+4 &nbsp; \{
+5 &nbsp; &nbsp; *pout \= in^2;
+6 &nbsp; \}
+7
+8 &nbsp; void proc2(float *pin, float *pout, int sizein)
+9 &nbsp; \{
+10&nbsp; &nbsp; int i;
+11 
+12&nbsp; &nbsp; pout[0] \= *pin;
+13&nbsp; &nbsp; for(i\=1;i&lt;sizein;++i)\{
+14&nbsp; &nbsp; &nbsp; pout[i] \= pout[i-1]*(*pin);
+15&nbsp; &nbsp; \}
+16&nbsp; \}
+17
+18&nbsp; void main(void)
+19&nbsp; \{
+20&nbsp; &nbsp; float a;
+21&nbsp; &nbsp; float b[3];
+22
+23&nbsp; &nbsp; proc1(5, &nbsp;a);
+24&nbsp; &nbsp; printf("\\n a\=%f",a);
+25
+26&nbsp; &nbsp; a \= 2.0;
+27&nbsp; &nbsp; proc2(&nbsp;a, b, 3);
+28&nbsp; &nbsp; printf("\\n b[0]\=%f, b[1]\=%f, b[2]\=%f", b[0], b[1],b[2]);
+29&nbsp; \}
+</pre>
+<p align="justify">O código acima foi escrito em linguagem C para um processador de 32 <i>bits</i>. Considerando que, nesse código, <code>char</code> possui 1 <i>byte</i> de tamanho, enquanto que <code>float</code> possui 4 <i>bytes</i>, julgue <u>o item seguinte</u><s> os itens seguintes</s>.</p>
+<br/>
+<p><b>(INPE - 2009 - Tecnologista da Carreira de Desenvolvimento Tecnológico / Tecnologista Júnior Padrão I - CESPE - 42)</b> A linha 12 teria o mesmo significado se escrita como <code>*(pout+0) \= *pin;</code>.</p>{
+	=Certo#
+	~Errado#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 020::[html]<pre>
+<u>0 &nbsp; \#include &lt;stdio.h&gt;</u>
+1 &nbsp; typedef char BYTE;
+2
+3 &nbsp; void proc1(BYTE in, float *pout)
+4 &nbsp; \{
+5 &nbsp; &nbsp; *pout \= in^2;
+6 &nbsp; \}
+7
+8 &nbsp; void proc2(float *pin, float *pout, int sizein)
+9 &nbsp; \{
+10&nbsp; &nbsp; int i;
+11 
+12&nbsp; &nbsp; pout[0] \= *pin;
+13&nbsp; &nbsp; for(i\=1;i&lt;sizein;++i)\{
+14&nbsp; &nbsp; &nbsp; pout[i] \= pout[i-1]*(*pin);
+15&nbsp; &nbsp; \}
+16&nbsp; \}
+17
+18&nbsp; void main(void)
+19&nbsp; \{
+20&nbsp; &nbsp; float a;
+21&nbsp; &nbsp; float b[3];
+22
+23&nbsp; &nbsp; proc1(5, &nbsp;a);
+24&nbsp; &nbsp; printf("\\n a\=%f",a);
+25
+26&nbsp; &nbsp; a \= 2.0;
+27&nbsp; &nbsp; proc2(&nbsp;a, b, 3);
+28&nbsp; &nbsp; printf("\\n b[0]\=%f, b[1]\=%f, b[2]\=%f", b[0], b[1],b[2]);
+29&nbsp; \}
+</pre>
+<p align="justify">O código acima foi escrito em linguagem C para um processador de 32 <i>bits</i>. Considerando que, nesse código, <code>char</code> possui 1 <i>byte</i> de tamanho, enquanto que <code>float</code> possui 4 <i>bytes</i>, julgue <u>o item seguinte</u><s> os itens seguintes</s>.</p>
+<br/>
+<p><b>(INPE - 2009 - Tecnologista da Carreira de Desenvolvimento Tecnológico / Tecnologista Júnior Padrão I - CESPE - 43)</b> A linha 14 teria o mesmo significado se escrita como <code>*(pout++) \= *(pout-1)*(pin[0]);</code>.</p>{
+	~Certo#
+	=Errado#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 021::[html]<p align="justify"><b>(MPE/MG - 2012 - Analista do MP/Tecnologia da Informação/Administração de Redes - FUNDEP/UFMG - 58)</b> Na linguagem C, qual a forma de se incluir um cabeçalho <stdio.h> em uma determinada rotina?</p>{	
+	=\#include &lt;stdio.h&gt;#
+	~\#insert &lt;stdio.h&gt;#
+	~\#include &lt;stdio.h&gt;#
+	~\#insert &lt;stdio.h&gt;#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 022::[html]<p align="justify"><b>(MPE/MG - 2012 - Analista do MP/Tecnologia da Informação/Administração de Redes - FUNDEP/UFMG - 54)</b> Assinale a alternativa que apresenta o valor correto armazenado na posição 4 do vetor V, após a execução do trecho do algoritmo seguinte:</p>
+<pre>
+V[1] &larr; 1
+PARA J \= 2 ATÉ 4
+   V[J] &larr; V[J - 1] + 2J
+FIM-PARA
+</pre>{
+	~15#
+	~17#
+	~18#
+	=19#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 023::[html]<p align="justify"><b>(MPE/MG - 2012 - Analista do MP/Tecnologia da Informação/Administração de Redes - FUNDEP/UFMG - 60)</b> Qual seria o resultado da execução do seguinte trecho de comando utilizando a linguagem C?</p>
+<pre>
+main()
+\{
+   for(;;) printf(5+7);
+\}
+</pre>{
+	~A tela permaneceria em branco#
+	=O sistema ficaria em loop infinitamente#
+	~Seria impresso na tela o valor 12#
+	~Seria impresso na tela a operação 5+7#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 024::[html]<p align="justify"><b>(SEED/PR - 2022 - Professor/Programação - Consulplan - 14)</b> Analise o código abaixo escrito em C.</p>
+<pre>
+int main() \{
+ &nbsp; &nbsp; int a, b;
+ &nbsp; &nbsp; a \= 3;
+ &nbsp; &nbsp; b \= 7;
+ &nbsp; &nbsp; int c \= a * (b + a);
+ &nbsp; &nbsp; c \= b;
+
+ &nbsp; &nbsp; printf("%d", c);
+
+ &nbsp; &nbsp; return 0;
+\}
+</pre>
+<p align="justify">Assinale, a seguir, o valor impresso ao final da execução do código.</p>{
+	=7#
+	~10#
+	~24#
+	~30#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 025::[html]<p align="justify"><b>(SEED/PR - 2022 - Professor/Programação - Consulplan - 17)</b> Analise o código abaixo escrito em C.</p>
+<pre>
+int main() \{
+ &nbsp; &nbsp; int a \= 0, b \= 1, c \= 2;
+
+ &nbsp; &nbsp; printf("%d", a);
+
+ &nbsp; &nbsp; c \= a;
+
+ &nbsp; &nbsp; printf("%d", b);
+
+ &nbsp; &nbsp; b \= c;
+
+ &nbsp; &nbsp; printf("%d", c);
+
+ &nbsp; &nbsp; return 0;
+\}
+</pre>
+<p align="justify">Assinale, a seguir, o valor impresso ao final da execução do código.</p>{
+	~002;#
+	=010;#
+	~012;#
+	~020;#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 026::[html]<p align="justify"><b>(SEED/PR - 2022 - Professor/Programação - Consulplan - 18)</b> Analise o código abaixo escrito em C.</p>
+<pre>
+int main() \{
+ &nbsp; &nbsp; int a \= 0;
+
+ &nbsp; &nbsp; while(a &lt; 100) \{
+ &nbsp; &nbsp; &nbsp; &nbsp; if((a % 2) == 0) \{
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a++;
+ &nbsp; &nbsp; &nbsp; &nbsp; \}
+ &nbsp; &nbsp; &nbsp; &nbsp; else \{
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a \= a + 3;
+ &nbsp; &nbsp; &nbsp; &nbsp; \}
+ &nbsp; &nbsp; \}
+
+ &nbsp; &nbsp; return 0;
+\}
+</pre>
+<p align="justify">Assinale, a seguir, um conceito ou estrutura de programação que NÃO foi utilizado no código.</p>{
+	~Variável.#
+	=Recursividade.#
+	~Estrutura condicional.#
+	~Estrutura de repetição.#
+}
+	
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 027::[html]<p align="justify"><b>(SEED/PR - 2022 - Professor/Programação - Consulplan - 20)</b> Em uma linguagem de programação estruturada, como a linguagem C, é comum dividir o código em conjuntos de instruções que realizam determinada tarefa e que podem ser reaproveitados em mais de um momento ao longo do código. Estes conjuntos podem ser caracterizados como procedimentos ou funções. São definições de procedimentos e funções, EXCETO:</p>{
+	~Funções retornam valor.#
+	~Procedimentos não retornam valor.#
+	=Funções e procedimentos são sinônimos.#
+	~Funções podem ser utilizadas em expressões aritméticas dentro de um código.#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 028::[html]<p align="justify"><b>(SEED/PR - 2022 - Professor/Programação - Consulplan - 21)</b> Na programação estruturada, um conceito que poderá otimizar o desenvolvimento é o de "estruturas". Podemos afirmar que uma estrutura, EXCETO:</p>{
+	~É capaz de armazenar informações de tipos diferentes.#
+	~É considerada pelo programa como um novo tipo de dado.#
+	=É capaz de armazenar somente até três campos de informações.#
+	~Declarada dentro do escopo da função principal de um programa, não poderá ser utilizada dentro de funções declaradas fora do escopo da função principal.#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 029::[html]<p align="justify"><b>(SEED/PR - 2022 - Professor/Programação - Consulplan - 24)</b> Na programação estruturada, as funções podem receber parâmetros por valor ou por referência. Sobre passagem de parâmetro por referência, assinale a afirmativa correta.</p>{
+	~Somente é possível passar por referência parâmetros do tipo <code>char</code>.#
+	~Somente é possível passar por referência parâmetros do tipo inteiro.#
+	=Um parâmetro passado por referência é, na verdade, um endereço de memória.#
+	~Um parâmetro passado por referência é, na verdade, um valor armazenado na memória.#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 030::[html]<p align="justify"><b>(SEED/PR - 2022 - Professor/Programação - Consulplan - 40)</b> A linguagem C++ fornece vários tipos de variáveis, as quais precisam ser declaradas e atribuídas a um tipo. Nesta linguagem, a variável destinada a um número real exato e que ocupa menos memória do que um <code>double</code>, porém tem menos precisão e variação, é:</p>{
+	~<code>char</code>.#
+	=<code>float</code>.#
+	~<code>long int</code>.#
+	~<code>wchar_t</code>.#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 031::[html]<p align="justify"><b>(SEFAZ/RR - 2022 - Desenvolvedor de Software/Tipo A - IDECAN - 52)</b> As variáveis possuem etiquetas que são os nomes das variáveis, e a classificação do que pode ser guardado em cada variável é dada pelos tipos de variáveis de uma determinada linguagem de programação. Selecione o tipo de variável que armazena dados vazios.</p>{
+	~<code>int</code>#
+	~<code>char</code>#
+	~<code>float</code>#
+	~<code>double</code>#
+	=<code>void</code>#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 032::[html]<p align="justify"><b>(SEFAZ/RR - 2022 - Desenvolvedor de Software/Tipo A - IDECAN - 53)</b> Assim como na matemática, em programação os operadores possuem precedência uns em relação aos outros. Selecione a alternativa que mostra o operador com a precedência de maior prioridade.</p>{
+	~Multiplicação (*)#
+	~Maior ou igual (&gt;\=)#
+	~Soma (+)#
+	=- (menos unário), operador Não#
+	~Subtração (-)#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 033::[html]<p align="justify"><b>(SEFAZ/RR - 2022 - Desenvolvedor de Software/Tipo A - IDECAN - 54)</b> Quando criamos um programa de computador, utilizamos a seguinte sequência de operações na grande maioria das vezes: entrada de dados, processamento e saída. Selecione a estrutura de seleção que nunca testa uma ou mais variáveis de acordo com uma condição.</p>{
+	~<code>if</code>#
+	~<code>else if</code> / <code>elif</code>#
+	=<code>else</code>#
+	~<code>while</code>#
+	~<code>for</code>#
+}
+
+::POO - Revisão sobre Linguagem C - Questões de Concursos - 034::[html]<p align="justify"><b>(SEFAZ/RR - 2022 - Desenvolvedor de Software/Tipo A - IDECAN - 98)</b> Carlos trabalha como desenvolvedor de software e recebe a demanda de criar um trecho de código usando um <i>loop</i> de repetição que somente pode ser usado quando se sabe a quantidade de vezes que o <i>loop</i> vai acontecer. Selecione o <i>loop</i> de repetição que Carlos deve utilizar.</p>{
+	~<code>if</code>#
+	=<code>for</code>#
+	~<code>while</code>#
+	~<code>switch</code>#
+	~<code>do - while</code>#
+}
+

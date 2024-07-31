@@ -1,0 +1,39 @@
+Criando banco1 com construtor padrão...
+
+Testando registro do nome do banco...
+Nome esperado: Superbanco
+Nome: Superbanco
+
+Testando adição de contas...
+Numero de contas esperado: 3
+Numero de contas inserido: 3
+
+Testando obtem contas...
+Testando depósito...
+Saldo esperado na conta 1002: 10000.0
+Saldo na conta 1002: 10000.0
+Saldo esperado na conta 1001: 1000.0
+Saldo na conta 1001: 1000.0
+Saldo esperado na conta 1003: 200.0
+Saldo na conta 1003: 200.0
+
+Testando retirada...
+Saldo esperado na conta 1002: 0.0
+Saldo na conta 1002: 0.0
+Saldo RETIRADO esperado da conta 1002: 10000.0
+Saldo RETIRADO da conta 1002: 10000.0
+Saldo esperado na conta 1001: 800.0
+Saldo na conta 1001: 800.0
+Saldo RETIRADO esperado da conta 1001: 200.0
+Saldo RETIRADO da conta 1001: 200.0
+
+Testando transferência...
+Transeferido? Esperado: true; Resultado: 1
+Saldo esperado na conta 1002: 500.0
+Saldo na conta 1002: 500.0
+Saldo esperado na conta 1001: 300.0
+Saldo na conta 1001: 300.0
+
+Testando saldo total...
+Saldo total esperado: 1000.0
+Saldo total: 1000.0

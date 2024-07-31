@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <question type="category">
+    <category>
+      <text>$module$/top/POO-04-ClassesEObjetos-ListaDeExercicios2-Questao01</text>
+    </category>
+    <info format="moodle_auto_format">
+      <text></text>
+    </info>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Classes e Objetos - Lista de Exercícios 2 - Questão 01 - Versão 001</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p align="justify">Complete a implementação de uma classe denominada <code>Elevador</code> em C++ a partir da seguinte declaração de classe:</p>
+<pre>
+class Elevador {
+private:
+    int ocupacao;
+    int capacidade;
+    int andarAtual;
+    int totalAndares;
+public:
+    Elevador(int cap=8, int an=10);
+    ~Elevador();
+    bool entra();
+    bool sai();
+    bool sobe();
+    bool desce();
+    int obtemOcupacao();
+    int obtemCapacidade();
+    int obtemAndarAtual();
+    int obtemTotalAndares();
+};
+</pre>
+<p align="justify">A classe simula o funcionamento de um elevador, armazenando as seguintes informações para cada elevador: ocupação atual do elevador (em número de pessoas), capacidade máxima do elevador (em número de pessoas), número do andar atual (que varia de 0 até o número total de andares menos 1) e número total de andares (incluindo o andar 0, que corresponde ao andar térreo).</p>
+<p align="justify">Os métodos a serem implementados na classe <code>Elevador</code> são os seguintes:</p>
+<ul>
+    <li>construtor: recebe a capacidade do elevador (em número de pessoas) e o número de andares (incluindo o andar térreo) - respectivamente, com valores <i>default</i> 8 e 10 -, e inicializa a ocupação do elevador com zero e o andar atual também com zero;</li>
+    <li>destrutor: não realiza nada, mas pode ser usado para depuração;</li>
+    <li><code>entra()</code>: simula a tentativa de entrada de uma pessoa no elevador, aumentando o número de ocupantes, se o número máximo ainda não tiver sido atingido (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>sai()</code>: simula a saída de uma pessoa no elevador, diminuindo o número de ocupantes, se houver ocupantes (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>sobe()</code>: simula a subida do elevador para o andar acima do atual, aumentando o número do andar atual, se ainda não estiver no último andar (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>desce()</code>: simula a descida do elevador para o andar abaixo do atual, diminuindo o número do andar atual, se já não estiver no andar térreo (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>obtemOcupacao()</code>: retorna a ocupação atual do elevador (em número de pessoas);</li>
+    <li><code>obtemCapacidade()</code>: retorna a capacidade máxima do elevador (em número de pessoas);</li>
+    <li><code>obtemAndarAtual()</code>: retorna o andar atual do elevador;</li>
+    <li><code>obtemTotalAndares()</code>: retorna o número todal de andares.</li>
+</ul>
+<p align="justify">Além dos métodos que completam a classe <code>Elevador</code>, implemente um programa que lê a partir da entrada padrão uma série de informações que definem as características do elevador e também uma série de operações executadas por este elevador, determinando ao final, o número de ocupantes do elevador, o andar atual do elevador e o número de pessoas que não conseguiram ingressar no elevador devido ao limite de capacidade.</p>
+<p align="justify">Os dados fornecidos na entrada padrão iniciam com a capacidade máxima do elevador (em número de pessoas) e o número total de andares - informações que serão usadas para criar um objeto da classe <code>Elevador</code>. Na sequência, aparece um conjunto de comandos para serem executados no elevador. Os comandos são os seguintes:</p>
+<ul>
+    <li><code>+</code>: simula a tentativa de ingresso de uma pessoa no elevador;</li>
+    <li><code>-</code>: simula a saída de uma pessoa do elevador;</li>
+    <li><code>^</code>: faz o elevador subir um andar;</li>
+    <li><code>v</code>: faz o elevador descer um andar;</li>
+    <li><code>.</code>: indica o final da operação do elevador (este será sempre o último comando da entrada).</li>
+</ul>
+<p align="justify">Um exemplo de entrada é o seguinte:</p>
+<pre>
+4 6
++ + ^ + ^ + ^ - ^
++ + + ^ -
+^ v - ^ ^ + .
+</pre>
+<p align="justify">Para este exemplo, no final da operação, o elevador estará ocupado por <code>3</code> pessoas e parado no andar <code>5</code>, sendo que, ao longo do seu percurso, <code>2</code> pessoas tentaram ingressar no elevador e não conseguiram.</p>
+<p align="justify">Após completar a implementação, submeta a seguinte entrada ao seu programa:</p>
+<pre>
+8 20
++ + + + ^ ^ - + + ^ + ^ - + v ^ - + v - ^ ^ v v v - ^ + v v + v ^ + v + ^ - - - - - - + + v - + + v
+- + + ^ v - ^ - + v + v - v + v ^ - - ^ ^ + ^ + v ^ ^ v + ^ v ^ + ^ - + + v v ^ ^ v v v v - + v + +
+v - + v v + v v ^ ^ v v v v - - ^ + + v - - - - + + v - - v - - v v v + v - ^ + ^ v + ^ ^ - - ^ v ^
+v v + v ^ v + + v ^ ^ + ^ + v - ^ ^ + ^ ^ v + v - v - + ^ v - - + ^ ^ + ^ + v - + + + + v - + ^ v -
+- - - - + + v - - + + ^ ^ + ^ - + + v v - ^ v + ^ - - ^ v ^ v + v - v ^ ^ v + ^ + ^ - + v - + ^ ^ -
+- ^ v - - - - + v + ^ ^ - + v ^ ^ - - + + ^ v ^ - + ^ ^ v + ^ v ^ v - + v + v v ^ - + v - v + v - +
+v v ^ ^ + ^ ^ ^ + v - + + ^ + + v + v ^ + v - - - ^ + ^ v ^ ^ ^ + v - v - - - - v - v - + + + + + v
+v ^ v ^ v ^ ^ v ^ - v + ^ v v ^ - - + ^ + v v v v v ^ - v + v ^ + v ^ - - ^ v v - - ^ + v v - ^ + +
+v - v - - + + v v - ^ - + + + + v - ^ - v + v - ^ - ^ + ^ ^ v v ^ v - + v - - + + + v ^ + ^ v ^ v -
++ ^ ^ v - ^ + + v v + ^ v - - - - v + + + + v - v ^ - - + ^ - + + + v ^ + + + v v v + + ^ - - + v -
+- + + + + v - v ^ ^ v ^ v - + + v ^ v v v - ^ - v - v - - v - + ^ + v - ^ + v + v + ^ v ^ + + ^ v v
++ + v ^ ^ ^ v - v + ^ v v v + ^ v ^ ^ ^ - - ^ - - ^ v v - - - ^ v ^ ^ ^ - v + ^ v - ^ ^ v + ^ v v +
+v v - - + ^ v - + v + v v v - ^ + + + ^ ^ - ^ - - + + + ^ - + ^ - ^ ^ - - ^ v v ^ v + v - + v ^ v -
+v ^ v + + v - - + ^ - ^ v - ^ + ^ v v - v ^ + + + ^ ^ ^ - + + ^ - + + v - ^ - - + + ^ - + + v ^ - +
+^ - - ^ v v ^ v + v ^ - ^ + + + v ^ v - + ^ - v - + ^ - - ^ v ^ + + ^ v v + + + v - ^ - ^ v ^ v + ^
+v - - - + v - ^ - ^ - + + ^ - + v + ^ - v v - - + + + ^ v + v ^ ^ v + + + v ^ - v - - - + + v ^ - -
+^ - ^ v ^ + ^ + + ^ - + + v ^ ^ - v ^ - ^ ^ v - + ^ - - - + + ^ - ^ - + v + ^ v ^ v v - ^ + v ^ - +
++ v - + v + ^ ^ - ^ ^ - ^ - - + + ^ + v ^ - - v + + ^ v - - v v v - + + + ^ + v v - v - - - + + + ^
+- ^ ^ ^ + ^ ^ v ^ ^ - ^ - v - - + + + ^ ^ v v ^ v - v - - v + + v ^ v v - - + ^ - ^ ^ + + ^ ^ v - -
+- + v v v v ^ + + ^ - - - + + + ^ v ^ ^ - + v ^ + v ^ ^ v - - + v v + ^ - - + + ^ ^ + + + ^ - + + +
+.
+</pre>
+<p align="justify">E responda:</p>
+<ol type="a">
+    <li>Qual o número de ocupantes do elevador no final das operações indicadas? &nbsp; {1:SHORTANSWER:=8}</li>
+    <li>Em qual andar o elevador estará parado no final das operações indicadas? &nbsp; {1:SHORTANSWER:=19}</li>
+    <li>Qual o número de pessoas que não puderam ingressar no elevador devido à lotação máxima ter sido atingida? &nbsp; {1:SHORTANSWER:=21}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Classes e Objetos - Lista de Exercícios 2 - Questão 01 - Versão 002</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p align="justify">Complete a implementação de uma classe denominada <code>Elevador</code> em C++ a partir da seguinte declaração de classe:</p>
+<pre>
+class Elevador {
+private:
+    int ocupacao;
+    int capacidade;
+    int andarAtual;
+    int totalAndares;
+public:
+    Elevador(int cap=8, int an=10);
+    ~Elevador();
+    bool entra();
+    bool sai();
+    bool sobe();
+    bool desce();
+    int obtemOcupacao();
+    int obtemCapacidade();
+    int obtemAndarAtual();
+    int obtemTotalAndares();
+};
+</pre>
+<p align="justify">A classe simula o funcionamento de um elevador, armazenando as seguintes informações para cada elevador: ocupação atual do elevador (em número de pessoas), capacidade máxima do elevador (em número de pessoas), número do andar atual (que varia de 0 até o número total de andares menos 1) e número total de andares (incluindo o andar 0, que corresponde ao andar térreo).</p>
+<p align="justify">Os métodos a serem implementados na classe <code>Elevador</code> são os seguintes:</p>
+<ul>
+    <li>construtor: recebe a capacidade do elevador (em número de pessoas) e o número de andares (incluindo o andar térreo) - respectivamente, com valores <i>default</i> 8 e 10 -, e inicializa a ocupação do elevador com zero e o andar atual também com zero;</li>
+    <li>destrutor: não realiza nada, mas pode ser usado para depuração;</li>
+    <li><code>entra()</code>: simula a tentativa de entrada de uma pessoa no elevador, aumentando o número de ocupantes, se o número máximo ainda não tiver sido atingido (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>sai()</code>: simula a saída de uma pessoa no elevador, diminuindo o número de ocupantes, se houver ocupantes (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>sobe()</code>: simula a subida do elevador para o andar acima do atual, aumentando o número do andar atual, se ainda não estiver no último andar (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>desce()</code>: simula a descida do elevador para o andar abaixo do atual, diminuindo o número do andar atual, se já não estiver no andar térreo (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>obtemOcupacao()</code>: retorna a ocupação atual do elevador (em número de pessoas);</li>
+    <li><code>obtemCapacidade()</code>: retorna a capacidade máxima do elevador (em número de pessoas);</li>
+    <li><code>obtemAndarAtual()</code>: retorna o andar atual do elevador;</li>
+    <li><code>obtemTotalAndares()</code>: retorna o número todal de andares.</li>
+</ul>
+<p align="justify">Além dos métodos que completam a classe <code>Elevador</code>, implemente um programa que lê a partir da entrada padrão uma série de informações que definem as características do elevador e também uma série de operações executadas por este elevador, determinando ao final, o número de ocupantes do elevador, o andar atual do elevador e o número de pessoas que não conseguiram ingressar no elevador devido ao limite de capacidade.</p>
+<p align="justify">Os dados fornecidos na entrada padrão iniciam com a capacidade máxima do elevador (em número de pessoas) e o número total de andares - informações que serão usadas para criar um objeto da classe <code>Elevador</code>. Na sequência, aparece um conjunto de comandos para serem executados no elevador. Os comandos são os seguintes:</p>
+<ul>
+    <li><code>+</code>: simula a tentativa de ingresso de uma pessoa no elevador;</li>
+    <li><code>-</code>: simula a saída de uma pessoa do elevador;</li>
+    <li><code>^</code>: faz o elevador subir um andar;</li>
+    <li><code>v</code>: faz o elevador descer um andar;</li>
+    <li><code>.</code>: indica o final da operação do elevador (este será sempre o último comando da entrada).</li>
+</ul>
+<p align="justify">Um exemplo de entrada é o seguinte:</p>
+<pre>
+4 6
++ + ^ + ^ + ^ - ^
++ + + ^ -
+^ v - ^ ^ + .
+</pre>
+<p align="justify">Para este exemplo, no final da operação, o elevador estará ocupado por <code>3</code> pessoas e parado no andar <code>5</code>, sendo que, ao longo do seu percurso, <code>2</code> pessoas tentaram ingressar no elevador e não conseguiram.</p>
+<p align="justify">Após completar a implementação, submeta a seguinte entrada ao seu programa:</p>
+<pre>
+10 22
+^ ^ v v ^ ^ + + v + + + v + v - - + + v + + v - - - ^ + v - ^ - + ^ - ^ + ^ - - - v + v - - ^ + v v
+- + + + v - - - + + ^ v v v ^ v - - + ^ + ^ - + + ^ ^ v ^ ^ v + + ^ ^ v - + v + + v - - - ^ v v ^ ^
+- ^ v v v - + v - + + v - v v - ^ ^ + v ^ ^ - v - v + + + v v v - v v - - + + ^ ^ - ^ + + v - ^ - ^
+v v - + + v + + v + + ^ + ^ - - + + ^ + + v ^ - - - - - + + v ^ v + + ^ ^ - + + + v ^ ^ v - + + v -
+- v - + v + v - - + + ^ ^ + + ^ ^ v - v - ^ - + ^ v v + v - + ^ v v - ^ + v ^ + + + v - - + + ^ + v
+- + v v v v v + v + + + v - + + + + v ^ v ^ v ^ - - + + + ^ ^ - - - + + v ^ - v ^ ^ - v v - - - - -
++ + ^ ^ ^ + ^ + ^ v - ^ ^ ^ + + v ^ - + ^ v - - v ^ - + + + + ^ ^ - v v v v - v - - v ^ v + + ^ - v
+- ^ v - + + ^ v + v - + ^ - v ^ v ^ v ^ ^ - - v - v + v - + v - + + ^ v v + v v v v ^ - + + + ^ + ^
+v - v - ^ - - - - + + v + ^ - + v v + v - ^ v - ^ - + ^ + + v - - + ^ - - ^ - - + + v + ^ - + ^ - v
+^ ^ + v - ^ ^ ^ v v - + + + + v - v ^ ^ ^ ^ + + v ^ - - ^ + ^ + ^ - v ^ + ^ ^ v - v ^ ^ ^ - ^ v - v
+v ^ + ^ ^ - v v + ^ v - + ^ - + v + v - v - ^ v v v v - v - - ^ + ^ - v ^ ^ v ^ v ^ - + + + ^ - - +
+^ ^ v + ^ ^ - v - + + v - v ^ + v ^ + ^ v v ^ v - ^ v + + v - + + + + + v v ^ - - + + + v v + v v -
+- + v v + ^ - + v - ^ v v v v ^ ^ ^ ^ + ^ v ^ - ^ - ^ ^ + ^ - + v ^ + v v ^ v - ^ - + v - ^ - ^ - -
+v - + + ^ v - - + ^ v ^ - - + ^ + v - - v + + v ^ + + ^ + ^ - + + v ^ v - ^ - + ^ v ^ - + + v ^ - ^
+- - + ^ - v + v - + ^ v + v v ^ - + v ^ - + v - - + ^ v v ^ v - - - - + + ^ ^ ^ - - - + ^ v - - - +
++ + + v v v v ^ v ^ v ^ ^ + + v - + + v - v + ^ + v v - + + v ^ + v + + ^ - - + v + v - ^ v - - + v
+^ v + v + ^ ^ ^ + ^ + + v v ^ ^ v - ^ v ^ ^ v - + + v - - - + + + + + v v - + + + v - v + ^ - ^ ^ -
++ v ^ - - ^ ^ + v + + v ^ v - v - ^ v - + v v v + ^ - - + v - - v v - v ^ ^ + v v - v v v v + + ^ ^
+- ^ ^ ^ + + ^ v ^ ^ v ^ v - - - - - + + + + + + v v - - - v - - v ^ - - v - + ^ - ^ ^ v v ^ - + + v
+v - v + v - - + + + + + + + v v - + ^ ^ ^ v - + + v + ^ - v - - + v ^ + v ^ - ^ ^ ^ + ^ ^ ^ ^ ^ v ^
+.
+</pre>
+<p align="justify">E responda:</p>
+<ol type="a">
+    <li>Qual o número de ocupantes do elevador no final das operações indicadas? &nbsp; {1:SHORTANSWER:=8}</li>
+    <li>Em qual andar o elevador estará parado no final das operações indicadas? &nbsp; {1:SHORTANSWER:=9}</li>
+    <li>Qual o número de pessoas que não puderam ingressar no elevador devido à lotação máxima ter sido atingida? &nbsp; {1:SHORTANSWER:=25}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Classes e Objetos - Lista de Exercícios 2 - Questão 01 - Versão 003</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p align="justify">Complete a implementação de uma classe denominada <code>Elevador</code> em C++ a partir da seguinte declaração de classe:</p>
+<pre>
+class Elevador {
+private:
+    int ocupacao;
+    int capacidade;
+    int andarAtual;
+    int totalAndares;
+public:
+    Elevador(int cap=8, int an=10);
+    ~Elevador();
+    bool entra();
+    bool sai();
+    bool sobe();
+    bool desce();
+    int obtemOcupacao();
+    int obtemCapacidade();
+    int obtemAndarAtual();
+    int obtemTotalAndares();
+};
+</pre>
+<p align="justify">A classe simula o funcionamento de um elevador, armazenando as seguintes informações para cada elevador: ocupação atual do elevador (em número de pessoas), capacidade máxima do elevador (em número de pessoas), número do andar atual (que varia de 0 até o número total de andares menos 1) e número total de andares (incluindo o andar 0, que corresponde ao andar térreo).</p>
+<p align="justify">Os métodos a serem implementados na classe <code>Elevador</code> são os seguintes:</p>
+<ul>
+    <li>construtor: recebe a capacidade do elevador (em número de pessoas) e o número de andares (incluindo o andar térreo) - respectivamente, com valores <i>default</i> 8 e 10 -, e inicializa a ocupação do elevador com zero e o andar atual também com zero;</li>
+    <li>destrutor: não realiza nada, mas pode ser usado para depuração;</li>
+    <li><code>entra()</code>: simula a tentativa de entrada de uma pessoa no elevador, aumentando o número de ocupantes, se o número máximo ainda não tiver sido atingido (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>sai()</code>: simula a saída de uma pessoa no elevador, diminuindo o número de ocupantes, se houver ocupantes (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>sobe()</code>: simula a subida do elevador para o andar acima do atual, aumentando o número do andar atual, se ainda não estiver no último andar (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>desce()</code>: simula a descida do elevador para o andar abaixo do atual, diminuindo o número do andar atual, se já não estiver no andar térreo (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>obtemOcupacao()</code>: retorna a ocupação atual do elevador (em número de pessoas);</li>
+    <li><code>obtemCapacidade()</code>: retorna a capacidade máxima do elevador (em número de pessoas);</li>
+    <li><code>obtemAndarAtual()</code>: retorna o andar atual do elevador;</li>
+    <li><code>obtemTotalAndares()</code>: retorna o número todal de andares.</li>
+</ul>
+<p align="justify">Além dos métodos que completam a classe <code>Elevador</code>, implemente um programa que lê a partir da entrada padrão uma série de informações que definem as características do elevador e também uma série de operações executadas por este elevador, determinando ao final, o número de ocupantes do elevador, o andar atual do elevador e o número de pessoas que não conseguiram ingressar no elevador devido ao limite de capacidade.</p>
+<p align="justify">Os dados fornecidos na entrada padrão iniciam com a capacidade máxima do elevador (em número de pessoas) e o número total de andares - informações que serão usadas para criar um objeto da classe <code>Elevador</code>. Na sequência, aparece um conjunto de comandos para serem executados no elevador. Os comandos são os seguintes:</p>
+<ul>
+    <li><code>+</code>: simula a tentativa de ingresso de uma pessoa no elevador;</li>
+    <li><code>-</code>: simula a saída de uma pessoa do elevador;</li>
+    <li><code>^</code>: faz o elevador subir um andar;</li>
+    <li><code>v</code>: faz o elevador descer um andar;</li>
+    <li><code>.</code>: indica o final da operação do elevador (este será sempre o último comando da entrada).</li>
+</ul>
+<p align="justify">Um exemplo de entrada é o seguinte:</p>
+<pre>
+4 6
++ + ^ + ^ + ^ - ^
++ + + ^ -
+^ v - ^ ^ + .
+</pre>
+<p align="justify">Para este exemplo, no final da operação, o elevador estará ocupado por <code>3</code> pessoas e parado no andar <code>5</code>, sendo que, ao longo do seu percurso, <code>2</code> pessoas tentaram ingressar no elevador e não conseguiram.</p>
+<p align="justify">Após completar a implementação, submeta a seguinte entrada ao seu programa:</p>
+<pre>
+6 15
+^ + v - + + + ^ - + ^ ^ - ^ v ^ - + v - ^ ^ - v v v ^ ^ v v + + ^ ^ + + ^ + v v - - + v v v + ^ v v
+v + ^ + v v - + ^ v ^ - - - ^ v + v v ^ + ^ ^ + v - + + + ^ - - + + + + ^ v v - + + v v v - + v ^ +
+v ^ v - - ^ v v ^ ^ - v - v - v + ^ + v + ^ v v v v - v v - v v v - - ^ + + + ^ - + ^ - + + v - + ^
+v v ^ v ^ - - + + ^ + ^ + + v v + + + ^ ^ v ^ - v v ^ v ^ - v - + + ^ + ^ - + ^ + v - - + + + ^ v v
+v v v ^ - + v ^ ^ v - ^ + + ^ - - + + v - - + ^ - - + ^ v + v ^ v - - ^ + v + + + ^ - ^ - - + ^ ^ -
+v + v v v - v ^ - + ^ ^ v ^ - + + ^ v ^ - ^ v + + v ^ ^ - + ^ - - - + + v ^ - - ^ - - + v v - + ^ +
+v v + + + + ^ + ^ v v + + ^ ^ ^ v ^ v ^ ^ - v - v ^ ^ ^ - ^ ^ + + v - - + + + v v + v ^ v + ^ ^ - -
+- + v ^ v + ^ - - - + ^ - + v ^ - - + ^ - + v v v v ^ - - ^ v ^ + v - + + + + + + + + v v - v - + ^
+- + + + ^ - ^ - v - ^ v + ^ v ^ - v - + v - + v ^ v + ^ - + + v ^ - ^ v v ^ - v ^ ^ v ^ ^ ^ - ^ - v
+^ ^ + v v ^ + ^ v - - + + v v v - v ^ + ^ + v v - ^ v - ^ ^ + ^ ^ v v ^ + + ^ - v - ^ ^ ^ - + v - -
+v ^ ^ ^ + v v v + ^ v + v ^ ^ v - + v v - - + + v + + v v v v - + + + v ^ - + ^ - ^ - + + ^ - + + v
+^ ^ - ^ - + + v v ^ + v - - ^ ^ v ^ + ^ - v + v v ^ - - v - - + v - + + + v + ^ v v + ^ - v ^ - v -
++ v v v + + v - v + + v - - v ^ + + + + + v + v ^ - + + ^ ^ v ^ v ^ ^ v - ^ v - - + + v - ^ v ^ - -
+v - + ^ ^ v v - ^ - + + + v ^ + ^ - v v v + + v ^ ^ + ^ ^ - + + ^ v - - - + + + ^ v ^ - + + v ^ v ^
++ v - + v v - + ^ - ^ v ^ - v + v ^ - - + + v - + v ^ - - + v - - + ^ - - + ^ - + v ^ - ^ v ^ + + ^
+v - - + v + v ^ v ^ + + ^ + ^ v v + ^ v - v ^ + + v v + v ^ - ^ ^ - + ^ ^ v ^ - - + v v ^ - - ^ - v
+^ v ^ v ^ + + + + + ^ ^ - v ^ - + v + v ^ ^ v v ^ ^ v v v ^ + + v ^ ^ v v + ^ v + v - - + ^ v ^ + ^
+- - + v - ^ + ^ - + ^ v + v v v - ^ - - - - + v + ^ ^ v - + + v v v - + ^ + ^ - - v v v v v ^ ^ ^ -
++ ^ + + + ^ + v + + v - + v v - + ^ + + ^ v v - + v v v - - - v v + v v v - + + v + ^ - v ^ ^ - ^ v
+- - + v v + ^ ^ ^ - + + v ^ v - ^ v ^ ^ + v v - + + ^ ^ - v ^ - v - + ^ v - + ^ ^ + ^ + ^ ^ + + v +
+.
+</pre>
+<p align="justify">E responda:</p>
+<ol type="a">
+    <li>Qual o número de ocupantes do elevador no final das operações indicadas? &nbsp; {1:SHORTANSWER:=6}</li>
+    <li>Em qual andar o elevador estará parado no final das operações indicadas? &nbsp; {1:SHORTANSWER:=7}</li>
+    <li>Qual o número de pessoas que não puderam ingressar no elevador devido à lotação máxima ter sido atingida? &nbsp; {1:SHORTANSWER:=51}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Classes e Objetos - Lista de Exercícios 2 - Questão 01 - Versão 004</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p align="justify">Complete a implementação de uma classe denominada <code>Elevador</code> em C++ a partir da seguinte declaração de classe:</p>
+<pre>
+class Elevador {
+private:
+    int ocupacao;
+    int capacidade;
+    int andarAtual;
+    int totalAndares;
+public:
+    Elevador(int cap=8, int an=10);
+    ~Elevador();
+    bool entra();
+    bool sai();
+    bool sobe();
+    bool desce();
+    int obtemOcupacao();
+    int obtemCapacidade();
+    int obtemAndarAtual();
+    int obtemTotalAndares();
+};
+</pre>
+<p align="justify">A classe simula o funcionamento de um elevador, armazenando as seguintes informações para cada elevador: ocupação atual do elevador (em número de pessoas), capacidade máxima do elevador (em número de pessoas), número do andar atual (que varia de 0 até o número total de andares menos 1) e número total de andares (incluindo o andar 0, que corresponde ao andar térreo).</p>
+<p align="justify">Os métodos a serem implementados na classe <code>Elevador</code> são os seguintes:</p>
+<ul>
+    <li>construtor: recebe a capacidade do elevador (em número de pessoas) e o número de andares (incluindo o andar térreo) - respectivamente, com valores <i>default</i> 8 e 10 -, e inicializa a ocupação do elevador com zero e o andar atual também com zero;</li>
+    <li>destrutor: não realiza nada, mas pode ser usado para depuração;</li>
+    <li><code>entra()</code>: simula a tentativa de entrada de uma pessoa no elevador, aumentando o número de ocupantes, se o número máximo ainda não tiver sido atingido (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>sai()</code>: simula a saída de uma pessoa no elevador, diminuindo o número de ocupantes, se houver ocupantes (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>sobe()</code>: simula a subida do elevador para o andar acima do atual, aumentando o número do andar atual, se ainda não estiver no último andar (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>desce()</code>: simula a descida do elevador para o andar abaixo do atual, diminuindo o número do andar atual, se já não estiver no andar térreo (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>obtemOcupacao()</code>: retorna a ocupação atual do elevador (em número de pessoas);</li>
+    <li><code>obtemCapacidade()</code>: retorna a capacidade máxima do elevador (em número de pessoas);</li>
+    <li><code>obtemAndarAtual()</code>: retorna o andar atual do elevador;</li>
+    <li><code>obtemTotalAndares()</code>: retorna o número todal de andares.</li>
+</ul>
+<p align="justify">Além dos métodos que completam a classe <code>Elevador</code>, implemente um programa que lê a partir da entrada padrão uma série de informações que definem as características do elevador e também uma série de operações executadas por este elevador, determinando ao final, o número de ocupantes do elevador, o andar atual do elevador e o número de pessoas que não conseguiram ingressar no elevador devido ao limite de capacidade.</p>
+<p align="justify">Os dados fornecidos na entrada padrão iniciam com a capacidade máxima do elevador (em número de pessoas) e o número total de andares - informações que serão usadas para criar um objeto da classe <code>Elevador</code>. Na sequência, aparece um conjunto de comandos para serem executados no elevador. Os comandos são os seguintes:</p>
+<ul>
+    <li><code>+</code>: simula a tentativa de ingresso de uma pessoa no elevador;</li>
+    <li><code>-</code>: simula a saída de uma pessoa do elevador;</li>
+    <li><code>^</code>: faz o elevador subir um andar;</li>
+    <li><code>v</code>: faz o elevador descer um andar;</li>
+    <li><code>.</code>: indica o final da operação do elevador (este será sempre o último comando da entrada).</li>
+</ul>
+<p align="justify">Um exemplo de entrada é o seguinte:</p>
+<pre>
+4 6
++ + ^ + ^ + ^ - ^
++ + + ^ -
+^ v - ^ ^ + .
+</pre>
+<p align="justify">Para este exemplo, no final da operação, o elevador estará ocupado por <code>3</code> pessoas e parado no andar <code>5</code>, sendo que, ao longo do seu percurso, <code>2</code> pessoas tentaram ingressar no elevador e não conseguiram.</p>
+<p align="justify">Após completar a implementação, submeta a seguinte entrada ao seu programa:</p>
+<pre>
+10 12
++ ^ + v - + + + + ^ + + v + v ^ v ^ - - - + + v - v ^ ^ v - - + + ^ v ^ + + v v - - ^ v - v + ^ v v
+- + ^ + v - ^ v ^ v ^ v v - - + ^ v v ^ - + + + + ^ - + ^ + v ^ + + + v + v v - + + v v - ^ - v ^ ^
+- - + v - ^ v v ^ ^ v v - v v - + ^ - + + ^ - - v v - - v v + + v - v - + v ^ ^ ^ v ^ - - + + ^ v +
+v v - + ^ v ^ ^ - ^ + ^ ^ + v - ^ ^ ^ ^ ^ - + v - - ^ v - + v - + ^ ^ ^ ^ - + ^ ^ - - + + + v ^ - +
+v v - + + ^ - ^ - + v + + + + ^ + v - v - - + ^ + v v ^ v ^ - - + v v - + + + ^ ^ ^ - ^ - - ^ + ^ -
+- ^ v - - - v - + ^ ^ + v ^ v + ^ ^ v + v - + + + v + ^ v ^ ^ - + v ^ - - ^ - v + ^ v - - - ^ + ^ +
+v v + + + ^ + + ^ v - ^ ^ - + + + ^ v + + v - v v + + + v ^ + + ^ - - v v v v - v - v ^ v ^ - + + v
+v ^ - - + + + v ^ v - ^ - - - + + + v ^ - + v - v v ^ - - + v - + + + v v + v - v - + v - - - ^ - -
++ v v - - + ^ + + + ^ - - + + ^ v - - - + + v - ^ - + + ^ - + v + v - - + ^ v - + + v ^ ^ ^ v - + v
++ + + v v + ^ - + v ^ + v v v v - v ^ ^ + ^ v v v - - + + ^ + + + v v ^ ^ + + v - - ^ + ^ v ^ v - v
+v ^ ^ ^ ^ v - v + ^ - ^ v + + v v - - + v v ^ v v - v - - - v ^ ^ ^ v - - + + ^ - - + + ^ ^ + ^ - -
++ ^ v ^ ^ + v v - + ^ - - v + ^ - ^ + ^ - v ^ - v + v - v v - ^ v + ^ + v - + + v - - + + v - - + ^
++ + + + + + v - + v ^ v v v - ^ ^ ^ + ^ ^ v ^ - ^ v ^ ^ ^ ^ v - + + + v - ^ - v ^ v ^ v - ^ v - - +
+v - - - + + + v + ^ v ^ - v ^ + + v v v v + ^ - ^ ^ + + ^ + v + + v - - + + ^ - ^ v ^ v ^ ^ - + v +
+^ v v ^ - v - + + v - + ^ v - ^ v ^ v ^ v ^ v - ^ v ^ - v - - - - + + + v + + ^ v - - - + + ^ - ^ ^
+v ^ v v - v - ^ - + v + ^ ^ + v v ^ - + v v ^ ^ ^ v - - + ^ - ^ - + ^ + + v ^ v v ^ - - ^ v v + v -
+^ - ^ v ^ + + + ^ + + + v v + ^ v - ^ - ^ ^ v - + ^ v - - ^ + ^ - ^ ^ v v + ^ - + v v - - + + ^ + ^
+v - ^ - v ^ - + + ^ + v ^ v - v - + v - ^ v v v ^ - - - - + + v v v v v ^ ^ - + v v - v v - + + + ^
+v + ^ ^ ^ - + + + + v - + v v v ^ + ^ ^ ^ - - ^ v - - - - - v - - + + + v v - + + + ^ - v + + v - +
+v - - - v v ^ + ^ ^ - ^ v + v - - + ^ ^ - - + + ^ v ^ + v v ^ v - - + ^ - ^ v + ^ ^ + ^ ^ + + v v +
+.
+</pre>
+<p align="justify">E responda:</p>
+<ol type="a">
+    <li>Qual o número de ocupantes do elevador no final das operações indicadas? &nbsp; {1:SHORTANSWER:=8}</li>
+    <li>Em qual andar o elevador estará parado no final das operações indicadas? &nbsp; {1:SHORTANSWER:=6}</li>
+    <li>Qual o número de pessoas que não puderam ingressar no elevador devido à lotação máxima ter sido atingida? &nbsp; {1:SHORTANSWER:=18}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Classes e Objetos - Lista de Exercícios 2 - Questão 01 - Versão 005</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p align="justify">Complete a implementação de uma classe denominada <code>Elevador</code> em C++ a partir da seguinte declaração de classe:</p>
+<pre>
+class Elevador {
+private:
+    int ocupacao;
+    int capacidade;
+    int andarAtual;
+    int totalAndares;
+public:
+    Elevador(int cap=8, int an=10);
+    ~Elevador();
+    bool entra();
+    bool sai();
+    bool sobe();
+    bool desce();
+    int obtemOcupacao();
+    int obtemCapacidade();
+    int obtemAndarAtual();
+    int obtemTotalAndares();
+};
+</pre>
+<p align="justify">A classe simula o funcionamento de um elevador, armazenando as seguintes informações para cada elevador: ocupação atual do elevador (em número de pessoas), capacidade máxima do elevador (em número de pessoas), número do andar atual (que varia de 0 até o número total de andares menos 1) e número total de andares (incluindo o andar 0, que corresponde ao andar térreo).</p>
+<p align="justify">Os métodos a serem implementados na classe <code>Elevador</code> são os seguintes:</p>
+<ul>
+    <li>construtor: recebe a capacidade do elevador (em número de pessoas) e o número de andares (incluindo o andar térreo) - respectivamente, com valores <i>default</i> 8 e 10 -, e inicializa a ocupação do elevador com zero e o andar atual também com zero;</li>
+    <li>destrutor: não realiza nada, mas pode ser usado para depuração;</li>
+    <li><code>entra()</code>: simula a tentativa de entrada de uma pessoa no elevador, aumentando o número de ocupantes, se o número máximo ainda não tiver sido atingido (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>sai()</code>: simula a saída de uma pessoa no elevador, diminuindo o número de ocupantes, se houver ocupantes (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>sobe()</code>: simula a subida do elevador para o andar acima do atual, aumentando o número do andar atual, se ainda não estiver no último andar (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>desce()</code>: simula a descida do elevador para o andar abaixo do atual, diminuindo o número do andar atual, se já não estiver no andar térreo (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>obtemOcupacao()</code>: retorna a ocupação atual do elevador (em número de pessoas);</li>
+    <li><code>obtemCapacidade()</code>: retorna a capacidade máxima do elevador (em número de pessoas);</li>
+    <li><code>obtemAndarAtual()</code>: retorna o andar atual do elevador;</li>
+    <li><code>obtemTotalAndares()</code>: retorna o número todal de andares.</li>
+</ul>
+<p align="justify">Além dos métodos que completam a classe <code>Elevador</code>, implemente um programa que lê a partir da entrada padrão uma série de informações que definem as características do elevador e também uma série de operações executadas por este elevador, determinando ao final, o número de ocupantes do elevador, o andar atual do elevador e o número de pessoas que não conseguiram ingressar no elevador devido ao limite de capacidade.</p>
+<p align="justify">Os dados fornecidos na entrada padrão iniciam com a capacidade máxima do elevador (em número de pessoas) e o número total de andares - informações que serão usadas para criar um objeto da classe <code>Elevador</code>. Na sequência, aparece um conjunto de comandos para serem executados no elevador. Os comandos são os seguintes:</p>
+<ul>
+    <li><code>+</code>: simula a tentativa de ingresso de uma pessoa no elevador;</li>
+    <li><code>-</code>: simula a saída de uma pessoa do elevador;</li>
+    <li><code>^</code>: faz o elevador subir um andar;</li>
+    <li><code>v</code>: faz o elevador descer um andar;</li>
+    <li><code>.</code>: indica o final da operação do elevador (este será sempre o último comando da entrada).</li>
+</ul>
+<p align="justify">Um exemplo de entrada é o seguinte:</p>
+<pre>
+4 6
++ + ^ + ^ + ^ - ^
++ + + ^ -
+^ v - ^ ^ + .
+</pre>
+<p align="justify">Para este exemplo, no final da operação, o elevador estará ocupado por <code>3</code> pessoas e parado no andar <code>5</code>, sendo que, ao longo do seu percurso, <code>2</code> pessoas tentaram ingressar no elevador e não conseguiram.</p>
+<p align="justify">Após completar a implementação, submeta a seguinte entrada ao seu programa:</p>
+<pre>
+9 14
++ ^ v - ^ + + + + + + + + ^ v - + ^ - - + ^ - v v - ^ + v v - + + ^ v - + + + v v v - - - + ^ ^ - -
+v + ^ ^ v v - - + + ^ v - v + v ^ - v + ^ ^ ^ ^ - ^ ^ v - + + ^ ^ + ^ v - - - + + + v v - + v - + +
+v - + v - + v - + + v - - - - v ^ ^ ^ - + ^ v - - v - - v v v - + + + + + + + ^ ^ - + ^ ^ v v ^ - +
+v - ^ - - + + ^ - ^ + + + + v - + ^ + ^ ^ - ^ - - v ^ - + v v ^ v + + + ^ ^ v ^ + v ^ ^ - ^ v ^ v v
+- v v - - - - + + + + + + ^ + + + v v - - ^ - + + v v ^ - + v ^ v - - + ^ v + + + ^ v ^ - - + + ^ v
+- ^ v - - v - + v + + + v ^ v ^ + ^ - ^ - + v + ^ v - + + ^ + v - - - + + ^ v v + ^ - - - - ^ v ^ v
+v - + + + + + + + v v ^ ^ ^ + ^ v + v ^ ^ v - v - ^ + ^ v + ^ ^ + v v v v - - v - v - ^ v + ^ ^ v -
+- + v ^ - ^ ^ - - - - + + + + ^ - ^ - + ^ - v - - v ^ v v + v + + + + + v + v v - v ^ - - v v + v +
+v - - - + v ^ v - - ^ v ^ ^ v ^ - v + + + ^ - - + v + + + ^ v v ^ v ^ - - - + v ^ - + ^ ^ ^ v - + v
+^ + ^ v v ^ + ^ - v + ^ v - v v v v - + + + + v - ^ v v + ^ ^ + ^ - v ^ ^ ^ ^ v v - ^ ^ ^ v ^ - v -
+- + ^ ^ - + v - ^ ^ - + v - - + + ^ v v v v ^ v - v - - + + v + ^ + v - ^ + v ^ v + ^ v + ^ + ^ v v
+^ ^ - + ^ ^ - v - - + + v - + ^ - ^ + ^ - v + v v ^ v - v - - - + ^ ^ - - + ^ ^ - - + ^ - + + + v ^
+v v - - ^ ^ - + v v ^ v v - - + + + ^ - + + + v ^ v ^ + ^ ^ v - + + + v - + v v + v ^ - v - + + v -
+- ^ - ^ ^ v v v ^ ^ - ^ - - ^ ^ ^ v - v - ^ + v + ^ ^ + + ^ - + ^ v + v v ^ ^ - ^ - ^ v + ^ - ^ - ^
++ v v ^ v v - + ^ - - - - + + ^ - ^ - ^ v + v - ^ v ^ + v ^ v ^ v - ^ + v + ^ ^ v - + + + + + v ^ +
+v - + v v - v ^ - ^ v + ^ ^ - + v + ^ v v - + ^ ^ v v - - + + ^ + v + ^ ^ - ^ - v + v v - + v - - +
+^ v - + + + + ^ ^ + + ^ - v ^ ^ - - - - - + + + + ^ v - v + + ^ - ^ ^ v - ^ - + ^ - v - + ^ v + ^ -
+- + + v v + + ^ v ^ ^ v + v v - v ^ - v - - - + + + + v v v v v v - v - ^ ^ - - - - + v - v + + ^ ^
+v ^ + + ^ + + v + + v - + v v - ^ ^ + ^ + v v ^ - v v - - - v - v + v v v - ^ - + ^ ^ v v + ^ v ^ -
+- - v - + + ^ ^ ^ ^ v + v + v - - + ^ + + v v ^ ^ - + ^ v v ^ - v v + ^ v ^ v + ^ + + ^ ^ ^ ^ + v ^
+.
+</pre>
+<p align="justify">E responda:</p>
+<ol type="a">
+    <li>Qual o número de ocupantes do elevador no final das operações indicadas? &nbsp; {1:SHORTANSWER:=9}</li>
+    <li>Em qual andar o elevador estará parado no final das operações indicadas? &nbsp; {1:SHORTANSWER:=6}</li>
+    <li>Qual o número de pessoas que não puderam ingressar no elevador devido à lotação máxima ter sido atingida? &nbsp; {1:SHORTANSWER:=20}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Classes e Objetos - Lista de Exercícios 2 - Questão 01 - Versão 006</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p align="justify">Complete a implementação de uma classe denominada <code>Elevador</code> em C++ a partir da seguinte declaração de classe:</p>
+<pre>
+class Elevador {
+private:
+    int ocupacao;
+    int capacidade;
+    int andarAtual;
+    int totalAndares;
+public:
+    Elevador(int cap=8, int an=10);
+    ~Elevador();
+    bool entra();
+    bool sai();
+    bool sobe();
+    bool desce();
+    int obtemOcupacao();
+    int obtemCapacidade();
+    int obtemAndarAtual();
+    int obtemTotalAndares();
+};
+</pre>
+<p align="justify">A classe simula o funcionamento de um elevador, armazenando as seguintes informações para cada elevador: ocupação atual do elevador (em número de pessoas), capacidade máxima do elevador (em número de pessoas), número do andar atual (que varia de 0 até o número total de andares menos 1) e número total de andares (incluindo o andar 0, que corresponde ao andar térreo).</p>
+<p align="justify">Os métodos a serem implementados na classe <code>Elevador</code> são os seguintes:</p>
+<ul>
+    <li>construtor: recebe a capacidade do elevador (em número de pessoas) e o número de andares (incluindo o andar térreo) - respectivamente, com valores <i>default</i> 8 e 10 -, e inicializa a ocupação do elevador com zero e o andar atual também com zero;</li>
+    <li>destrutor: não realiza nada, mas pode ser usado para depuração;</li>
+    <li><code>entra()</code>: simula a tentativa de entrada de uma pessoa no elevador, aumentando o número de ocupantes, se o número máximo ainda não tiver sido atingido (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>sai()</code>: simula a saída de uma pessoa no elevador, diminuindo o número de ocupantes, se houver ocupantes (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>sobe()</code>: simula a subida do elevador para o andar acima do atual, aumentando o número do andar atual, se ainda não estiver no último andar (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>desce()</code>: simula a descida do elevador para o andar abaixo do atual, diminuindo o número do andar atual, se já não estiver no andar térreo (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>obtemOcupacao()</code>: retorna a ocupação atual do elevador (em número de pessoas);</li>
+    <li><code>obtemCapacidade()</code>: retorna a capacidade máxima do elevador (em número de pessoas);</li>
+    <li><code>obtemAndarAtual()</code>: retorna o andar atual do elevador;</li>
+    <li><code>obtemTotalAndares()</code>: retorna o número todal de andares.</li>
+</ul>
+<p align="justify">Além dos métodos que completam a classe <code>Elevador</code>, implemente um programa que lê a partir da entrada padrão uma série de informações que definem as características do elevador e também uma série de operações executadas por este elevador, determinando ao final, o número de ocupantes do elevador, o andar atual do elevador e o número de pessoas que não conseguiram ingressar no elevador devido ao limite de capacidade.</p>
+<p align="justify">Os dados fornecidos na entrada padrão iniciam com a capacidade máxima do elevador (em número de pessoas) e o número total de andares - informações que serão usadas para criar um objeto da classe <code>Elevador</code>. Na sequência, aparece um conjunto de comandos para serem executados no elevador. Os comandos são os seguintes:</p>
+<ul>
+    <li><code>+</code>: simula a tentativa de ingresso de uma pessoa no elevador;</li>
+    <li><code>-</code>: simula a saída de uma pessoa do elevador;</li>
+    <li><code>^</code>: faz o elevador subir um andar;</li>
+    <li><code>v</code>: faz o elevador descer um andar;</li>
+    <li><code>.</code>: indica o final da operação do elevador (este será sempre o último comando da entrada).</li>
+</ul>
+<p align="justify">Um exemplo de entrada é o seguinte:</p>
+<pre>
+4 6
++ + ^ + ^ + ^ - ^
++ + + ^ -
+^ v - ^ ^ + .
+</pre>
+<p align="justify">Para este exemplo, no final da operação, o elevador estará ocupado por <code>3</code> pessoas e parado no andar <code>5</code>, sendo que, ao longo do seu percurso, <code>2</code> pessoas tentaram ingressar no elevador e não conseguiram.</p>
+<p align="justify">Após completar a implementação, submeta a seguinte entrada ao seu programa:</p>
+<pre>
+11 30
++ + v - + ^ + ^ - + ^ ^ - + v - + + v v + + v v - - + + v v ^ - + ^ - + ^ - + v v v - + v v + ^ - v
+v + ^ - - + + v ^ - - - + v ^ - ^ - v ^ + ^ + ^ v ^ ^ - + ^ - ^ + + + v + v - + + v v - - ^ - - + ^
+- - + v - + v v ^ ^ - - v v v v ^ + + v + + v v v v - v v v v - - - v ^ v v ^ + + v ^ + ^ - v + v -
++ v ^ - - - + + + ^ + ^ + + v v + + ^ ^ ^ - - - - + ^ - + v v - + ^ ^ + ^ + v ^ ^ - ^ - - + + ^ - -
+v v v ^ v ^ - ^ ^ - v + ^ ^ + ^ + v - - - - + + ^ v v ^ v - - + + v - ^ - + ^ + + + v - + v ^ ^ ^ v
+v ^ v v v v - - + + + ^ v + v ^ ^ ^ v + v - + ^ + v ^ - + + + v ^ v - - + + v v + ^ v - - v - - - +
++ v ^ + ^ - - + + + + + ^ + ^ + v + v ^ - - + v v + + ^ v + + + ^ - v - v v - v v v - ^ - ^ + ^ v v
+- - - + + ^ + v ^ - - + ^ - - ^ - - + + ^ v v v v - + v v + v ^ - + ^ - - ^ v - v - + v - - v + v ^
+- v v v ^ v + v v v + v ^ ^ v ^ - - ^ v + ^ v - ^ + + + ^ ^ v v ^ v - - + + v v + ^ - ^ ^ ^ v ^ v v
++ ^ ^ - - + ^ ^ v - + ^ v - v - - v ^ ^ + ^ v - v ^ v v ^ ^ ^ + ^ - + ^ ^ ^ ^ - v v + ^ ^ v + v v v
+- ^ ^ + ^ - - + + ^ v - + ^ ^ v - ^ - + + + ^ v v - - + + v v ^ + ^ v - - + + ^ - ^ ^ v ^ - + + + v
+^ ^ v - - + + + v + ^ - - - + ^ - + ^ + v v ^ - v ^ - - - - v ^ v + + ^ - - ^ ^ + + ^ ^ + v + v - -
++ v v v + ^ v ^ - - ^ - v v v ^ - - + + + + + + ^ v + + + + v - + + ^ v - - - + ^ - + v - ^ v - + v
+v ^ v ^ ^ v v - ^ ^ v - - + + ^ - - + v v ^ + v + + ^ + ^ + v ^ ^ v - - - - + + + + + v + ^ - + v -
+- + + + v v ^ v + v + v + v - - + ^ v - - - + + ^ - + v v ^ v ^ - v ^ v - + + ^ - - ^ v ^ - + v ^ -
++ ^ v v - v v - + ^ - + ^ ^ + v - ^ ^ v v v ^ ^ + v v ^ - ^ v + + v + + + v ^ v - + v - ^ - v ^ - v
+^ v ^ v + + ^ + + + + ^ v - ^ + v v ^ - ^ ^ - v ^ ^ v - - ^ + + v + ^ v v ^ ^ v ^ - - v + ^ v ^ ^ -
++ v ^ - v + + ^ v - + + + v - v - ^ - - - - + v - + + + v - v v - - v - + ^ ^ v - - v v - - + + ^ +
+v ^ ^ + ^ - + + + + v + v v v v + + ^ - + + v ^ - - - - v v v - - ^ v - v v - + + + ^ - - ^ ^ - + v
+- v v - v v + ^ + ^ - - + ^ v - ^ v - + + + v ^ + v ^ ^ v v ^ - v - + + v ^ v + + ^ ^ + ^ + + ^ v ^
+.
+</pre>
+<p align="justify">E responda:</p>
+<ol type="a">
+    <li>Qual o número de ocupantes do elevador no final das operações indicadas? &nbsp; {1:SHORTANSWER:=10}</li>
+    <li>Em qual andar o elevador estará parado no final das operações indicadas? &nbsp; {1:SHORTANSWER:=4}</li>
+    <li>Qual o número de pessoas que não puderam ingressar no elevador devido à lotação máxima ter sido atingida? &nbsp; {1:SHORTANSWER:=23}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Classes e Objetos - Lista de Exercícios 2 - Questão 01 - Versão 007</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p align="justify">Complete a implementação de uma classe denominada <code>Elevador</code> em C++ a partir da seguinte declaração de classe:</p>
+<pre>
+class Elevador {
+private:
+    int ocupacao;
+    int capacidade;
+    int andarAtual;
+    int totalAndares;
+public:
+    Elevador(int cap=8, int an=10);
+    ~Elevador();
+    bool entra();
+    bool sai();
+    bool sobe();
+    bool desce();
+    int obtemOcupacao();
+    int obtemCapacidade();
+    int obtemAndarAtual();
+    int obtemTotalAndares();
+};
+</pre>
+<p align="justify">A classe simula o funcionamento de um elevador, armazenando as seguintes informações para cada elevador: ocupação atual do elevador (em número de pessoas), capacidade máxima do elevador (em número de pessoas), número do andar atual (que varia de 0 até o número total de andares menos 1) e número total de andares (incluindo o andar 0, que corresponde ao andar térreo).</p>
+<p align="justify">Os métodos a serem implementados na classe <code>Elevador</code> são os seguintes:</p>
+<ul>
+    <li>construtor: recebe a capacidade do elevador (em número de pessoas) e o número de andares (incluindo o andar térreo) - respectivamente, com valores <i>default</i> 8 e 10 -, e inicializa a ocupação do elevador com zero e o andar atual também com zero;</li>
+    <li>destrutor: não realiza nada, mas pode ser usado para depuração;</li>
+    <li><code>entra()</code>: simula a tentativa de entrada de uma pessoa no elevador, aumentando o número de ocupantes, se o número máximo ainda não tiver sido atingido (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>sai()</code>: simula a saída de uma pessoa no elevador, diminuindo o número de ocupantes, se houver ocupantes (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>sobe()</code>: simula a subida do elevador para o andar acima do atual, aumentando o número do andar atual, se ainda não estiver no último andar (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>desce()</code>: simula a descida do elevador para o andar abaixo do atual, diminuindo o número do andar atual, se já não estiver no andar térreo (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>obtemOcupacao()</code>: retorna a ocupação atual do elevador (em número de pessoas);</li>
+    <li><code>obtemCapacidade()</code>: retorna a capacidade máxima do elevador (em número de pessoas);</li>
+    <li><code>obtemAndarAtual()</code>: retorna o andar atual do elevador;</li>
+    <li><code>obtemTotalAndares()</code>: retorna o número todal de andares.</li>
+</ul>
+<p align="justify">Além dos métodos que completam a classe <code>Elevador</code>, implemente um programa que lê a partir da entrada padrão uma série de informações que definem as características do elevador e também uma série de operações executadas por este elevador, determinando ao final, o número de ocupantes do elevador, o andar atual do elevador e o número de pessoas que não conseguiram ingressar no elevador devido ao limite de capacidade.</p>
+<p align="justify">Os dados fornecidos na entrada padrão iniciam com a capacidade máxima do elevador (em número de pessoas) e o número total de andares - informações que serão usadas para criar um objeto da classe <code>Elevador</code>. Na sequência, aparece um conjunto de comandos para serem executados no elevador. Os comandos são os seguintes:</p>
+<ul>
+    <li><code>+</code>: simula a tentativa de ingresso de uma pessoa no elevador;</li>
+    <li><code>-</code>: simula a saída de uma pessoa do elevador;</li>
+    <li><code>^</code>: faz o elevador subir um andar;</li>
+    <li><code>v</code>: faz o elevador descer um andar;</li>
+    <li><code>.</code>: indica o final da operação do elevador (este será sempre o último comando da entrada).</li>
+</ul>
+<p align="justify">Um exemplo de entrada é o seguinte:</p>
+<pre>
+4 6
++ + ^ + ^ + ^ - ^
++ + + ^ -
+^ v - ^ ^ + .
+</pre>
+<p align="justify">Para este exemplo, no final da operação, o elevador estará ocupado por <code>3</code> pessoas e parado no andar <code>5</code>, sendo que, ao longo do seu percurso, <code>2</code> pessoas tentaram ingressar no elevador e não conseguiram.</p>
+<p align="justify">Após completar a implementação, submeta a seguinte entrada ao seu programa:</p>
+<pre>
+4 16
+^ + v - + ^ ^ - + ^ + ^ v ^ v ^ - + v v ^ - + v - + ^ + + v ^ v + ^ - ^ - - + + + + + + + v + ^ v v
+v - + + + v ^ v ^ v ^ - - v + v - - + ^ + ^ + ^ - + ^ - - + + + ^ - + + + v v ^ - - + v v + v v ^ ^
+v - + v - - - + ^ + v - v - v v + ^ - + + ^ - - v v v + + v - - + v v - + + + + ^ ^ - + + + v ^ v -
+- + ^ - ^ - + ^ - ^ + + + ^ v v + + ^ + ^ v - - - - + + ^ v - + v + + ^ + ^ - + ^ v ^ ^ - + v ^ - v
+- v - + v ^ v - + + v + + ^ ^ + ^ - v - v ^ v ^ - + v - + ^ - ^ - + + ^ ^ v ^ + + ^ v + v v ^ ^ - +
+v + v - - v v ^ v - - + + + + ^ + ^ + + v ^ v + + v + ^ - ^ - + ^ - + v v ^ v - - - + + v v ^ - - +
+v v ^ + + + + + ^ - v + + + ^ ^ - + v + ^ - - - - ^ ^ ^ v + + ^ - + v - + + v v v - - + v + ^ + v -
+v ^ v ^ - ^ ^ v - + v + ^ v v - - + + + ^ v - v v v ^ - - + v ^ ^ - - + v ^ - + + ^ - + + v v ^ - ^
+- v - + ^ - + + v - ^ v - + + + v - ^ - + + + + ^ v + ^ - + + v ^ - ^ v v - - + + + v + + ^ v + v v
+^ ^ - + v + ^ - - + + ^ v v - v - v ^ + + + v - v ^ - - + + ^ - - + + + + ^ - + v - + ^ ^ v ^ v - v
+v ^ + ^ + v v - - + + ^ v + ^ - v + v v v - ^ v v - - - + ^ + + + ^ - v ^ - + ^ v + ^ v ^ ^ ^ ^ v v
+^ ^ v + + ^ v v v ^ ^ v - - ^ + v + + ^ v - - - + ^ v - v v v + v ^ ^ - + v - - + + ^ ^ v - ^ v v +
+v v v - + + v ^ v - - + v v - + ^ ^ ^ ^ ^ v ^ v + v + ^ + ^ v ^ - + ^ - v ^ - v + v ^ v - ^ v ^ v v
+v ^ - ^ ^ - + + + + v ^ v v - + + + v - v ^ ^ v ^ + ^ + ^ + v + ^ v + v - + ^ v + v - + + ^ - ^ - ^
++ v v + v - ^ - - + ^ v ^ v - ^ v - + ^ - + + v - - + + v ^ - + v v ^ - v + ^ ^ v v + v + v ^ v ^ ^
+- - + v - - v - + + + + ^ ^ ^ - v ^ ^ v - v ^ + ^ - v + v ^ v ^ ^ v ^ ^ ^ - ^ v - ^ v - ^ + + ^ - +
++ + ^ - ^ + ^ ^ ^ ^ + ^ - v ^ ^ v - ^ v ^ ^ v - ^ - + + v ^ - + + + ^ v - ^ + v + v - - ^ ^ v + ^ ^
+v v - + v ^ ^ - + ^ + v ^ - - - v + v v ^ - - v ^ + ^ v - v v + v - + + ^ ^ ^ v - v v - v + ^ ^ + +
+v ^ + + ^ + ^ - + ^ - ^ v v v - + + ^ ^ - - + + v - v v - v - v v ^ v - + v ^ ^ v + ^ v - ^ ^ - + +
++ + v - - - ^ + ^ ^ - ^ - + + v ^ - + + + v - + ^ - ^ - + v ^ v v - ^ ^ - ^ - + + ^ + + + + ^ ^ v +
+.
+</pre>
+<p align="justify">E responda:</p>
+<ol type="a">
+    <li>Qual o número de ocupantes do elevador no final das operações indicadas? &nbsp; {1:SHORTANSWER:=4}</li>
+    <li>Em qual andar o elevador estará parado no final das operações indicadas? &nbsp; {1:SHORTANSWER:=14}</li>
+    <li>Qual o número de pessoas que não puderam ingressar no elevador devido à lotação máxima ter sido atingida? &nbsp; {1:SHORTANSWER:=63}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Classes e Objetos - Lista de Exercícios 2 - Questão 01 - Versão 008</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p align="justify">Complete a implementação de uma classe denominada <code>Elevador</code> em C++ a partir da seguinte declaração de classe:</p>
+<pre>
+class Elevador {
+private:
+    int ocupacao;
+    int capacidade;
+    int andarAtual;
+    int totalAndares;
+public:
+    Elevador(int cap=8, int an=10);
+    ~Elevador();
+    bool entra();
+    bool sai();
+    bool sobe();
+    bool desce();
+    int obtemOcupacao();
+    int obtemCapacidade();
+    int obtemAndarAtual();
+    int obtemTotalAndares();
+};
+</pre>
+<p align="justify">A classe simula o funcionamento de um elevador, armazenando as seguintes informações para cada elevador: ocupação atual do elevador (em número de pessoas), capacidade máxima do elevador (em número de pessoas), número do andar atual (que varia de 0 até o número total de andares menos 1) e número total de andares (incluindo o andar 0, que corresponde ao andar térreo).</p>
+<p align="justify">Os métodos a serem implementados na classe <code>Elevador</code> são os seguintes:</p>
+<ul>
+    <li>construtor: recebe a capacidade do elevador (em número de pessoas) e o número de andares (incluindo o andar térreo) - respectivamente, com valores <i>default</i> 8 e 10 -, e inicializa a ocupação do elevador com zero e o andar atual também com zero;</li>
+    <li>destrutor: não realiza nada, mas pode ser usado para depuração;</li>
+    <li><code>entra()</code>: simula a tentativa de entrada de uma pessoa no elevador, aumentando o número de ocupantes, se o número máximo ainda não tiver sido atingido (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>sai()</code>: simula a saída de uma pessoa no elevador, diminuindo o número de ocupantes, se houver ocupantes (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>sobe()</code>: simula a subida do elevador para o andar acima do atual, aumentando o número do andar atual, se ainda não estiver no último andar (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>desce()</code>: simula a descida do elevador para o andar abaixo do atual, diminuindo o número do andar atual, se já não estiver no andar térreo (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>obtemOcupacao()</code>: retorna a ocupação atual do elevador (em número de pessoas);</li>
+    <li><code>obtemCapacidade()</code>: retorna a capacidade máxima do elevador (em número de pessoas);</li>
+    <li><code>obtemAndarAtual()</code>: retorna o andar atual do elevador;</li>
+    <li><code>obtemTotalAndares()</code>: retorna o número todal de andares.</li>
+</ul>
+<p align="justify">Além dos métodos que completam a classe <code>Elevador</code>, implemente um programa que lê a partir da entrada padrão uma série de informações que definem as características do elevador e também uma série de operações executadas por este elevador, determinando ao final, o número de ocupantes do elevador, o andar atual do elevador e o número de pessoas que não conseguiram ingressar no elevador devido ao limite de capacidade.</p>
+<p align="justify">Os dados fornecidos na entrada padrão iniciam com a capacidade máxima do elevador (em número de pessoas) e o número total de andares - informações que serão usadas para criar um objeto da classe <code>Elevador</code>. Na sequência, aparece um conjunto de comandos para serem executados no elevador. Os comandos são os seguintes:</p>
+<ul>
+    <li><code>+</code>: simula a tentativa de ingresso de uma pessoa no elevador;</li>
+    <li><code>-</code>: simula a saída de uma pessoa do elevador;</li>
+    <li><code>^</code>: faz o elevador subir um andar;</li>
+    <li><code>v</code>: faz o elevador descer um andar;</li>
+    <li><code>.</code>: indica o final da operação do elevador (este será sempre o último comando da entrada).</li>
+</ul>
+<p align="justify">Um exemplo de entrada é o seguinte:</p>
+<pre>
+4 6
++ + ^ + ^ + ^ - ^
++ + + ^ -
+^ v - ^ ^ + .
+</pre>
+<p align="justify">Para este exemplo, no final da operação, o elevador estará ocupado por <code>3</code> pessoas e parado no andar <code>5</code>, sendo que, ao longo do seu percurso, <code>2</code> pessoas tentaram ingressar no elevador e não conseguiram.</p>
+<p align="justify">Após completar a implementação, submeta a seguinte entrada ao seu programa:</p>
+<pre>
+5 18
++ + v - + + + ^ v + ^ - + ^ - ^ v + v v ^ - - + v v - - + + ^ v + ^ v + ^ ^ - v v - - - - + ^ + v -
+- ^ ^ + + v + v - + + v v v ^ - + v - ^ ^ ^ + ^ v + ^ v + ^ - ^ ^ ^ + v - - + ^ ^ - - - - ^ + v + +
+v ^ v v - - - + ^ ^ - v v + v + + ^ + v ^ ^ v v v - v v - - v v v v - + + + ^ ^ ^ + ^ + ^ - v - + +
+v - - + ^ - + ^ v ^ ^ + ^ + v - ^ ^ ^ + + v - - + v ^ v + v v + v + ^ - + + + + ^ - ^ ^ v - + + v v
+v - v - + + v ^ + v - + ^ + + + ^ - - v v ^ v ^ ^ - v ^ - ^ v + v - v ^ - + ^ + ^ ^ v - - + + ^ + v
+- ^ v v v - - ^ v ^ + ^ - + + ^ + ^ - ^ v + v + ^ - ^ - + ^ ^ v ^ - ^ - v ^ v - + ^ v - + + ^ v - +
++ + ^ ^ ^ ^ + ^ ^ - - ^ + + ^ ^ v ^ - + ^ v v - v + + ^ v ^ + ^ ^ - v - - v v - v v v - + + ^ ^ - v
+- ^ v + v + + v + v v ^ + v - + v ^ - + + v v - - v + v v + v + ^ - ^ v - ^ v v - v ^ v v v - + v -
++ v v - + v + v v v - + ^ ^ - - + v + v v ^ v v - + ^ - + + + v + v + v - + v v ^ - + + ^ ^ - + v -
++ ^ - + v ^ ^ - + v ^ - + v - v v - + + + + v - - ^ v v + + + + ^ v v ^ + + ^ - - - + ^ ^ - - + v -
+- + + ^ - + v - + ^ - - + ^ - + v ^ - v v + + + v v - v v v v ^ ^ ^ - - + ^ - ^ v + ^ - ^ + ^ + v -
+^ - + + ^ + v v v ^ ^ - - - + + v ^ ^ + v v ^ v - + v - - - v ^ v + + ^ - v - + + + + ^ v v ^ - - ^
+v - - + + ^ - + + + ^ - ^ + v ^ ^ + ^ ^ - - + + ^ v ^ ^ ^ - + ^ - + ^ v v - - + ^ v ^ v - + v ^ - v
+- ^ - + ^ v v v - + + + v - ^ ^ ^ v v - - + ^ v + ^ ^ ^ ^ + v ^ - + + v - + ^ - ^ v + v - + + + v +
+^ v - - + v + v ^ v + v - - + + v ^ - ^ - ^ v v ^ - - + v ^ v ^ v v - - + + ^ - - + ^ v ^ v ^ v + +
+v ^ v - v - - + v ^ - + ^ - + + + + ^ v - - ^ ^ ^ v - + v - + ^ + v ^ + ^ v ^ v - + v - ^ v - ^ v -
+^ - ^ v ^ ^ + ^ ^ ^ ^ - + + ^ - + v - + ^ - + v ^ ^ - v - ^ + + v + ^ - v - + + + v v v ^ ^ - ^ - -
++ + ^ v v ^ + ^ - ^ + v ^ v v v v ^ - - ^ v v - + ^ - - + + v v v v v v + + ^ - - v v v v - + ^ - +
++ ^ ^ ^ ^ ^ ^ - ^ ^ v + v v - - + + + + ^ v - - - - + v - - + + v + v - v - ^ ^ - ^ + v v + ^ - ^ -
++ v v v - + ^ - + + + + + ^ - - ^ v + + + v v + ^ - + + v v - + v v + + v ^ - ^ ^ ^ + ^ + + + ^ v ^
+.
+</pre>
+<p align="justify">E responda:</p>
+<ol type="a">
+    <li>Qual o número de ocupantes do elevador no final das operações indicadas? &nbsp; {1:SHORTANSWER:=5}</li>
+    <li>Em qual andar o elevador estará parado no final das operações indicadas? &nbsp; {1:SHORTANSWER:=9}</li>
+    <li>Qual o número de pessoas que não puderam ingressar no elevador devido à lotação máxima ter sido atingida? &nbsp; {1:SHORTANSWER:=38}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Classes e Objetos - Lista de Exercícios 2 - Questão 01 - Versão 009</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p align="justify">Complete a implementação de uma classe denominada <code>Elevador</code> em C++ a partir da seguinte declaração de classe:</p>
+<pre>
+class Elevador {
+private:
+    int ocupacao;
+    int capacidade;
+    int andarAtual;
+    int totalAndares;
+public:
+    Elevador(int cap=8, int an=10);
+    ~Elevador();
+    bool entra();
+    bool sai();
+    bool sobe();
+    bool desce();
+    int obtemOcupacao();
+    int obtemCapacidade();
+    int obtemAndarAtual();
+    int obtemTotalAndares();
+};
+</pre>
+<p align="justify">A classe simula o funcionamento de um elevador, armazenando as seguintes informações para cada elevador: ocupação atual do elevador (em número de pessoas), capacidade máxima do elevador (em número de pessoas), número do andar atual (que varia de 0 até o número total de andares menos 1) e número total de andares (incluindo o andar 0, que corresponde ao andar térreo).</p>
+<p align="justify">Os métodos a serem implementados na classe <code>Elevador</code> são os seguintes:</p>
+<ul>
+    <li>construtor: recebe a capacidade do elevador (em número de pessoas) e o número de andares (incluindo o andar térreo) - respectivamente, com valores <i>default</i> 8 e 10 -, e inicializa a ocupação do elevador com zero e o andar atual também com zero;</li>
+    <li>destrutor: não realiza nada, mas pode ser usado para depuração;</li>
+    <li><code>entra()</code>: simula a tentativa de entrada de uma pessoa no elevador, aumentando o número de ocupantes, se o número máximo ainda não tiver sido atingido (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>sai()</code>: simula a saída de uma pessoa no elevador, diminuindo o número de ocupantes, se houver ocupantes (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>sobe()</code>: simula a subida do elevador para o andar acima do atual, aumentando o número do andar atual, se ainda não estiver no último andar (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>desce()</code>: simula a descida do elevador para o andar abaixo do atual, diminuindo o número do andar atual, se já não estiver no andar térreo (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>obtemOcupacao()</code>: retorna a ocupação atual do elevador (em número de pessoas);</li>
+    <li><code>obtemCapacidade()</code>: retorna a capacidade máxima do elevador (em número de pessoas);</li>
+    <li><code>obtemAndarAtual()</code>: retorna o andar atual do elevador;</li>
+    <li><code>obtemTotalAndares()</code>: retorna o número todal de andares.</li>
+</ul>
+<p align="justify">Além dos métodos que completam a classe <code>Elevador</code>, implemente um programa que lê a partir da entrada padrão uma série de informações que definem as características do elevador e também uma série de operações executadas por este elevador, determinando ao final, o número de ocupantes do elevador, o andar atual do elevador e o número de pessoas que não conseguiram ingressar no elevador devido ao limite de capacidade.</p>
+<p align="justify">Os dados fornecidos na entrada padrão iniciam com a capacidade máxima do elevador (em número de pessoas) e o número total de andares - informações que serão usadas para criar um objeto da classe <code>Elevador</code>. Na sequência, aparece um conjunto de comandos para serem executados no elevador. Os comandos são os seguintes:</p>
+<ul>
+    <li><code>+</code>: simula a tentativa de ingresso de uma pessoa no elevador;</li>
+    <li><code>-</code>: simula a saída de uma pessoa do elevador;</li>
+    <li><code>^</code>: faz o elevador subir um andar;</li>
+    <li><code>v</code>: faz o elevador descer um andar;</li>
+    <li><code>.</code>: indica o final da operação do elevador (este será sempre o último comando da entrada).</li>
+</ul>
+<p align="justify">Um exemplo de entrada é o seguinte:</p>
+<pre>
+4 6
++ + ^ + ^ + ^ - ^
++ + + ^ -
+^ v - ^ ^ + .
+</pre>
+<p align="justify">Para este exemplo, no final da operação, o elevador estará ocupado por <code>3</code> pessoas e parado no andar <code>5</code>, sendo que, ao longo do seu percurso, <code>2</code> pessoas tentaram ingressar no elevador e não conseguiram.</p>
+<p align="justify">Após completar a implementação, submeta a seguinte entrada ao seu programa:</p>
+<pre>
+7 8
++ + v v + ^ ^ + v ^ ^ ^ - + v + v ^ v v - + + v v - ^ ^ v - ^ v + ^ v ^ ^ - - - + v - + v v ^ + v v
+- ^ ^ + v - + v - + ^ v v - ^ - ^ v - ^ - + + + + ^ + v ^ - + ^ ^ ^ - - - + + ^ - + v v - + v v - +
++ ^ - v - ^ v - ^ - - + + + v - ^ - + + ^ ^ v v v - - - + + + + v v v + v - + + ^ v + ^ + v - ^ v ^
+v v - + ^ v ^ + v ^ ^ ^ ^ + v v + ^ ^ + ^ v ^ v - - - - + + v ^ - + + + ^ - + ^ + v - + + + v ^ - v
+- - - - + + v ^ + v - + ^ ^ ^ - - - + + v - + ^ ^ - - - + ^ v ^ - v - + + v + ^ ^ ^ v ^ v - + ^ ^ -
+v - - + v - v + + + + ^ v + v + + + v - + ^ - + ^ v + ^ v ^ - - + + ^ v v ^ v v ^ - + v v v ^ v + v
+v v ^ ^ ^ + ^ ^ + v v + + ^ - + + ^ - ^ ^ v - - v ^ + + v ^ + ^ ^ - v v v v - v - v v ^ v + + ^ - -
+- ^ v - + ^ ^ - ^ - v ^ + v v - + + v ^ ^ v v - - - + v v + v + + v ^ - v ^ - - - v + v - + v + v +
+v - - v + v ^ - v v - + + + ^ - - + ^ + + + + + ^ v ^ ^ ^ ^ - v ^ v - - + ^ v - ^ + v + ^ ^ - ^ - -
+^ ^ ^ v v ^ ^ ^ v - - - + + + + ^ - + + ^ + v - v - + v ^ + + ^ ^ - - ^ + ^ ^ - v v + ^ ^ v + v v -
+v ^ ^ + ^ v - v + ^ v - + ^ ^ v - - + v - - ^ - - v v v v - v + + + v - ^ - + + v ^ + v + ^ ^ ^ v -
+^ - - - - - + + + + + + v - ^ ^ - ^ ^ - - + ^ v - ^ v - - + v + v ^ + ^ - v ^ + v v ^ ^ v - ^ v v +
+v - - - + ^ v - + v ^ - + v v + ^ + + + ^ - ^ v - + ^ ^ ^ ^ v ^ v + ^ - v + v v ^ v + v - + v ^ - -
+- - - + + + v v + ^ - - + v + ^ ^ - - - v + + v ^ ^ ^ ^ ^ - + ^ + v - - - + + + ^ - - + + ^ - ^ - ^
+- + v ^ - v ^ - + v - + ^ - v ^ - + v + v ^ v v ^ v ^ - - ^ v ^ + + + v v + ^ ^ - v ^ v ^ v + v ^ ^
+- ^ - v v v - + v ^ v ^ ^ + + v - ^ - - - + + ^ ^ - v ^ v ^ - + + + ^ - + + ^ - v ^ - - + v - ^ v v
++ v + v + ^ ^ ^ + ^ + ^ - - ^ ^ v - - - + + + v ^ ^ v - v ^ + + v ^ - + v ^ ^ - - + v - + ^ - ^ + ^
+- v ^ - v ^ ^ ^ - + + v - + v - v + v v ^ v - v + ^ ^ - v - - v + v - + + + + + v - v - - - ^ ^ ^ ^
+- ^ + + ^ + ^ v ^ + v ^ v v - v + ^ ^ ^ + v v + v - - v v v - v v + v - - v ^ + v ^ ^ v - ^ ^ v ^ v
+v - v v v - + + + + v - + ^ v - ^ - + ^ - + v ^ - + + ^ v - ^ - - - + ^ v ^ - + + ^ ^ ^ - + + + + ^
+.
+</pre>
+<p align="justify">E responda:</p>
+<ol type="a">
+    <li>Qual o número de ocupantes do elevador no final das operações indicadas? &nbsp; {1:SHORTANSWER:=5}</li>
+    <li>Em qual andar o elevador estará parado no final das operações indicadas? &nbsp; {1:SHORTANSWER:=7}</li>
+    <li>Qual o número de pessoas que não puderam ingressar no elevador devido à lotação máxima ter sido atingida? &nbsp; {1:SHORTANSWER:=15}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Classes e Objetos - Lista de Exercícios 2 - Questão 01 - Versão 010</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p align="justify">Complete a implementação de uma classe denominada <code>Elevador</code> em C++ a partir da seguinte declaração de classe:</p>
+<pre>
+class Elevador {
+private:
+    int ocupacao;
+    int capacidade;
+    int andarAtual;
+    int totalAndares;
+public:
+    Elevador(int cap=8, int an=10);
+    ~Elevador();
+    bool entra();
+    bool sai();
+    bool sobe();
+    bool desce();
+    int obtemOcupacao();
+    int obtemCapacidade();
+    int obtemAndarAtual();
+    int obtemTotalAndares();
+};
+</pre>
+<p align="justify">A classe simula o funcionamento de um elevador, armazenando as seguintes informações para cada elevador: ocupação atual do elevador (em número de pessoas), capacidade máxima do elevador (em número de pessoas), número do andar atual (que varia de 0 até o número total de andares menos 1) e número total de andares (incluindo o andar 0, que corresponde ao andar térreo).</p>
+<p align="justify">Os métodos a serem implementados na classe <code>Elevador</code> são os seguintes:</p>
+<ul>
+    <li>construtor: recebe a capacidade do elevador (em número de pessoas) e o número de andares (incluindo o andar térreo) - respectivamente, com valores <i>default</i> 8 e 10 -, e inicializa a ocupação do elevador com zero e o andar atual também com zero;</li>
+    <li>destrutor: não realiza nada, mas pode ser usado para depuração;</li>
+    <li><code>entra()</code>: simula a tentativa de entrada de uma pessoa no elevador, aumentando o número de ocupantes, se o número máximo ainda não tiver sido atingido (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>sai()</code>: simula a saída de uma pessoa no elevador, diminuindo o número de ocupantes, se houver ocupantes (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>sobe()</code>: simula a subida do elevador para o andar acima do atual, aumentando o número do andar atual, se ainda não estiver no último andar (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>desce()</code>: simula a descida do elevador para o andar abaixo do atual, diminuindo o número do andar atual, se já não estiver no andar térreo (este método retorna <code>true</code> se for possível executá-lo com sucesso, ou <code>false</code> em caso contrário);</li>
+    <li><code>obtemOcupacao()</code>: retorna a ocupação atual do elevador (em número de pessoas);</li>
+    <li><code>obtemCapacidade()</code>: retorna a capacidade máxima do elevador (em número de pessoas);</li>
+    <li><code>obtemAndarAtual()</code>: retorna o andar atual do elevador;</li>
+    <li><code>obtemTotalAndares()</code>: retorna o número todal de andares.</li>
+</ul>
+<p align="justify">Além dos métodos que completam a classe <code>Elevador</code>, implemente um programa que lê a partir da entrada padrão uma série de informações que definem as características do elevador e também uma série de operações executadas por este elevador, determinando ao final, o número de ocupantes do elevador, o andar atual do elevador e o número de pessoas que não conseguiram ingressar no elevador devido ao limite de capacidade.</p>
+<p align="justify">Os dados fornecidos na entrada padrão iniciam com a capacidade máxima do elevador (em número de pessoas) e o número total de andares - informações que serão usadas para criar um objeto da classe <code>Elevador</code>. Na sequência, aparece um conjunto de comandos para serem executados no elevador. Os comandos são os seguintes:</p>
+<ul>
+    <li><code>+</code>: simula a tentativa de ingresso de uma pessoa no elevador;</li>
+    <li><code>-</code>: simula a saída de uma pessoa do elevador;</li>
+    <li><code>^</code>: faz o elevador subir um andar;</li>
+    <li><code>v</code>: faz o elevador descer um andar;</li>
+    <li><code>.</code>: indica o final da operação do elevador (este será sempre o último comando da entrada).</li>
+</ul>
+<p align="justify">Um exemplo de entrada é o seguinte:</p>
+<pre>
+4 6
++ + ^ + ^ + ^ - ^
++ + + ^ -
+^ v - ^ ^ + .
+</pre>
+<p align="justify">Para este exemplo, no final da operação, o elevador estará ocupado por <code>3</code> pessoas e parado no andar <code>5</code>, sendo que, ao longo do seu percurso, <code>2</code> pessoas tentaram ingressar no elevador e não conseguiram.</p>
+<p align="justify">Após completar a implementação, submeta a seguinte entrada ao seu programa:</p>
+<pre>
+9 24
+^ + v v + ^ - + + ^ + ^ v ^ - ^ v ^ v - ^ ^ - v - + ^ - + v + v ^ + v + + ^ v - v - ^ v v v ^ ^ - -
+v - + + + v ^ - ^ - - + + v ^ v - + + + ^ ^ ^ - + ^ - + ^ ^ v + ^ - + + ^ v v ^ ^ - - - v - - + + ^
+- + v v - + v v + + v v v v v v + ^ + v ^ ^ - - - v - - - - v + v + + ^ v v ^ ^ + v ^ ^ - - + ^ v +
+v - + v - - + + + ^ + ^ + + v v ^ ^ ^ + + v ^ v - - ^ v + v v ^ v - + + + + + + + v - + + ^ v + v -
+v - v ^ v ^ - ^ - + v + ^ ^ ^ + + v - v - - + ^ + v - ^ v + v + v v v + ^ - ^ ^ - - + + + v + ^ - +
+v - - + v v v - + ^ ^ ^ - ^ - - + + + + v - + + + v ^ ^ - - + + + v - + v ^ - v - + + v v v + v + v
+v v ^ ^ ^ + ^ - + + v ^ + ^ - + + ^ - ^ - + v - - ^ ^ ^ v + ^ + ^ - - v v v - - v - - + v + ^ ^ v -
+v + v - + ^ ^ v ^ - v ^ ^ v v - + ^ - ^ - - + v - v + + + ^ - + ^ v ^ - - + v - - + + + + + + + + ^
+- v - v + v ^ v v - ^ - ^ - + + v v ^ v v - - + ^ v + ^ ^ ^ - - + v ^ v - + v - ^ + v ^ + ^ - ^ v v
+^ - + + v ^ + + v - + ^ v - - - v v ^ - - + + + v ^ - - + + + ^ ^ - v + + ^ ^ - v v ^ + ^ - - + v -
+- ^ ^ ^ - + v v ^ ^ - - + ^ + v v - - - + v + v v v v - - - - ^ + ^ v - + + + ^ v + ^ - - - + + + +
+^ - + + + ^ - - - - + + v - ^ - + + ^ ^ - v ^ - - ^ - v v v v ^ - + + ^ - v ^ + v - - + + + + v v -
++ v - v + ^ v ^ - v + v v - v ^ + + + ^ - + ^ v + v + + ^ ^ v - + ^ ^ - - + v v ^ - - + v + v + v -
+- - + + + v v - ^ ^ v ^ - - + ^ - - - - + + + v ^ + + ^ + ^ v + ^ v ^ - - ^ - + ^ - - + + ^ v ^ v ^
+^ - - ^ v - ^ - ^ v ^ - - - + + v - - + + ^ - v - + ^ v v - + + v - ^ v v ^ ^ ^ v v - + ^ - + v + ^
+v + v - v v v - + ^ v ^ + + ^ v - + ^ - v v + ^ ^ - v - + ^ - + ^ v - + + + ^ - - + v - ^ - v ^ v v
+^ v ^ v + + + ^ + + + + v v ^ ^ v - + v + ^ - v ^ - + v - ^ + ^ - + + v v ^ - - - - + + ^ ^ - ^ + +
+v - ^ - v ^ + + v - + + ^ v - v - ^ - v ^ - - v + + ^ v v v - - - v v - ^ + + v - v v v v v ^ ^ ^ ^
+v + ^ + + ^ ^ v + ^ v ^ v v v v ^ + ^ ^ + v - + v v v v - - v - - ^ v v v - + ^ - + + v v ^ ^ v - -
++ v - - - v ^ + + + v + v ^ v v - + ^ ^ ^ v v + ^ v ^ ^ - v ^ - - v ^ - + ^ - ^ ^ ^ + + + ^ + ^ - +
+.
+</pre>
+<p align="justify">E responda:</p>
+<ol type="a">
+    <li>Qual o número de ocupantes do elevador no final das operações indicadas? &nbsp; {1:SHORTANSWER:=7}</li>
+    <li>Em qual andar o elevador estará parado no final das operações indicadas? &nbsp; {1:SHORTANSWER:=9}</li>
+    <li>Qual o número de pessoas que não puderam ingressar no elevador devido à lotação máxima ter sido atingida? &nbsp; {1:SHORTANSWER:=21}</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+</quiz>

@@ -1,0 +1,132 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{ragged2e}
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usetheme{AnnArbor}
+\usecolortheme{orchid}
+\usefonttheme[onlymath]{serif}
+
+\newcommand\setItemnumber[1]{\setcounter{enumi}{\numexpr#1-1\relax}}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+\title[\sc{Revisão sobre Linguagem C}]{Revisão sobre Linguagem C}
+\author[Roland Teodorowitsch]{Roland Teodorowitsch}
+%\institute[LP2 - EC - PUCRS]{Laboratório de Programação II - Curso de Engenharia de Computação - PUCRS}
+\institute[POO - EC - PUCRS]{Programação Orientada a Objetos - ECo - Curso de Engenharia de Computação - PUCRS}
+\date{4 de março de 2021}
+
+\begin{document}
+\justifying
+
+%-------------------------------------------------------
+\begin{frame}
+	\titlepage
+\end{frame}
+
+%=======================================================
+\section{Questões}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Questão 1}
+\begin{enumerate}
+\setItemnumber{1}
+\item Considere as seguintes afirmações:
+	\begin{enumerate}[I.]
+	\item Linguagens de Programação de \_\_\_\_\_\_\_\_ apresentam um nível de abstração mais alto, sem exigir conhecimento do código de máquina.
+	\item Linguagens de Programação de \_\_\_\_\_\_\_\_ podem ser ou \_\_\_\_\_\_\_\_ (quando se gera código executável e erros de sintaxe são detectados antes da execução) ou \_\_\_\_\_\_\_\_ (quando instruções são decodificadas e executadas durante a própria execução).
+	\item Linguagens \_\_\_\_\_\_\_\_ usam códigos mnemônicos, que possuem uma correspondência direta com as instruções em linguagem de máquina.
+	\end{enumerate}
+
+Qual das alternativas abaixo completa correspondentemente e corretamente cada uma das afirmações acima?
+	\begin{enumerate}[(A)]
+	\item Alto Nível -- Alto Nível -- virtualizadas -- pré-compiladas -- de alto nível.
+	\item Baixo Nível -- Alto Nível -- interpretadas -- compiladas -- de bancos de dados.
+	\item Baixo Nível -- Baixo Nível -- interpretadas -- compiladas -- de baixo nível.
+	\item Alto Nível -- Alto Nível -- compiladas -- interpretadas -- de montagem.
+	\item Médio Nível -- Baixo Nível -- compiladas -- interpretadas -- virtualizadas.
+	\end{enumerate}
+\end{enumerate}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Questão 2}
+\begin{enumerate}
+\setItemnumber{2}
+\item Escreva uma função recursiva em C para calcular o número de Fibonacci de ordem n. Lembre-se de que o número de Fibonacci de ordem n pode ser definido como a soma dos dois números de Fibonacci anteriores:\\
+\emph{\texttt{Fibonacci ( n )  = Fibonacci(n-1) + Fibonacci(n-2)}}\\
+e que \emph{\texttt{Fibonacci(1)=0}} e \emph{\texttt{Fibonacci(2)=1}}.\\
+Por exemplo, para n igual a 5 o valor de Fibonacci correspondente será 3:
+\begin{itemize}
+\item \emph{\texttt{Fibonacci(1) = 0}}
+\item \emph{\texttt{Fibonacci(2) = 1}}
+\item \emph{\texttt{Fibonacci(3) = Fibonacci(1)+Fibonacci(2) = 0 + 1 = 1}}
+\item \emph{\texttt{Fibonacci(4) = Fibonacci(2)+Fibonacci(3) = 1 + 1 = 2}}
+\item \emph{\texttt{Fibonacci(5) = Fibonacci(3)+Fibonacci(4) = 1 + 2 = 3}}
+\end{itemize}
+\end{enumerate}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Questão 3}
+\begin{enumerate}
+\setItemnumber{3}
+\item Considere a função criada na questão anterior e crie um programa que leia valores inteiros enquanto estes valores forem maiores ou iguais a um, calculando, para cada valor maior ou igual a um, o número de Fibonacci correspondente. Contabilize também quantos dos números de Fibonacci calculados eram pares, quantos eram ímpares e quantas vezes o resultado foi zero. O número de pares, ímpares e zeros deve ser impresso antes do final da execução do programa.
+\end{enumerate}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Questão 4}
+\begin{enumerate}
+\setItemnumber{4}
+\item Escreva um programa em C que leia dois vetores A e B, parcialmente preenchidos, cada um com no máximo 100 elementos. Inicialmente deve-se ler o número de elementos do vetor A (0 a 100), depois cada um dos valores do vetor A. A seguir deve-se ler o número elementos do vetor B (0 a 100), depois cada um dos valores do vetor B. Depois de ler os dois vetores, seu programa deve verificar quantas vezes o vetor A aparece dentro do vetor B, imprimindo este valor. Por exemplo, se tivéssemos A = \{ 3, 4 \} e B = \{ 1, 2, 3, 4, 1, 2, 3, 3, 4, 5 \}, o resultado seria 2.
+\end{enumerate}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Questão 5}
+{\scriptsize
+\begin{enumerate}
+\setItemnumber{5}
+\item Sua tarefa é escrever trechos de programa em C para gerenciar itens de uma agenda de contatos. Para cada item da agenda será necessário armazenar: nome (até 40 caracteres úteis), telefone (no formato ``(99)99999-9999''), dia de nascimento, mês de nascimento e ano de nascimento. Desta forma:
+\begin{enumerate}[a)]
+\scriptsize
+\item Declare um tipo correspondente ao registro (struct) para armazenar as informações dos contatos da agenda;
+\item Escreva um trecho de programa que leia o número de contatos da agenda, aloque área dinamicamente para os contatos (usando como base o registro declarado no item a) e a seguir leia as informações de cada um dos contatos da agenda, armazenando essas informações na estrutura de dados alocada;
+\item Escreva um trecho de programa para ler um dia e um mês, mostrando todos os contatos da agenda que fazem aniversário neste dia deste mês (levando em consideração o registro declarado no item a, bem como a lista de contatos alocada e lida no item b -- declare apenas novas variáveis necessárias para atender o que se pede neste item;
+\item Escreva um trecho de programa que salve todos os dados lidos no item b em um arquivo chamado ``agenda.csv'' no formato CSV (\emph{Comma-Separated-Values}). Neste tipo de arquivo cada linha contém os dados de um contato, com cada campo delimitado por um separador (use ``;'' como separador). Por exemplo, se ``João da Silva'', de telefone ``(51)99123-4567'', nascido no dia 13 do mês 8 de 1988 é um contato, então a linha gerada no arquivo CSV para este contato seria:\\
+\texttt{João da Silva;(51)99123-4567;13;8;1988}\\
+Da mesma forma, declare apenas novas variáveis necessárias para atender o que se pede neste item.
+\item Escreva o trecho de programa para desalocar a estrutura de dados alocada no item b.
+\end{enumerate}
+\end{enumerate}
+}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Questão 6}
+\begin{enumerate}
+\setItemnumber{6}
+\item Um programa em C pode receber informações da linha de comandos através da especificação de dois parâmetros na função main(): \texttt{argc} (valor inteiro que indica o número de palavras colocado na linha de comandos) e \texttt{argv} (vetor de ponteiros de caracteres apontando para o texto de cada uma destas palavras). Escreva um programa em C que recebe uma lista de valores inteiros como argumentos da linha de comandos e imprime o produtório destes valores. Por exemplo, o programa questao.c, poderia ser executado da seguinte forma:\\
+\texttt{\$ questao 1 2 2 3\\
+RESULTADO = 12}\\
+Lembre-se de que o ``primeiro argumento'' é sempre o nome do executável e que todos os argumentos correspondem a vetores de caracteres. Pode-se converter um vetor de caracteres para um valor inteiro usando a função \texttt{int atoi(char *nptr);} definida em \texttt{stdlib.h}.
+
+\end{enumerate}
+\end{frame}
+
+%-------------------------------------------------------
+\end{document}
+

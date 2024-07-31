@@ -1,0 +1,291 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{ragged2e}
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{gensymb}
+\usepackage{multirow}
+\usepackage{xcolor,colortbl}
+\definecolor{verde}{rgb}{0,0.5,0}
+\usepackage{listings}
+
+\lstset{language=C++,
+	backgroundcolor=\color{green!10},
+	basicstyle=\ttfamily,
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{green}\ttfamily,
+	morecomment=[l][\color{magenta}]{\#},
+	literate=
+	{á}{{\'a}}1
+	{à}{{\`a}}1
+	{ã}{{\~a}}1
+	{â}{{\^a}}1
+	{é}{{\'e}}1
+	{ê}{{\^e}}1
+	{í}{{\'i}}1
+	{ó}{{\'o}}1
+	{õ}{{\~o}}1
+	{ú}{{\'u}}1
+	{ü}{{\"u}}1
+	{ç}{{\c{c}}}1
+	{Á}{{\'A}}1
+	{À}{{\`A}}1
+	{Ã}{{\~A}}1
+	{Â}{{\^A}}1
+	{É}{{\'E}}1
+	{Ê}{{\^E}}1
+	{Í}{{\'I}}1
+	{Ó}{{\'O}}1
+	{Õ}{{\~O}}1
+	{Ú}{{\'U}}1
+	{Ü}{{\"U}}1
+	{Ç}{{\c{C}}}1
+}
+
+\usetheme{AnnArbor}
+\usecolortheme{orchid}
+\usefonttheme[onlymath]{serif}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+\title[\sc{Ponteiros e Alocação Dinâmica}]{Ponteiros e Alocação Dinâmica}
+\author[Roland Teodorowitsch]{Roland Teodorowitsch}
+%\institute[LP2 - EC - PUCRS]{Laboratório de Programação II - Curso de Engenharia de Computação - PUCRS}
+\institute[POO - EC - PUCRS]{Programação Orientada a Objetos - ECo - Curso de Engenharia de Computação - PUCRS}
+\date{11 de outubro de 2023}
+
+\begin{document}
+\justifying
+
+%-------------------------------------------------------
+\begin{frame}
+	\titlepage
+\end{frame}
+
+%=======================================================
+\section{Ponteiros em C++}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Revisão}
+\begin{itemize}
+	\item O operador \texttt{*} antecedendo o nome de uma variável em uma declaração, define um ponteiro o respectivo tipo
+\begin{lstlisting}[language=C++]
+double *mediaPtr;
+\end{lstlisting}
+	\item Operador de referência (\texttt{\&}): do lado esquerdo de uma variável, permite recuperar o endereço desta variável (pode ser lido como ``endereço de'')
+\begin{lstlisting}[language=C++]
+mediaPtr = &media;
+\end{lstlisting}
+	\item Operador de dereferência (\texttt{*}): quando utilizado sozinho, à esquerda de um ponteiro, retorna o conteúdo do ponteiro (pode ser lido como ``conteúdo ou valor apontado por'')
+\begin{lstlisting}[language=C++]
+cout << "media= " << *mediaPtr << endl;
+\end{lstlisting}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Exemplo: \texttt{exemplo01.cpp}}
+\lstinputlisting{src/exemplo01.cpp}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Inicialização de ponteiros}
+\begin{itemize}
+	\item É uma boa prática de programação em C/C++ sempre inicializar tanto variáveis quanto ponteiros
+	\item Em Java, o compilador inicializa as variáveis automaticamente com 0 (zero), mas em C/C++ isso NÃO ocorre
+	\item Em C++, para ponteiros pode-se usar \texttt{nullptr}:
+\begin{lstlisting}[language=C++]
+int *dados = nullptr;
+\end{lstlisting}
+	\item Para uma discussão sobre o uso de 0 ou NULL em C++, veja: \url{http://www.cplusplus.com/forum/beginner/5604/}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Impressão de ponteiros}
+\begin{itemize}
+	\item Em C++, ponteiros podem ser impressos usando \texttt{cout} normalmente:
+\lstinputlisting{src/exemplo02.cpp}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Vetores}
+\begin{itemize}
+	\item Em C/C++, ``um vetor é um ponteiro para determinado tipo de dado'':
+\lstinputlisting{src/exemplo03.cpp}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Aritmética de Ponteiros}
+\begin{itemize}
+	\item É possível realizar operações sobre ponteiros
+	\item Somar um valor inteiro a um ponteiro de determinado tipo significa ``deslocar'' a referência
+	\item O deslocamento será igual a \texttt{sizeof(tipo)*valorInteiro}
+\lstinputlisting{src/exemplo04.cpp}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Ponteiros de Objetos}
+\lstinputlisting[basicstyle=\ttfamily\scriptsize]{src/exemplo05.cpp}
+\end{frame}
+
+%=======================================================
+\section{Alocação Dinâmica em C++}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Alocação Dinâmica (Revisão)}
+\begin{itemize}
+	\item Alocação Estática
+\begin{lstlisting}[language=C++]
+int num;
+char v[10];
+\end{lstlisting}
+	\item Alocação Dinâmica: em C++ é feita com os operadores \texttt{new} (para alocar) e \texttt{delete} (para desalocar)
+\begin{lstlisting}[language=C++]
+int *ptr_i = new int;
+MinhaClasse *meuObjeto = new MinhaClasse;
+// ...
+delete meuObjeto;
+delete ptr_i;
+\end{lstlisting}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Alocação Dinâmica de Vetores}
+\begin{itemize}
+	\item No exemplo anterior, foi alocado um espaço para armazenar apenas um dado
+	\item Para alocar um vetor, basta especificar o tamanho desse vetor no momento da alocação
+	\item O acesso é feito exatamente como se fosse um vetor
+\lstinputlisting[basicstyle=\ttfamily\scriptsize]{src/exemplo04.cpp}
+	\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Alocação Dinâmica de Matrizes}
+\lstinputlisting[basicstyle=\ttfamily\tiny]{src/matriz_dinamica.cpp}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Realocação de Memória}
+\begin{itemize}
+	\item Se for preciso aumentar o tamanho de um vetor alocado dinamicamente, pode-se usar:\\\texttt{realloc(ponteiro, novo\_tamanho)}
+	\item Exemplo:
+\begin{lstlisting}[language=C++]
+// A area de memoria eh realocada, e todos os dados sao
+// copiados da area antiga para a area nova
+cadastro = (CPessoa *)realloc(cadastro, 20);
+\end{lstlisting}
+\end{itemize}
+\end{frame}
+
+%=======================================================
+\section{Lista de Exercícios}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Exercício 1}
+\begin{enumerate}
+	\small	
+	\item Analise o programa abaixo, considerando que as variáveis globais \texttt{a} (\texttt{int}, 4 \emph{bytes}), \texttt{b} (\texttt{int}, 4 \emph{bytes}), \texttt{ptr} (ponteiro para \texttt{int}, 8 \emph{bytes}) e \texttt{v} (vetor com 4 elementos \texttt{int}, 16 \emph{bytes}) tenham sido alocadas nos endereços especificados nos respectivos comentários, ou seja, respectivamente, nos endereços \texttt{0xf180}, \texttt{0xf184}, \texttt{0xf188} e \texttt{0xf190}. A partir destas informações, mostre a saída do programa.
+\fontsize{5pt}{5pt}\selectfont{
+\lstinputlisting{src/exercicio01.cpp}
+}
+	\end{enumerate}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Exercício 2}
+\begin{enumerate}
+	\setcounter{enumi}{1}
+	\item Analise a classe do programa abaixo e crie os métodos necessários para o armazenamento dos dados digitados pelo usuário.
+\lstinputlisting[basicstyle=\ttfamily\tiny]{src/exercicio02-template.cpp}
+\end{enumerate}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Exercícios 3-6}
+\begin{enumerate}
+	\small
+	\setcounter{enumi}{2}
+	\item Escreva um programa em C++ que recebe um vetor de números inteiros. Esse vetor de 10 posições deve
+ser criado de forma dinâmica e inicializado de 1 a 10. Ao final, deve-se imprimir na tela usando
+aritmética de ponteiros.
+	\item Crie duas funções em C++, uma para imprimir um vetor de inteiros e outra para imprimir um vetor de valores reais (\texttt{double}). Ambas as funções devem receber um ponteiro para o vetor e o tamanho do vetor, e devem usar apenas a aritmética de ponteiros.
+	\item Escreva um programa em C++ que inicialize um vetor de 100 números reais (\texttt{double}) com valores aleatórios quaisquer, e depois calcule a média apenas dos números que se encontram nos índices pares (iniciando em 0) desse vetor. Utilize apenas aritmética de ponteiros na sua implementação.
+	\item Modifique o programa do exercício anterior de forma que ele receba o tipo de média a ser calculada como parâmetro da linha de comandos: se for passado ``0'', faça a média sobre os índices pares; se for passado ``1'', faça a média sobre os índices ímpares; e, caso seja outro número, faça a média de todos os números do vetor.	
+\end{enumerate}
+\end{frame}
+
+%=======================================================
+\section{Créditos}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Créditos}
+\begin{itemize}
+	\item Estas lâminas contêm trechos de materiais disponibilizados pelos professores Rafael Garibotti, Márcio Sarroglia Pinho, Marco Mangan, Matheus Trevisan e Edson Moreno.
+\end{itemize}
+\end{frame}
+
+%=======================================================
+\section{Soluções}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Exercício 1}
+\begin{lstlisting}[language={}]
+Memória:                         Saída do programa:
+========                         ==================
+0xf180 | a    | 4                0xf19c
+0xf184 | b    | 4                9
+0xf188 | ptr  | 0xf190           4
+0xf190 | v[0] | 4                3
+0xf194 | v[1] | 3                9
+0xf198 | v[2] | 9                4
+0xf19c | v[3] | 4
+\end{lstlisting}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Exercício 2: \texttt{exercicio02.cpp}}
+\fontsize{5pt}{5pt}\selectfont{
+\lstinputlisting{src/exercicio02.cpp}
+}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Exercício 3: \texttt{exercicio03.cpp}}
+\lstinputlisting[basicstyle=\ttfamily\tiny]{src/exercicio03.cpp}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Exercício 4: \texttt{exercicio04.cpp}}
+\lstinputlisting[basicstyle=\ttfamily\tiny]{src/exercicio04.cpp}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Exercício 5: \texttt{exercicio05.cpp}}
+\lstinputlisting[basicstyle=\ttfamily\tiny]{src/exercicio05.cpp}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Exercício 6: \texttt{exercicio06.cpp}}
+\lstinputlisting[basicstyle=\ttfamily\tiny]{src/exercicio06.cpp}
+\end{frame}
+
+%-------------------------------------------------------
+\end{document}
+

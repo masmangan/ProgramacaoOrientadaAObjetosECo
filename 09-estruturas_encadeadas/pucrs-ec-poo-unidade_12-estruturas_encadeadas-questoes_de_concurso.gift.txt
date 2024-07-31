@@ -1,0 +1,9 @@
+$CATEGORY: $course$/ProgramacaoOrientadaAObjetos-EstruturasEncadeadas-QuestoesDeConcurso
+
+::POO - Estruturas Encadeadas - Questões de Concurso - 001::[html]<p align="justify"><b>(BNB - 2018 -  Especialista Técnico / Analista de Tecnologia da Informação  - CESPE / CEBRASPE - 67)</b> Julgue <u>o item subsequente</u><s>os itens subsequentes</s>, relativos a estrutura de dados.</p>
+<p align="justify">Uma lista encadeada é basicamente uma estrutura de dados em lista em que cada nó possui três campos: um para os dados, um para o endereço do nó anterior, e outro para o endereço do nó posterior.{
+	~Certo#
+	=Errado#
+}
+
+

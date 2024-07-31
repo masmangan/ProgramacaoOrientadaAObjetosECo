@@ -1,0 +1,347 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{ragged2e}
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usetheme{AnnArbor}
+\usecolortheme{orchid}
+\usefonttheme[onlymath]{serif}
+\usepackage{gensymb}
+\usepackage{multirow}
+\usepackage{xcolor,colortbl}
+\definecolor{verde}{rgb}{0,0.5,0}
+\usepackage{listings}
+\lstset{
+  language=C++,
+  basicstyle=\ttfamily,
+  keywordstyle=\color{blue},
+  stringstyle=\color{verde},
+  commentstyle=\color{red},
+  extendedchars=true,
+  showspaces=false,
+  showstringspaces=false,
+%  numbers=left,
+%  numberstyle=\tiny,
+  breaklines=true,
+  backgroundcolor=\color{green!10},
+  breakautoindent=true,
+  captionpos=b,
+  xleftmargin=0pt
+}
+\newcommand\setItemnumber[1]{\setcounter{enumi}{\numexpr#1-1\relax}}
+
+\usetheme{AnnArbor}
+\usecolortheme{orchid}
+\usefonttheme[onlymath]{serif}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+\title[\sc{\emph{Streams} e Arquivos em C++}]{\emph{Streams} e Arquivos em C++}
+\author[Roland Teodorowitsch]{Roland Teodorowitsch}
+%\institute[LP2 - EC - PUCRS]{Laboratório de Programação II - Curso de Engenharia de Computação - PUCRS}
+\institute[POO - EC - PUCRS]{Programação Orientada a Objetos - ECo - Curso de Engenharia de Computação - PUCRS}
+\date{30 de agosto de 2023}
+
+\begin{document}
+\justifying
+
+%-------------------------------------------------------
+\begin{frame}
+	\titlepage
+\end{frame}
+
+%=======================================================
+\section{Streams}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{\emph{Streams} em C++}
+\begin{itemize}
+	\item C++ permite acesso a dispositivos de entrada e saída
+	\item \emph{Streams} são abstrações que correspondem a fluxos de entrada e saída
+	\item \texttt{cout} e \texttt{cin} são fluxos de entrada e saída para o terminal
+	\begin{itemize}
+		\item \texttt{cout} é usado para escrever
+		\item \texttt{cin} é usado para ler
+	\end{itemize}
+	\item A mesma abstração poderia ser usada para compor \emph{strings}, como se estivéssemos escrevendo na tela
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{\texttt{stringstream}}
+\begin{columns}[T]
+\begin{column}{0.5\linewidth}
+\begin{itemize}
+	\item Exemplo:
+\lstinputlisting[basicstyle=\ttfamily\scriptsize]{src/stringstream1.cpp}
+\end{itemize}
+\end{column}
+\begin{column}{0.5\linewidth}
+\begin{itemize}
+	\item Resultado:
+\lstinputlisting[basicstyle=\ttfamily\scriptsize]{src/stringstream1.output}
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Usando \texttt{stringstream} para criar método \texttt{str()} para objeto}
+\lstinputlisting[basicstyle=\ttfamily\tiny]{src/stringstream2.cpp}
+\end{frame}
+
+%=======================================================
+\section{Arquivos}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{\emph{Streams} em C++}
+\begin{itemize}
+	\item \emph{Streams}: arquivos texto, arquivos binários, \emph{sockets}, etc.
+	\item Acesso a arquivos:
+	\begin{itemize}
+		\item Criação e gravação de dados em arquivos
+		\item Leitura dos dados de arquivos
+	\end{itemize}
+	\item Exemplos:
+	\begin{itemize}
+		\item Gravação de um conjunto de números aleatórios em um \textbf{arquivo texto} em C++ (\texttt{escrita.cpp})
+		\item Leitura desse arquivo (\texttt{leitura.cpp})
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Escrevendo em um Arquivo Texto}
+\begin{itemize}
+	\item Crie um arquivo chamado \texttt{escrita.cpp} e acrescente a ele os trechos de código a seguir...
+	\item O principal arquivo de cabeçalho para trabalhar com arquivos em C++ é \texttt{fstream}
+	\item O início do cógigo-fonte será, portanto:
+\lstinputlisting[firstline=1,lastline=10,basicstyle=\ttfamily\scriptsize]{src/escrita.cpp}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Escrevendo em um Arquivo Texto}
+\begin{itemize}
+	\item O primeiro passo dentro de \texttt{main()} é criar uma instância de \texttt{ofstream}, que será o fluxo de saída associado ao arquivo:
+\lstinputlisting[firstline=12,lastline=13,basicstyle=\ttfamily\scriptsize]{src/escrita.cpp}
+	\item O próximo passo é abrir o arquivo para escrita:
+\lstinputlisting[firstline=14,lastline=15,basicstyle=\ttfamily\scriptsize]{src/escrita.cpp}
+Neste trecho de código:
+	\begin{itemize}
+		\item Usa-se o modo \texttt{ios::out}, que cria o arquivo e abre ele para escrita
+		\item Cuidado: se esse modo for usado em arquivos já existentes, eles serão \textbf{apagados}!
+		\item O método \texttt{is\_open()} retorna \texttt{false} se o arquivo não está aberto, então usa-se para testar se foi possível realizar a operação
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Escrevendo em um Arquivo Texto}
+\begin{itemize}
+	\item Como em linguagem C, a função \texttt{srand()} é utilizada para inicializar o gerador de números aleatórios (semente)
+\lstinputlisting[firstline=16,lastline=16,basicstyle=\ttfamily\scriptsize]{src/escrita.cpp}
+	\item Início da gravação dos dados (cabeçalho do arquivo):
+\lstinputlisting[firstline=17,lastline=18,basicstyle=\ttfamily\scriptsize]{src/escrita.cpp}
+	\item Gravação dos TAM registros numéricos:
+\lstinputlisting[firstline=19,lastline=23,basicstyle=\ttfamily\scriptsize]{src/escrita.cpp}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Escrevendo em um Arquivo Texto}
+\begin{itemize}
+	\item Para finalizar, feche o arquivo:
+\lstinputlisting[firstline=24,lastline=27	,basicstyle=\ttfamily\scriptsize]{src/escrita.cpp}
+	\item Compile o programa \texttt{escrita.cpp}, depois execute-o e verifique se o arquivo \texttt{teste.txt} foi criado no diretório corrente
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Números Aleatórios em C++}
+\begin{itemize}
+	\item C++11 traz uma nova forma para gerar números randômicos
+	\item Sintaxe:
+\begin{lstlisting}
+// Arquivo de cabecalho da biblioteca
+#include <random>
+
+// Obtem um numero randomico do HW:
+std::random_device rd;
+// Gerador de semente:
+std::mt19937 eng(rd());
+// Define a distribuicao, neste caso a partir de 1 ate 10:
+std::uniform_int_distribution<> distr(1, 10);
+// Gera o numero randomico:
+int num = distr(eng);
+\end{lstlisting}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Lendo de um Arquivo Texto}
+\begin{itemize}
+	\item Crie um arquivo chamado \texttt{leitura.cpp} e acrescente a ele os trechos de código a seguir...
+	\item Os arquivos de cabeçalho que devem ser incluídos são os mesmos do programa que faz a escrita:
+\lstinputlisting[firstline=1,lastline=8,basicstyle=\ttfamily\scriptsize]{src/leitura.cpp}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Lendo de um Arquivo Texto}
+\begin{itemize}
+	\item O primeiro passo dentro de \texttt{main()} é criar uma instância de \texttt{ifstream}, que será o fluxo de entrada associado do arquivo:
+\lstinputlisting[firstline=10,lastline=11,basicstyle=\ttfamily\scriptsize]{src/leitura.cpp}
+	\item O próximo passo é abrir o arquivo para leitura:
+\lstinputlisting[firstline=13,lastline=14,basicstyle=\ttfamily\scriptsize]{src/leitura.cpp}
+	Neste trecho de código, usa-se o modo \texttt{ios::in}, que abre o arquivo para leitura
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Lendo de um Arquivo Texto}
+\begin{itemize}
+	\item Ler o cabeçalho do arquivo:
+\lstinputlisting[firstline=15,lastline=17,basicstyle=\ttfamily\scriptsize]{src/leitura.cpp}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Lendo de um Arquivo Texto}
+\begin{itemize}
+	\item Ler cada um dos valores que estão gravados no arquivo, mas, em vez de ler linhas, os valores serão lidos como inteiros:
+\lstinputlisting[firstline=18,lastline=22,basicstyle=\ttfamily\scriptsize]{src/leitura.cpp}
+Sobre a leitura:
+	\begin{itemize}
+		\item Depois do cabeçalho, as próximas linhas são compostas de dois números: um contador e o valor armazenado
+		\item Basta então fazer uma repetição, que terminará quando não houver mais dados no arquivo
+		\item O método \texttt{good()} retorna \texttt{false} quando algo diferente acontecer (erro ou final do arquivo)
+		\item O dado lido só é exibido na tela, se o método \texttt{fail()} retornar \texttt{false}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Lendo de um Arquivo Texto}
+\begin{itemize}
+	\item O laço pode ter terminado por dois motivos: ou houve um erro, ou o arquivo terminou
+	\begin{itemize}
+		\item No primeiro caso, o método \texttt{bad()} retorna \texttt{true}
+		\item No segundo caso, o método \texttt{eof()} retorna \texttt{true}
+	\end{itemize}
+	\item Logo, uma situação de erro ocorre quando \texttt{bad()} retornou \texttt{true}, ou \texttt{eof()} retornou \texttt{false}:
+\lstinputlisting[firstline=23,lastline=25,basicstyle=\ttfamily\scriptsize]{src/leitura.cpp}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Lendo de um Arquivo Texto}
+\begin{itemize}
+	\item Para finalizar, feche o arquivo:
+\lstinputlisting[firstline=26,lastline=29,basicstyle=\ttfamily\scriptsize]{src/leitura.cpp}
+	\item Compile o programa \texttt{leitura.cpp}, depois execute-o e verifique se os dados do arquivo \texttt{teste.txt} estão sendo corretamente exibidos no terminal
+	\item Mais informações em:
+	\begin{itemize}
+		\item \url{http://www.cplusplus.com/reference/istream/iostream/}
+		\item \url{http://www.inf.pucrs.br/~pinho/PRGSWB/Streams/streams.html}
+		\item \url{http://www.inf.pucrs.br/~flash/lapro2ec/aulas/streams/aula_streams.html}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+%=======================================================
+\section{Lista de Exercícios}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Lista de Exercícios}
+\begin{enumerate}
+	\setItemnumber{1}
+	\item Copie os códigos vistos em aula em dois arquivos (respectivamente, \texttt{escrita.cpp} para o programa que gera os números e os salva em arquivo e \texttt{leitura.cpp} para o programa que lê os números do arquivo, exibindo-os no terminal). Compile-os e teste-os para verificar a criação e leitura do arquivo ``teste.txt'' no diretório corrente.
+\end{enumerate}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Lista de Exercícios}
+\begin{enumerate}
+	\setItemnumber{2}
+	\item Escreva um programa em C++ que permita controlar as presenças dos alunos de uma turma. O programa deve:
+	\begin{enumerate}[a]
+{\footnotesize
+		\item Ler os dados da turma em um arquivo com o seguinte formato: linha inicial contendo o número de alunos e o número de presenças ou faltas. Na sequência aparece uma linha para cada aluno com: nome do aluno (considere nomes com apenas uma palavra) seguido pelas presenças já registradas desse aluno (``P'' para presença, ``F'' para falta). Crie uma classe \texttt{Aluno} (que possui nome e vetor parcialmente preenchido para as presenças) e trabalhe com um vetor parcialmente preenchido de objetos da classe \texttt{Aluno}. O conteúdo do arquivo poderia ser o seguinte:
+\lstinputlisting[basicstyle=\ttfamily\tiny]{src/chamada.txt}
+		\item Realizar uma chamada na data corrente, imprimindo o nome do aluno e perguntando se o aluno está presente (``P'') ou ausente (``F'').
+		\item Imprimir um relatório indicando para cada aluno: número de presenças, número de faltas e porcentagem de aulas que o aluno assistiu.
+		\item Gerar um novo arquivo com o controle de presenças atualizado.
+}
+	\end{enumerate}
+\end{enumerate}
+\end{frame}
+
+%=======================================================
+\section{Créditos}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Créditos}
+\begin{itemize}
+	\item Estas lâminas contêm trechos de materiais disponibilizados pelos professores Rafael Garibotti e Matheus Trevisan.
+\end{itemize}
+\end{frame}
+
+%=======================================================
+\section{Soluções}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Exercício 1: \texttt{escrita.cpp}}
+\lstinputlisting[basicstyle=\ttfamily\tiny]{src/escrita.cpp}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Exercício 1: \texttt{leitura.cpp}}
+\fontsize{6pt}{6pt}\selectfont{
+\lstinputlisting{src/leitura.cpp}
+}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Exercício 2: \texttt{Aluno.hpp}}
+\lstinputlisting[basicstyle=\ttfamily\tiny]{src/Aluno.hpp}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Exercício 2: \texttt{Aluno.cpp} (primeira parte)}
+\lstinputlisting[firstline=1,lastline=24,basicstyle=\ttfamily\tiny]{src/Aluno.cpp}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Exercício 2: \texttt{Aluno.cpp} (segunda parte)}
+\lstinputlisting[firstline=26,lastline=50,basicstyle=\ttfamily\tiny]{src/Aluno.cpp}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Exercício 2: \texttt{chamada.cpp} (primeira parte)}
+\fontsize{6pt}{6pt}\selectfont{
+\lstinputlisting[firstline=1,lastline=28]{src/chamada.cpp}
+}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Exercício 2: \texttt{chamada.cpp} (segunda parte)}
+\fontsize{6pt}{6pt}\selectfont{
+\lstinputlisting[firstline=29,lastline=56]{src/chamada.cpp}
+}
+\end{frame}
+
+%-------------------------------------------------------
+\end{document}
+

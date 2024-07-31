@@ -1,0 +1,50 @@
+$CATEGORY: $course$/POO-06-Composicao
+
+::POO - Composição - Questão 01 - Versão 001::[html]<p> Na Orientação a Objetos, quando se criam classes que usam objetos de outras classes, a técnica é chamada de</p>{
+	=composição.#
+	~seleção.#
+	~herança.#
+	~generalização.#
+}
+
+::POO - Composição - Questão 02 - Versão 001::[html]<p> No contexto da Orientação a Objetos, qual das características a seguir NÃO corresponde à <b>composição</b>?</p>{
+	=Uma classe usa objetos criados a partir dela mesma, recursivamente.#
+	~Módulos menores são usados para desenvolver módulos maiores.#
+	~Uma classe usa objetos de outras classes.#
+	~Há uma relação de dependência entre classes.#
+}
+
+::POO - Composição - Questão 03 - Versão 001::[html]<p> No contexto da Orientação a Objetos, qual das características a seguir caracteriza a <b>composição</b>?</p>{
+	=Módulos menores são usados para desenvolver módulos maiores.#
+	~Classes usam apenas tipos primitivos de dados.#
+	~Uma classe usa objetos criados a partir dela mesma, recursivamente.#
+	~Classes grandes que resolvem o problema sem qualquer dependência.#
+}
+
+::POO - Composição - Questão 04 - Versão 001::[html]<p> Em C++, em qual dessas construções é necessário ter um construtor sem argumentos ou um construtor com argumentos <i>default</i>?</p>{
+	=Quando se declara um vetor de objetos da classe (<code>Classe objeto[TAM];</code>).#
+	~Quando se declara um ponteiro para um objeto da classe (<code>Classe *objeto;</code>).#
+	~Quando se declara um vetor de ponteiros para objetos da classe (<code>Classe *objeto[TAM];</code>).#
+	~Quando se declara um objeto da classe chamando o construtor com algum parâmetro (<code>Classe objeto(123);</code>).#
+}
+
+::POO - Composição - Questão 05 - Versão 001::[html]<p> Em C++, quando se usa um e-comercial (<code>&amp;</code>) na declaração de argumentos de um método (por exemplo, <code>tipo &amp; argumento</code>), isto significa que:</p>{
+	=o argumento será passado por referência, sem que seja necessário usar operadores de referência (<code>&amp;</code>) e deferência (<code>*</code>) na implementação.#
+	~o argumento será passado por referência, sendo necessário usar operadores de referência (<code>&amp;</code>) e deferência (<code>*</code>) na implementação.#
+	~o argumento será passado por valor, sem que seja necessário usar operadores de referência (<code>&amp;</code>) e deferência (<code>*</code>) na implementação.#
+	~o argumento será passado por valor, sendo necessário usar operadores de referência (<code>&amp;</code>) e deferência (<code>*</code>) na implementação.#
+}
+
+::POO - Composição - Questão 06 - Versão 001::[html]<p> Em C++, qual palavra-reservada deve ser adicionada na declaração de argumentos de um método ou função para indicar que este argumento NÃO será alterado dentro da função?</p>{
+	=<code>const</code>#
+	~<code>static</code>#
+	~<code>fixed</code>#
+	~<code>unvariable</code>#
+}
+
+::POO - Composição - Questão 07 - Versão 001::[html]<p> Em C++, o que é um objeto anônimo?</p>{
+	=Um objeto que é criado sem que se defina um nome para ele.#
+	~Um objeto que NÃO ocupa área na memória.#
+	~Um objeto abstrato, ou seja, que não existe de fato.#
+	~Um objeto virtual, criado para resolver uma dependência temporária.#
+}

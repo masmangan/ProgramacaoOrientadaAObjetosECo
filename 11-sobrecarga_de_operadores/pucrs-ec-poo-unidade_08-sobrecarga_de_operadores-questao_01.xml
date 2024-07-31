@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <question type="category">
+    <category>
+      <text>$module$/top/POO-08-SobrecargaDeOperadores-Questao01</text>
+    </category>
+    <info format="moodle_auto_format">
+      <text></text>
+    </info>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="essay">
+    <name>
+      <text>POO - Sobrecarga de Operadores - Questão 01 - Versão 001</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p align="justify"> Definir uma classe (chamada <code>Circulo</code>) que represente um círculo e que apresente as seguintes características:</p>
+            <ul>
+                <li>Métodos Privados para calcular: área do círculo (&#960;r<sup>2</sup>), circunferência do círculo (2&#960;r);</li>
+                <li>Construtores: <code>Circulo()</code> com centro em (0,0) e raio 1, <code>Circulo(double raio)</code> com centro em (0,0), <code>Circulo (double x, double y)</code> com raio 1, <code>Circulo (double x, double y, double raio)</code>;</li>
+                <li>Métodos Públicos para: obter posição X do centro do círculo, obter posição Y do centro do círculo, definir posição X do centro do círculo, definir posição Y do centro do círculo, definir o raio R do círculo, multiplicar o raio R do círculo por determinado fator (de escala), obter o raio do círculo, obter uma cadeia de caracteres com as informações básicas do círculo, obter a área do círculo, obter a circunferência do círculo;</li>
+                <li>Método para sobrecarregar o operador &lt;&lt; para imprimir os dados de um círculo;</li>
+                <li>Método para sobrecarregar o operador &gt;&gt; para ler os dados de um círculo do terminal;</li>
+                <li>Métodos para sobrecarregar os operadores &gt; e &lt; para comparar a área de dois círculos.</li>
+            </ul>
+                
+Criar um programa principal para testar a classe.
+
+                
+                
+                
+                
+                
+                Considere a declaração da classe <code>Pessoa</code> em C++ a seguir:</p>
+<pre>
+class Pessoa {
+  private:
+    string nome;
+    int idade;    // em anos
+    double peso;  // em kg
+  public:
+    Pessoa();
+    ~Pessoa();
+    string obtemNome();
+    int obtemIdade();
+    double obtemPeso();
+    void defineNome(string n);
+    void defineIdade(int i);
+    void definePeso(double p);
+    void fazAniversario();
+    void engorda(double kg);
+};
+</pre>
+<p align="justify">E implemente cada um dos métodos, em C++, definidos na interface pública dessa classe (de forma externa à classe), de forma que, para o seguinte programa principal:</p>
+<pre>
+int main() {
+    Pessoa p;
+    
+    p.defineNome("Joao da Silva");
+    p.defineIdade(20);
+    p.definePeso(75.5);
+    for (int i=0; i<5; ++i) {
+        p.fazAniversario();
+        p.engorda(0.1 + i/100.0);
+    }
+    cout << p.obtemNome() << endl;
+    cout << p.obtemIdade() << endl;
+    cout << p.obtemPeso() << endl;
+    return 0;
+}
+</pre>
+<p align="justify">A execução deverá gerar exatamente a seguinte saída:</p>
+<pre>
+Joao da Silva
+25
+76.1
+</pre>
+<p align="justify">Os métodos da interface pública da classe <code>Pessoa</code> fazem exatamente o seguinte:</p>
+<ul>
+    <li>construtor: inicializa variáveis de instância com valores nulos;</li>
+    <li><code>destrutor</code>: não faz nada;</li>
+    <li><code>obtemNome</code>: retorna o nome da pessoa;</li>
+    <li><code>obtemIdade</code>: retorna a idade da pessoa;</li>
+    <li><code>obtemPeso</code>: retorna o peso da pessoa;</li>
+    <li><code>defineNome</code>: define o nome da pessoa;</li>
+    <li><code>defineIdade</code>: define a idade da pessoa;</li>
+    <li><code>definePeso</code>: define o peso da pessoa;</li>
+    <li><code>fazAniversario</code>: incrementa a idade da pessoa;</li>
+    <li><code>engorda</code>: aumenta o peso da pessoa em determinado valor.</li>
+</ul>
+<p>Poste na solução apenas a implementação dos métodos.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<pre>
+Pessoa::Pessoa() {
+    nome = "";
+    idade = 0;
+    peso = 0.0;
+    //cout << "+ Pessoa criada..." << endl;
+}
+
+Pessoa::~Pessoa() {
+    //cout << "- Pessoa destruida..." << endl;
+}
+
+string Pessoa::obtemNome() {
+    return nome;
+}
+
+int Pessoa::obtemIdade() {
+    return idade;
+}
+
+double Pessoa::obtemPeso() {
+    return peso;
+}
+
+void Pessoa::defineNome(string n) {
+    nome = n;
+}
+
+void Pessoa::defineIdade(int i) {
+    idade = i;
+}
+
+void Pessoa::definePeso(double p) {
+    peso = p;
+}
+
+void Pessoa::fazAniversario() {
+    idade++;
+}
+
+void Pessoa::engorda(double kg) {
+    peso += kg;
+}
+</pre>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>15</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <graderinfo format="html">
+      <text></text>
+    </graderinfo>
+    <responsetemplate format="html">
+      <text></text>
+    </responsetemplate>
+  </question>
+
+</quiz>

@@ -1,0 +1,153 @@
+<p>Implemente os métodos da classe Placar definida no arquivo <code>Placar.hpp</code> a seguir usando como
+estrutura principal uma lista duplamente encadeada. A inserção na lista deve ser feita de
+forma ordenada, do menor para o maior número de pontos. Em caso de empate no número de pontos,
+a inserção do novo nodo deve ser feita após os nodos que já estão presentes na lista.</p>
+
+<p>Para a implementação da classe <code>Placar.hpp</code>, considere também a classe <code>Resultado</code>, cujo código é apresentado a seguir.</p>
+
+<p>Arquivo <code>Resultado.hpp</code>:</p>
+<pre>
+// Resultado.hpp (Roland Teodorowitsch; 23 out. 2019)
+#ifndef _RESULTADO_HPP
+#define _RESULTADO_HPP
+
+#include &lt;string&gt;
+
+using namespace std;
+
+class Resultado {
+  private:
+    string nome;
+    int    pontos;
+  public:
+    Resultado(string n="", int p=0);
+    string obtemNome();
+    void defineNome(string n);
+    int obtemPontos();
+    void definePontos(int p);
+    string toString();
+    string toCSV();
+};
+
+#endif
+</pre>
+
+<p>Arquivo <code>Resultado.cpp</code>:</p>
+<pre>
+// Resultado.cpp (Roland Teodorowitsch; 23 out. 2019)
+
+#include &lt;sstream&gt;
+#include "Resultado.hpp"
+
+Resultado::Resultado(string n, int p) {
+  nome = n;
+  pontos = p;
+}
+
+string Resultado::obtemNome() {
+  return nome;
+}
+
+void Resultado::defineNome(string n) {
+  nome = n;
+}
+
+int Resultado::obtemPontos() {
+  return pontos;
+}
+
+void Resultado::definePontos(int p) {
+  pontos = p;
+}
+
+string Resultado::toString() {
+  stringstream ss;
+  ss &lt;&lt; "Nome: " &lt;&lt; nome &lt;&lt; " (" &lt;&lt; pontos &lt;&lt; " pontos)";
+  return ss.str();
+}
+
+string Resultado::toCSV() {
+  stringstream ss;
+  ss &lt;&lt; nome &lt;&lt; ";" &lt;&lt; pontos;
+  return ss.str();
+}
+</pre>
+
+<p>Arquivo <code>Placar.hpp</code>:</p>
+<pre>
+// Placar.hpp (Roland Teodorowitsch; 23 out. 2019)
+#ifndef _PLACAR_HPP
+#define _PLACAR_HPP
+
+#include &lt;string&gt;
+#include "Resultado.hpp"
+
+using namespace std;
+
+class Placar {
+  private:
+    class Nodo {
+       public:
+         Resultado resultado;
+         Nodo *prox, *ant;
+         Nodo(Resultado r); //** Cria um nodo atribuindo r ao campo resultado desse nodo e zerando encadeamentos
+    };
+    string nomeArquivo;
+    Nodo *primeiro;
+    int numResultados;
+  public:
+    Placar(string arquivo);                //** Cria um placar vazio. Se o arquivo não existir, o placar é iniciado vazio. Se existir,
+                                           //   os resultados do arquivo são lidos e inseridos na lista usando insere(nome,pontos)
+    ~Placar();                             //** Desaloca os nodos do placar, simplesmente chamando limpa()
+    int obtemNumResultados();              //** Retorna o número de resultados no placar
+    Resultado *obtemResultado(int indice); //** Retorna o endereço do resultado que está no nodo na posição índice da lista
+    void insere(string n, int p);          //** Cria um resultado e o insere na lista, simplesmente chamando insere(Resultado(n,p))
+    void insere(Resultado r);              //** Recebe um resultado e insere-o na lista de resultados do placar em ordem crescente
+    void limpa();                          //** Desaloca cada um dos nodos de resultados do placar, deixando a lista vazia
+    void salva(int n);                     //** Salva os n primeiros resultados no arquivo especificado no construtor
+};
+
+#endif
+</pre>
+
+<p>Um exemplo de função <code>main()</code> para testar a classe <code>Placar</code> é mostrado a seguir.</p>
+<pre>
+// main.cpp (Roland Teodorowitsch; 23 out. 2019)
+
+#include &lt;iostream&gt;
+#include "Resultado.hpp"
+#include "Placar.hpp"
+
+using namespace std;
+
+int main() {
+  Placar placar("escores.csv");
+  int tam = placar.obtemNumResultados();
+  for (int i=0; i&lt;tam; ++i) {
+      Resultado *r = placar.obtemResultado(i);
+      cout &lt;&lt; r-&gt;toString() &lt;&lt; endl;
+  }
+  cout &lt;&lt; "------------------" &lt;&lt; endl;
+  placar.insere("Jogador10", 10);
+  Resultado result("Jogador20",20);
+  placar.insere(result);
+  placar.insere("Jogador1", 1);
+  placar.insere("Jogador10a", 10);
+  placar.insere("Jogador7", 7);
+  placar.insere("Jogador20", 20);
+  placar.insere("Jogador15", 15);
+  placar.insere("Jogador10b", 10);
+
+  placar.salva(10);
+
+  tam = placar.obtemNumResultados();
+  for (int i=0; i&lt;tam; ++i) {
+      Resultado *r = placar.obtemResultado(i);
+      cout &lt;&lt; r-&gt;toString() &lt;&lt; endl;
+  }
+  cout &lt;&lt; "------------------" &lt;&lt; endl;
+
+  return 0;
+}
+</pre>
+

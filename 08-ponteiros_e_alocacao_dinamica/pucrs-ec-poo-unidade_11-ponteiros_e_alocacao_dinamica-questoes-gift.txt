@@ -1,0 +1,70 @@
+$CATEGORY: $course$/POO-11-PonteirosEAlocacaoDinamicaEmC++
+
+::POO - Ponteiros e Alocação Dinâmica - Questão 01 - Versão 001::[html]<p align="justify">Em uma declaração de variável em C/C++, o operador <code>*</code> colocado do lado direito de um tipo indica que</p>
+</p>{
+	=a variável será um ponteiro para este tipo.#
+	~o escopo da variável estará limitado ao contexto local.#
+	~a variável NÃO tem valor inicial.#
+	~a variável será inicializada com 0 (zero).#
+}
+
+::POO - Ponteiros e Alocação Dinâmica - Questão 02 - Versão 001::[html]<p align="justify">Em C/C++, quando o operador <code>&amp;</code> é colocado do lado esquerdo de uma variável em uma expressão, isto significa que o que será considerado é</p>
+</p>{
+	=o endereço desta variável.#
+	~o conteúdo desta variável.#
+	~o escopo desta variável.#
+	~o contexto desta variável.#
+}
+
+::POO - Ponteiros e Alocação Dinâmica - Questão 03 - Versão 001::[html]<p align="justify">Em C/C++, quando o operador <code>*</code> é colocado do lado esquerdo de uma variável do tipo ponteiro em uma expressão, isto significa que o que será considerado é</p>
+</p>{
+	=o conteúdo do respectivo ponteiro.#
+	~o endereço do respectivo ponteiro.#
+	~o escopo do respetivo ponteiro.#
+	~o contexto do respectivo ponteiro.#
+}
+
+::POO - Ponteiros e Alocação Dinâmica - Questão 04 - Versão 001::[html]<p align="justify">Em C/C++, quando se declaram 2 variáveis da seguinte forma:</p>
+<pre>
+int* a, b;
+</pre>
+<p align="justify">isto significa que</p>{
+	=<code>a</code> é um ponteiro para inteiros e <code>b</code> é uma variável inteira.#
+	~ambas são ponteiros para inteiros.#
+	~ambas são variáveis inteiras.#
+	~<code>a</code> é uma variável inteira e <code>b</code> é um ponteiro para inteiros.#
+}
+
+::POO - Ponteiros e Alocação Dinâmica - Questão 05 - Versão 001::[html]<p align="justify">Em C++, quando um ponteiro ainda NÃO tem um valor inicial, a melhor prática é inicializá-lo com</p>{
+	=<code>nullptr</code>.#
+	~<code>NULL</code>.#
+	~<code>0</code>.#
+	~<code>-1</code>.#
+}
+
+::POO - Ponteiros e Alocação Dinâmica - Questão 06 - Versão 001::[html]<p align="justify">Em C/C++, considerando-se as seguintes declarações:</p>
+<pre>
+int numeros[10] = \{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10\};
+int * pnum = numeros;
+</pre>
+<p align="justify">Qual das expressões abaixo gera um valor diferente das demais?</p>{
+	=pnum+4#
+	~*(pnum+4)#
+	~pnum[4]#
+	~numeros[4]#
+	~*(numeros+4)#
+}
+
+::POO - Ponteiros e Alocação Dinâmica - Questão 07 - Versão 001::[html]<p align="justify">Em C/C++, quando se soma um valor inteiro a um ponteiro, este ponteiro será deslocado na memória um número de <i>bytes</i> igual</p>{
+	=ao valor inteiro vezes o tamanho do tipo para o qual o ponteiro aponta.#
+	~ao valor inteiro.#
+	~ao tamanho do tipo para o qual o ponteiro aponta.#
+	~ao valor inteiro mais o tamanho do tipo para o qual o ponteiro aponta.#
+}
+
+::POO - Ponteiros e Alocação Dinâmica - Questão 08 - Versão 001::[html]<p align="justify">Em C++, a forma recomendada para alocar memória dinamicamente é usar</p>{
+	=o operador <code>new</code>.#
+	~a função <code>malloc</code>.#
+	~o comando <code>alloc</code>.#
+	~a função <code>calloc</code>.#
+}

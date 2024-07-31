@@ -1,0 +1,49 @@
+$CATEGORY: $course$/Programação Orientada a Objetos - Introdução a Orientação a Objetos - Questões de Concursos
+
+::POO - Introdução à OO - Questões de Concursos - 001::[html]<p align="justify"><b>(UFG - 2023 - Analista de Tecnologia da Informação/Área: Sistemas - Instituto Verbena - 46)</b> Os pilares da orientação a objetos são um conjunto de conceitos fundamentais que estabelecem os princípios básicos da programação orientada a objetos. Esses pilares são representados por:</p>{
+	=Abstração, Herança, Polimorfismo e Encapsulamento.#
+	~Herança, Sobrecarga, Polimorfismo e Sobrescrita.#
+	~Sobrecarga, Abstração, Typecasting e Encapsulamento.#
+	~Sobrescrita, Herança, Encapsulamento e <i>Typecasting</i>.#
+}
+
+::POO - Introdução à OO - Questões de Concursos - 002::[html]<p align="justify"><b>(BNB - 2018 -  Especialista Técnico / Analista de Tecnologia da Informação  - CESPE / CEBRASPE - 51)</b> Julgue <u>o item</u><s>os itens a seguir</s>, relativos aos conceitos de construção de algoritmos.</p>
+<p align="justify">Em programação orientada a objetos, a técnica utilizada para esconder detalhes internos de funcionamento de uma classe é denominada generalização.</p>{
+	~Certo#
+	=Errado#
+}
+
+::POO - Introdução à OO - Questões de Concursos - 003::[html]<p align="justify"><b>(UFRRJ - 2023 - Analista de Tecnologia da Informação - UFRRJ - 34)</b> Na orientação a objetos, o princípio que restringe o acesso ao comportamento interno de um objeto é conhecido como</p>{
+	~herança.#
+	~abstração.#
+	~código fonte.#
+	~polimorfismo.#
+	=encapsulamento.#
+}
+
+::POO - Introdução à OO - Questões de Concursos - 004::[html]<p align="justify"><b>(MPE-BA - 2022 - Analista Técnico/Análise de Sistemas, Ciência da Computação, Engenharia da Computação ou Sistemas de Informação - Instituto Consulplan - 54)</b> Na programação orientada a objetos, todo objeto possui três características ou propriedades fundamentais que servem para defini-lo de maneira inequívoca: um estado; um comportamento; e, uma identidade. Um objeto deve ter todas ou algumas das propriedades anteriores. Um objeto sem o estado ou sem o comportamento pode existir, mas um objeto sempre tem uma identidade. Considerando as características de objetos, marque <u>V</u> para as afirmativas verdadeiras e <u>F</u> para as falsas.</p>
+<table>
+<tbody>
+<tr><td>( &nbsp; &nbsp; ) &nbsp;</td><td><p align="justify">O estado agrupa os valores de todos os atributos de um objeto, e cada atributo é uma parte da informação que qualifica o objeto continente. Cada atributo pode receber um valor em um domínio de definição.</p></td></tr>
+<tr><td>( &nbsp; &nbsp; ) &nbsp;</td><td><p align="justify">O estado de um objeto corresponde a uma seleção determinada de valores, partindo de valores possíveis dos diversos atributos. Essencialmente, um atributo é uma propriedade ou característica de uma classe e descreve uma gama de valores que a propriedade poderá conter nos objetos da classe.</p></td></tr>
+<tr><td>( &nbsp; &nbsp; ) &nbsp;</td><td><p align="justify">O comportamento é o conjunto de capacidades e atitudes de um objeto e que descreve as suas ações e reações. Cada componente de comportamento individual de um objeto denomina-se operação. Uma operação é algo que a classe pode realizar ou o que podemos fazer a uma classe. As operações de um objeto são acionadas (ativadas) como resultado de um estímulo externo representado na forma de uma mensagem enviada a outro objeto.</p></td></tr>
+<tr><td>( &nbsp; &nbsp; ) &nbsp;</td><td><p align="justify">A identidade é a propriedade que diferencia um objeto de outro similar. Essencialmente, a identidade de um objeto caracteriza sua própria existência. A identidade torna possível distinguir qualquer objeto sem ambiguidade e, independentemente de seu estado, isso permite, dentre outros fatores, a diferenciação de dois objetos que tenham os atributos idênticos.</p></td></tr>
+</tbody>
+</table>
+<p align="justify">A sequência está correta em</p>{	
+	~F, F, F, F.#
+	~F, V, F, V.#
+	~F, V, V, F.#
+	~V, F, F, V.#
+	=V, V, V, V.#
+}
+
+::POO - Introdução à OO - Questões de Concursos - 005::[html]<p align="justify"><b>(SEFAZ/RR - 2022 - Desenvolvedor de Software/Tipo A - IDECAN - 58)</b> O uso de programação orientada a objetos (POO) permitiu que a reutilização de código se tornasse algo praticamente comum em desenvolvimento de software, servindo como base para novos conceitos, como os serviços. Selecione a alternativa que mostra por meio de qual implementação o encapsulamento dos tipos de dados e suas funções é alcançado.</p>{
+	~Objetos#
+	~Atributos#
+	=Classes#
+	~Métodos#
+	~Filas#
+}
+
+

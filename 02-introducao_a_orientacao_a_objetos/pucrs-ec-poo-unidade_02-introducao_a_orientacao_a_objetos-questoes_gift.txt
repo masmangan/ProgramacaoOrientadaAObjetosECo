@@ -1,0 +1,72 @@
+$CATEGORY: $course$/POO-02-IntroducaoAOO
+
+::POO - Introdução à Orientação a Objetos - Questão 01 - Versão 001::[html]<p>Qual das seguintes afirmações sobre Paradigmas de Programação está ERRADA?</p>{
+	=São independentes tanto da organização interna dos elementos que compõem um programa, quanto da interação entre estes elementos.#
+	~São uma forma de se classicar as linguagens de programação a partir de suas funcionalidades.#
+	~É um padrão conceitual que orienta soluções de projeto e implementação.#
+	~Fornece e determina a visão que o programador possui sobre a estruturação e execução de seus programas.#
+}
+
+::POO - Introdução à Orientação a Objetos - Questão 02 - Versão 001::[html]<p>Sobre Paradigmas de Programação, qual das afirmações a seguir está correta?</p>{
+	=Um programa desenvolvido em uma linguagem com suporte para determinado paradigma de programação pode NÃO aproveitar as funcionalidades desse paradigma.#
+	~Uma linguagem suporta apenas um paradigma de programação.#
+	~Orientação a Objetos NÃO é um paradigma de programação.#
+	~Paradigmas de programação NÃO tem relação com as funcionalidades suportadas por determinada linguagem de programação.#
+}
+
+::POO - Introdução à Orientação a Objetos - Questão 03 - Versão 001::[html]<p>Na Orientação a Objetos, como são chamadas as abstrações básicas criadas a partir do mundo real?</p>{
+	=Objetos#
+	~Atributos#
+	~Comportamentos#
+	~Mensagens#
+}
+
+::POO - Introdução à Orientação a Objetos - Questão 04 - Versão 001::[html]<p>Na Orientação a Objetos, como são basicamente compostos os <b>objetos</b>?</p>{
+	=Atributos e comportamentos#
+	~Operações e Interfaces#
+	~Características e Dados#
+	~Campos e Propriedades#
+}
+
+::POO - Introdução à Orientação a Objetos - Questão 05 - Versão 001::[html]<p>Qual o conceito básico da Orientação a Objetos que busca esconder como as coisas funcionam (<i>data hiding</i>) por trás de uma interface externa (pública)?</p>{
+	=Encapsulamento#
+	~Abstração#
+	~Coesão#
+	~Coerência#
+}
+
+::POO - Introdução à Orientação a Objetos - Questão 06 - Versão 001::[html]<p>Como se chama a identificação das características e operações do mundo real que são realmente essenciais na resolução de um problema usando programação?</p>{
+	=Abstração#
+	~Encapsulamento#
+	~Consistência#
+	~Pensamento Computacional#
+}
+
+::POO - Introdução à Orientação a Objetos - Questão 07 - Versão 001::[html]<p>Qual é o componente usado na Programação Orientada a Objetos a partir do qual os objetos são gerados?</p>{
+	=Classe#
+	~Enumeração#
+	~Interface# 
+	~Registro#
+}
+
+::POO - Introdução à Orientação a Objetos - Questão 08 - Versão 001::[html]<p>Qual dos itens a seguir NÃO é um dos objetivos da Programação Orientada a Objetos?</p>{
+	=Gerar programas rápidos, independentemente da legibilidade.#
+	~Gerar programas com componentes reutilizáveis.#
+	~Produzir código que seja de fácil manutenção.#
+	~Criar programas de forma produtiva.#
+}
+
+::POO - Introdução à Orientação a Objetos - Questão 09 - Versão 001::[html]<p>Na Orientação a Objetos, o estado de um objeto é armazenado em:</p>{
+	=atributos.#
+	~variáveis globais.#
+	~constantes.#
+	~interfaces.#
+}
+
+::POO - Introdução à Orientação a Objetos - Questão 10 - Versão 001::[html]<p>Na Orientação a Objetos, como o comportamento de um objeto é definido?</p>{
+	=Através de métodos declarados na classe que define o objeto.#
+	~Em atributos declarados de forma estática pelo objeto.#
+	~Em atributos alocados dinamicamente pelo objeto.#
+	~Através do conjunto de valores que compõem o estado do objeto.#
+}
+

@@ -1,0 +1,153 @@
+$CATEGORY: $course$/Programação Orientada a Objetos - Relacionamento entre Classes - Questões de Concursos
+
+::POO - Relacionamento entre Classes - Questões de Concursos - 001::[html]<p align="justify"><b>(MPE-BA - 2022 - Analista Técnico/Análise de Sistemas, Ciência da Computação, Engenharia da Computação ou Sistemas de Informação - Instituto Consulplan - 57)</b> Na programação orientada a objetos uma relação é uma conexão semântica entre classes que permite uma classe conhecer os atributos; as operações; e, as relações de outras classes. As relações que podem ser estabelecidas entre classes são: associações; agregações; dependências; generalizações; e, especificações. Considerando os tipos de relações entre classes, assinale a afirmativa INCORRETA.</p>{
+	~<u>Composição</u>: é um tipo especial de agregação. Cada componente dentro de uma composição pode pertencer somente a um todo.#
+	=<u>Classes abstratas</u>: são modelos para suas classes derivadas. A propriedade fundamental de classes abstratas é poder criar suas próprias instâncias.#
+	~<u>Associação</u>: é uma conexão conceitual ou semâ ntica entre classes. Quando uma associação conecta duas classes, cada classe envia mensagens à outra em um diagrama de colaboração. Uma associação é uma abstração das ligações que existem entre instâncias de objeto.#
+	~<u>Herança</u>: é a propriedade pela qual instâ ncias de uma classe filha (ou subclasse) podem acessar tanto dados quanto comportamentos (métodos) associados a uma classe pai (ou superclasse). A herança sempre é transitória, de modo que uma classe pode herdar características de superclasses de nível superior.#
+	~<u>Agregação</u>: é um tipo especial de associação que expressa um acoplamento mais forte entre classes. Uma das classes desempenha um papel importante dentro da relação com as outras classes. A agregação permite a representação de relações, tais como "mestre e escravo", "todo e parte de" ou "composto e componentes". Os componentes e a classe que constituem são uma associação que configura um todo.#
+}
+
+
+::POO - Relacionamento entre Classes - Questões de Concursos - 002::[html]<p align="justify"><b>(TCM-SP - 2020 - Auxiliar Técnico de Controle Externo/Técnico de Informática - VUNESP - 43)</b> Considerando a modelagem de dados orientada a objetos, sejam dois conjuntos de entidades que devem ser representados por duas classes: Proprietário e Veículo. O modelo de classes deve refletir a seguinte situação: um proprietário pode possuir mais de um veículo e cada veículo é possuído por apenas um proprietário. O diagrama de classes correspondente a essa descrição é:</p>{
+	~<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWoAAAArBAMAAACjhd+tAAAAMFBMVEUwMDg4PkVCSE9PVl1gX2Nr
+bG98en6Gi42UmZugpKeprbDHxsrY1tro7e/w8/D9//xRu24YAAAACXBIWXMAAA7EAAAOxAGVKw4b
+AAAAB3RJTUUH5wkIDBQi/eWk0QAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcA
+AARJSURBVFjD7dh/bBNlGAfwG0hi6NZtIfiDrWN/aDKZ2YiEBJGsuAirKaxGMY4EV8SZETVUGgSS
+GTvYxoYTLzPMiM0yJfgHovQ6MRoKvWlIFuO0S1Az3LQjJCamJtfR63bte3df3ytjRmcrN2pzS3yS
+9tperu8nd8/7vD+Y+Bq94UN2Q9Et2MBcHtYZXzsBkc8WuQtIvKyXcID5Xm87xIlk7zvh7KA/b25B
+wqP3qs55qckrFUJ21EPFr+VMjVcfzFKCJGt9uVO/fl7PFQ4gXUJJ37C5U+sLFnCH0p82hpoPABEe
+8gUoAURABFpwNi4XDK5e0lRDlq8Rnnd7/PtqOET5QqpmKgyuvhO2ST7uMcusDcdm1UyJsdX5OD4I
+4qh9Cdz28Iz6CYZhPIZWF+C4H8RK3FalzfTnvV4cMrR6KZonwtONDtXUjYaoMDGj9hk7Q/I6yxIV
+e0Nre61vv1sSa6i9oWYN3htNRwV80YffjgqkK6ye+ClMwY82/kf1Wg5c+Mup4MxxmL4iutT/8Nsw
+bl2t0A4wrn349uYAkEEtMsyKOY17oZbSA3e7auhQk5XA45recuO7as6k5tEz5x/tkPnbHtF1qrEK
+SoHWEH9rai7Z6/xsszDUvkM+sHWL2rRjepmvfVPo9NOXcK5OyJm6Awnnr5tCSR957C0R4ndmeduz
+GdRuaenFFUPV3J6eyF1nTdeP9fz+8JUNPzgPeTlS8qMjZ+oR4Tq/ecwisf6Lz0QRDZqv9vUI6fO6
+UnJILlRyiJ0xw/Qp4v12OZxwtIOLe9T8nKlF31c0tw9KbDPGU+oOxHzp1N4gJDbOwnYOYnchTK0M
+w9qVJ+/T1PRBPHJTXZztcP19qWDdTRhmiUTnMUipuzDFps8QqpY8WD8A8QxVn4Is2MU9yZS6f7Y0
+kK0/ZzdG59Rri4VU4xeJbcBoSn0EYmY1KU1aOJ8/QtVXfV/y9lj/NU2drJKqc5YhaHKoD6irJHZA
+eCHKvx80j4S4cEY1Ti7muY2VhKrJ6nvR2r1svZmqceiOUO7Ugz5cymPpgy+qTxbvC5pJeeW/j+hc
+lldgutXzmocsTPXoglTPa85HtLcX02wsiAZVy6tpbyU1aTYWogZV78zT1J9oM9yAgLEgiBeKVyC0
+5vM4PwH5YwOqWxmqVte6afXM228hd+8KN7V5/EfKorSgFsbqyrHrsMtwan+Rpp52yiu1jYXmSX7K
+VaCwdehLqQfAyWV0/mk0dRHDLApBtHXla4uCU4Mg1Tu3C9y6UErdiajkxEHDqS8z2r0WWwLBWbXc
+VqZ+aIpi0rhqfKCpp1xKfWpjYZKXGuthasHu1MbCSYyQKgNmCO2OWm+8/zAFLNpflbxnb2hbh9Xf
+WSque4j2Rls5nmq3GlCtPkcrX+RNbbH7noArZ0HegHIirH40Tivf6TGQbkOOjcp8l+jG2MXZsiDV
++F+dTn2N0RtsltVykV6B6Q9QDJDuykXS1AAAAABJRU5ErkJggg==" alt="Questão 43a" title="Questão 43a"/>#
+	=<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWoAAAAsBAMAAAC+gO8VAAAAMFBMVEUxMDg2O0JFS1JPVVxiYGRq
+a259e3+Gi42UmJugpKepra/Jx8vb3uHp7O34/P/9//w9zTzWAAAACXBIWXMAAA7EAAAOxAGVKw4b
+AAAAB3RJTUUH5wkIDBU2/iRB7QAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcA
+AARsSURBVFjD7djvSxtnHADwR8tGaRLSuc51JkPaF4XVloLrwK6EqN0yJZbbWF9kbCVU3GSdEFcd
+c5SRVVe9asbh5ouVFqTFF9tayOmq2MXyxFJKpoWzrLAVB/cfbNFEveR5ju+ei02rdsl6mt1O2PfF
+XfLwHM8nT577Pj/Q4mt6A0NhQ9UtaEC/RHTGuL+QZB4g9a5eQjO6p7cdUkj19Y4+SAX1PtWzTvX0
+RrmkL3Mbe+Yj49S0aqPqtq6MNV2JjVMP61ILAPKaImpVrdpdiQjGqUO8nic41rVr2MQN3uxn48Z1
+XvUdVkkCOgHqRLaounR1FYWDOnOpn37bRXcclBtrBkeOuEWIYztTo5dMrt4K9XM4GbSSQB2891CN
+KlbWSXNQby61BQaiQLjK09B/Un6gfhMhtBJHy8FpLrUVBkT2uqVPuGmb81Ffl0grK3nGuKXwLYPV
+P+Tt6+YZael4ULVcBV8cZh6ow6sq/eqRjVfni6LvnEuvnpFeGXd3/eSYf6d2WZ2bZg71Nl6C8RDc
+PyeneUz5KYnNMtVH4d9R08jqJeiNR9kXZvWoLX9TFoEnV1NpudHlCwucR51EaN9jjV8E1cFu4kbV
+oENNygF8mj6bZWz51BhOPdbXXqBYb1/DBtXgYMsUrSH8ZGqRjAZuvyFPDbTQ7xtCantLeg8e8siR
+92MwWm+c+hNI+X/zSASTY4ICimSjTZ/nUfcrz199Ycw93PL17HNfWRKn+38/9PPha/4zn4m0bNRv
+mDoqJ8Ke6/sUYfhKVZzle9vdC51yLvXBGofCKQGoEOXEFRtYfoTkoJdKae5LEBeCyytLQ9TJ8CSb
+OzsUoRmmM+pvIBHOpb4wAYqwIEDdNUj22cHyBUKCV23aoqnZH3E4qy7ZXdjYFVijTnOfEoSeUgS2
+wMqoeWCsnCOEqZeCcGiE/QKmHgIK3oUWklEPPkwNpOFOYSO2tq9Vp5McAFkRfDCVUXdDMr+aOIlT
+xJPTTD2J72LvfPiepk7tT5UbNkKgiVPL1L2KcFk+G8citk1KUSmvGvorsVhbRpiaPLsTWnt3VJUz
+NbTuloxTR8Nwc1dQEZTio0pRO7alS8r+eUYXjTtZKOA6ZHOqY5tSva41H9UuH+bYoidNqlbfYm8r
+deU4DombVN1axNREO0m4wVals1g7WKARIEBlDNMz2lfzqS8hplaPNLLsuaXJRUpflts6g8PtrjhL
+qPbFPdXQ2Rgwnfom0tSKn01psBWa5/BCwErZhBzKqEdkkb6oVphOvR2hYgmSdbxV2xQMRdkW/cRJ
+WayXMupuiCscdJi0r5M+PpRVHyCn9tMBSxzmsb2Hqf25DyP+43G9GKAsy22DD+awcpwDSx90xOUZ
+bL8MUTZ09po0h9DSLvbKFfc4Uzs/ll7vdl/iHYm6WmxP+Krh2FmXGfN1Dct893u1ze55GWIXIX1O
+Jryknp+SBPXbGJBe2bRz43q26OY4xdmcavhfnUudQHpDKLCabNcrsCD4Q29AoUO34M+/AKFHLLWs
+LTQDAAAAAElFTkSuQmCC" alt="Questão 43b" title="Questão 43b"/>#
+	~<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWoAAAAsBAMAAAC+gO8VAAAAMFBMVEUuLjU2O0JJT1ZcW2JlaGpz
+cXWEiIuUmJuip6mprbC7vsHMyc3Y1trk6ezu8fD9//wDYK7qAAAACXBIWXMAAA7EAAAOxAGVKw4b
+AAAAB3RJTUUH5wkIDBgGbVMPDAAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcA
+AATQSURBVFjD7dj/TxtlGADwY2bOWWhRwtyEwGhTM2DCWoLDYej+AL9RU4pjyWUz+MMS14yFdRnZ
+zkDmlrisg8Vvi7Eakhlclh4kBqSk57boLxoL/iBx6G7DmC1BvbPNcdfel8f3Wpkb7CrH6nFLfH7o
++6a8Rz8cT5973hcTXtcbcchHRP+Z6hbsx2ZP6oy3XsoHetZelxk/ABCa9BLasF/0fp6YF3U3tKvD
+1eBFEAJ6Lz60MrUUy85/X7G6Bs5KHoDBghrj1F5XNrn9K1ZbgJQJ9Ofb44apxTrBo06/f2JZVxD3
+VqsDN4QbpuYDijWJ7nZ7cFlXeNQ0XqIeWZgapU4SYOFpNA8u96Kd6xe98SwcXw11Zn5P9bqqgGR/
+GPqrwperAiSwlA2pC56/e9HAH9UyYayay6leq1QnQrOENY37lecW1FjBi3ct4qsIqdJYtYDLNm21
+BQ5OQsrj/Ai6TsFtNYaFFi/EjVXLhRyunddWODsMYv0PmwOpl5++Qx1etE6OG6uGkVImQWWfx0vj
+UeicZIQWQrZcVLZfv63WtBmmRjFPay1YM17OdXwS2ThW8Vq0+s+e1qz6BTCDOq25YF0jBX274KvG
++M2GsOQ7H0f1emcZmEKd62G9NN6D/0idxLDdSz58AqAaDeT9qkGHOlUP0IZG5e//j2LNpaZE750/
+yrR1zSCqv3NOjzp2n2rlSVAK1RwMLUsNpDgWunUYfhw9LZ87dhROnE45qdHDTPTkNEwfyW9/nStD
+fOh2p4KMSMnBCA/8NatyIpRD3c+X7ncO4sM1XtH+hoXb5U05xzcN4F1tpLxhIGCY+hIkw3vfreOJ
+qX1bWGBj1sSrXk21o2E9Xy94lK0kk7hQBJbLkAg3p6m0pwtIDpeLDFMnwlO/WaGdJzrhi4y6F72l
+pfYfofkAajGaRiDZYwPLgQY30QzHXZ6DQCYjULugdvryG68sVgt4d7qkwckT2wEy6qDa+WhmCPDE
+fFb9NlL3RqN0M7fjakYdhoWKK+74LL9xfrFasW4Va6MTqnouo+5Wu8xc6lSdVEjGJ2eQeio+G2lO
+RDhVzXvECsMyBNrq5TJo4ok+6GXpL2PWYeZGPKcabQlDpGOTiNRCiRO875c6K5FacbvCxqk/DsGA
+u4UnOEc5V+KOWecdG7S+jRKD2jAa5BiQc7RCobI7FweR/oaJ/YTqtRwzrvKByIAyoWJmGPhWYiiY
+of/9iU4acB6S/z7kygOpXlH3pKgv5zQOFnizqveg1JMrNA4WWJOqzxSg2iSr+xu4hibo3qP5dwt7
+LaSmTai+Uqyq99rRy0P2FsnuZPpd4UtuD4sKqm3+8W3Q7wqbTv1rMYbUQp3aGq+FpkQoSRSJuB92
+Z9TDzJtyoVxmOnUxpqqTHdEidVPQN4m26PZTcGAfZNTdwAoe7ZPMVVOfyar9waOqepAEsfLWNk+6
+tZyFBGU7BCyPa5+urV5e71HVXEA5ljlYYOlUC6FYPgQ/qx4s9MJ1lDpbzKeWXUgtbfwcVbk1Q+Xz
+tf2Rp8YqusZrEh2tlO1Gz2ZwjlaYsPKJj6Hy8XUT6mUe8cXhnQ6YbqRTvojkG6IJufNTuPkMY8an
+THqlW3RznIc8mGr4X62pbtAZ7kCe1WmHXkI1pvysNyDfoVtA/wX8dBVPwDQ2VAAAAABJRU5ErkJg
+gg==" alt="Questão 43c" title="Questão 43c"/>#
+	~<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWoAAAAsBAMAAAC+gO8VAAAAMFBMVEUuLTU2O0JDSVBQVlxjYWVr
+am12dHiAhIeSl5mmqq3CwMTMyc3V2Nvg5efu8fD9//yAabl3AAAACXBIWXMAAA7EAAAOxAGVKw4b
+AAAAB3RJTUUH5wkIDBgtwe/2TAAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcA
+AASkSURBVFjD1dltTBt1GADwqzWbWWnrNhJhXVgmW0KJQgbzA8EILIQXa6iJmZnxA1OIgfRDozGb
+H4znZiG3aDlhDUbJdpAlmrAPPTdGZB9627LMlyw7fMlkme7GhgnRhDu7Qu+43j3+7yios63c2pXj
+/+Ha3kvud3fPPc9zV0y5anTwAEBADodhAYvdrTY4qnCA+GPJHSb47NGLpUYJbmzG8E7aAfa/s/Rd
+jUWyV0u40S2IB1NzyQhZKG1g1o96Ja5Hns1OfLxoLdQ1zVmh5ad/pNZAzV5bxRZOlCZSL5knF715
+Vcv8L6vdAoV+Q2pZjJGdeVULzAdpVvjoDQYG34Wfm3mpiZkCkSMB6h+nUq36Z37Vv2Y419ZRV7y2
+n3GPewMTdhodHoqQemxLqmQTza8609gEh25zYvsmlXmZv7aixgq5FBFCyZUmUdshRINcN7CBuWyl
+kuqDGGZJgZP8cb9J1DYIXACUG762w43iC8vn2rItxarq3g7eJOqNqjtKzQTtakENdAssvaQuS52w
+I2AStbUKT5Tu5vsb8EvVbeLWDl1dyJugomeMkFsACkKyWqqBOX3em8xD6kMkgvhXTg1qE7TPIfQx
+ZSyu/zt4A92TjBijeuJPzujLoI51EU/8c9EL2uRVkJ9DH5eNqINZ9nyKHcCtza9L3rKOTGoGhkHh
+VHQtZQ5UdH1lAA8kIvqF1n6vUp11p9oK8g7QG5ybSbWcSU2L9ZVv7aPONhbL1TabtMsd33qitD4c
+sNDw+koj/fDVA7CAj+zDRXJh11MCCBGHVFicVj10/hmx4veKhJ1mpm/awDbJ3mE8Ii55j8zRYtti
+Sd7U0+z0LZdaLpIhvkdXf8lf5NKp9zb2if44Ca1n0BE4wTZAHCU98MegNwB0jALXsvr50dyOL+5X
+L+AhuYhoFskWAF3dCzEyfYSASM6T0DIGsQ+R+ihBMB6p8JiuDkPtsnr3/tyOl+5XJypfkcuIY3+r
+CVjIrBb9UE7z0dNIfQYkxhMNS5p6HlfteYsQqClJOOC0SB6CcYG/HXEchyiVUa0WjdfRvg7UQNru
++Y5wTed8A3VIrZSd8udP3e+HxontIvnDZzVR32sRx11fB5+uyqCAlxmY7ebpz08qJEq7g0H4JtJz
+gpxAVWaqO3+ZD2Y5kLo4mVF6w8rhb7k+tffk/1d0OruKvkZvFtan+sG7p6tpHnZls6qva/dLeZoX
+C4JJ1fHNqFFRqDTn2qRqyWJB6iutWu/TGYaAD640sbNN4RjEWW+icxiuN3GmU8s7MaSWt51DSd36
+nSteOxJ2f1XZc367gMqAc3roRbVsosR06gZMU6MC6tReLPQInOQt5rlOltXVIZhEvXKL6dR7dHUM
+w2zao8wYjRrkU9bwb4/06WoCBLE9/d8La6aWltQUcJo6NAmLddyNgrnFGkF7sdADguSFLvPdjaKm
+liqkHQAbVPc9cqavQC04AN0CM8w4v2c/VgoSLhNmvhkt871fhSaPbsYTVRv5/j3kT0+2SZa3Gae0
+5SCM7KTMWGXG+AyP6Oau6OtXHVyX6rz0fHc+NTg+8eZa3WqUcAATDxsdbI7VqmHBe38B92xHX0yX
+cJ4AAAAASUVORK5CYII=" alt="Questão 43d" title="Questão 43d"/>#
+	~<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWoAAAAuBAMAAADzSE4eAAAAMFBMVEUuLjY2O0JDSE9PU1dgX2Jl
+aWtwbnKAhIaSl5mpqa3Aw8bMyc3X297k6ezw8+/9//w5ukRxAAAACXBIWXMAAA7EAAAOxAGVKw4b
+AAAAB3RJTUUH5wkIDBkgpkW7sAAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcA
+AASsSURBVGje7dhvTBtlHAfwwyUz2FB4QbIxsESHIxuoE5bg3AtWJBMkribG14oms3NTMjA5Jm6X
+/YkUGR4IgXXKzmWLG2jSIyy6Tm3Z4ht1yUE0ESXaRWIywpKrXUPver37+lyBZeDKuBbLLfFHcg95
+7p7eJ5fn+T1/KCQVP2JVg0qqlfb0Kqsl2mgIwJl5dURInaAZFhymfnIbjL5XgHbX7AujvQNiamQ3
+INcaJTipn42+RyFqzKll+6ZASugfXP2QGaOtXKmp0V2aJDe6y6MXFzPqVkH9VluS6qHBfL2IlQmr
+oF5WsHep24tWvZgZbEirWgp4l9vCAby/uC4fw/P/pk/tRljoM9BoZ+aiCgv49KuXigcfZWJl69Bl
+565WMTyC/myiJqNukXrIXOq1Wu0tbpK1Kg1Obf+8msp4YcFDJThnLrUFx0cQdRT14+gJzKlfpKgM
+7s6HaPJnKrUVPTyUyqmtjFz/+O1vTVEL1GP0w9HCMGse9UOgr4vS26xq6Yfz+u0estCmukXVHwuY
+R73GWxDZccaz3mtrurzl75b62dF4KOHz5lBn7hHQsw+/PCfc2MXF9gwESD+wl8Dkastd6k7iP1KH
+KWr/v17+BbCZFHyqahhQy08inmC0/Ln1t3UptV9tvPOWT7/UQdF/c9qI2peiWtsALUtfFnLLUoNX
+vNzUQfx64bR6qqMDfaflYv+lNvFr9zjG25atRopq8qHlStklKn7VxUmQ/rBqJ7kl1F3SusPFnzmG
+djQpGw9Zwvua5OLLG84yR5p5df1ZJm3qK7jFvXPeJrFjH2wPIuizTr75ekL1tupMqVJyaCW8GPrc
+CstV0rhO9kcdx8BHGDUrbeoQN3bTioMSS+P7uLqbVCVSN7cHJGaGRc1FhNuzYTlSXcXWab1POY6D
+D3swn7uUx15e2XhpsVpuoKO51cUSWwPE1S5E2MQ9BBJLbtcOI/wxUffoozFS91tczSF/Xv384MrG
++cVqzVqqVOoYJ6bj6laEl1bLT8SyeGFkgqhHhT+5upBnRldLDsWWth4CupJkvRqJ7UFvMDDisw6J
+Y8KSajTaOX5bnkLUcm4x6t25FYVErb1m59Kn/pRDV9VuiZ0pKo3klvuskdy8e8yNmo8kwNnjAlIo
+4sTsgYfqS1/mi8c3+mUCuKaX0+K9Z3Q+tRl9ZdSG1yHf3ZfqpFZPqn45leBgQTKr+gAZ5aotwcFC
+0KTqzgyijsVPwX4nfFEf1fh27uZNovabUD2co6sbq8hlTfnuWNEm8aidu1LlCJKEmh0p2omP7Jzp
+1H/lUEQtO6JkabwWNSEuzGQpDU68F1cPiZ1qgZpvOnUORT0gIFzjytI3BT2jZIv+7Al0vYu4uhVB
+2YFm06k7Kf1bh52uDl19jodSOPWqQ2ksCCIUV0tM4gPN1evXB3T1DKN9SDa7oIMBaTerWT5Bc1AM
++rO7MUp2VdvNp1btRB3L+5JkuYyB0sgzXZ4Kr+3Y4JaQfrAw2bIVFV/ZTJj5oo+Q9DG+l6wXMmkB
+fS248UZApj0q7Q2wGn0JU07RjLNMNNktujnOQ+5PNf5XJ1JPlhuMMmaF1cpGo4TNlHrNaGClw7BA
++AfrzqpLOCskNAAAAABJRU5ErkJggg==" alt="Questão 43e" title="Questão 43e"/>#
+}
+
+::POO - Relacionamento entre Classes - Questões de Concursos - 003::[html]<p align="justify"><b>(SEFAZ/RR - 2022 - Desenvolvedor de Software/Tipo A - IDECAN - 70)</b> O paradigma de programação orientada a objetos envolve a identificação e abstração de entidades, de acordo com o escopo de um sistema. Selecione a alternativa que mostra um tipo de relacionamento estrutural que especifica quais objetos de uma classe estão conectados a objetos de outra.</p>{
+	~Encapsulamento#
+	~Composição#
+	~Generalização#
+	=Associação#
+	~Agregação#
+}
+
+::POO - Relacionamento entre Classes - Questões de Concursos - 004::[html]<p align="justify"><b>(SEFAZ/RR - 2022 - Desenvolvedor de Software/Tipo A - IDECAN - 71)</b> Em UML, um diagrama de classes descreve os tipos de objetos presentes no sistema e os vários tipos de relacionamentos estáticos existentes entre eles. Selecione a propriedade de diagrama de classes UML que existe se mudanças na definição de um elemento (o fornecedor) podem causar mudanças ao outro (o cliente).</p>{
+	=Dependência#
+	~Generalização#
+	~Multiplicidade#
+	~Associação#
+	~Atributo#
+}
+

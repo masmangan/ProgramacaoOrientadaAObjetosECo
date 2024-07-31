@@ -1,0 +1,183 @@
+$CATEGORY: $course$/POO-03-IntroducaoALinguagemCPP
+
+::POO - Introdução à Linguagem C++ - Questão 01 - Versão 001::[html]<p>NÃO é uma característica da Orientação a Objetos:</p>{
+	~Permite organização modular e independente do código#
+	~É fortemente relacionada à Engenharia de Software#
+	~Favorece a manutenção do código#
+	=Baixa reutilização de componentes#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 02 - Versão 001::[html]<p>Qual das afirmações a seguir sobre Orientação a Objetos está correta?</p>{
+	~Há alta dependência entre componentes#
+	~A manutenibilidade dos programas é mais complexa#
+	~Há um significativo aumento no tempo de implementação#
+	=Favorece a reutilização de componentes#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 03 - Versão 001::[html]<p>Quem criou a Linguagem C++?</p>{
+	=Bjarne Stroustrup#
+	~Brian Kernighan#
+	~Dennis Ritchie#
+	~Ken Thompson#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 04 - Versão 001::[html]<p>Sobre a Linguagem C++, pode-se dizer que</p>{
+	=suporta Orientação a Objetos#
+	=é imperativa#
+	~suporta o paradigma funcional ou declarativo#
+	~é restritiva#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 05 - Versão 001::[html]<p>Qual das seguintes informações NÃO corresponde à Linguagem C++?</p>{
+	~Acrescenta Orientação a Objetos à Linguagem C#
+	=NÃO possui recursos procedimentais#
+	~Possui construtores adicionais para Orientação a Objetos#
+	~É extensível#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 06 - Versão 001::[html]<p>Sobre a programação em C++, qual afirmação está correta?</p>{
+	~Suporta apenas comentários de uma linha iniciados com <code>//</code>#
+	=<code>Headers</code> das bibliotecas padrão NÃO têm a extensão <code>.h</code>#
+	~Usa-se apenas <code>printf</code> e variantes para impressão#
+	~<code>std\:\:endl</code> sinaliza o final de um arquivo#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 07 - Versão 001::[html]<p>Em C++, para imprimir na saída padrão, usa-se</p>{
+	=<code>std\:\:cout</code>#
+	~<code>std\:\:cin</code>#
+	~<code>std\:\:endl</code>#
+	~<code>std\:\:cerr</code>#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 08 - Versão 001::[html]<p>Em C++, para ler da entrada padrão, usa-se</p>{
+	~<code>std\:\:cout</code>#
+	=<code>std\:\:cin</code>#
+	~<code>std\:\:endl</code>#
+	~<code>std\:\:cerr</code>#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 09 - Versão 001::[html]<p>Em C++, quando se usa, por exemplo, <code>std\:\:cout</code> ou <code>std\:\:cin</code>, <code>std\:\:</code> corresponde:</p>{
+	~a um arquivo de cabeçalho da biblioteca#
+	~ao nome da biblioteca#
+	~a uma diretiva de compilação#
+	=a um espaço de nomes (<i>namespace</i>)#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 10 - Versão 001::[html]<p>Em C++, para usar apenas <code>cout</code>, em vez de <code>std\:\:cout</code>, deve-se usar:</p>{
+	=<code>using std\:\:cout;</code>#
+	~<code>using std\:\:all;</code>#
+	~<code>using std;</code>#
+	=<code>using namespace std;</code>#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 11 - Versão 001::[html]<p>Em C++ qual operador de redirecionamento é usado com <code>std\:\:cin</code>?</p>{
+	=<code>&gt;&gt;</code>#
+	~<code>&lt;&lt;</code>#
+	~<code>&gt;</code>#
+	~<code>&lt;</code>#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 12 - Versão 001::[html]<p>Em C++ qual operador de redirecionamento é usado com <code>std\:\:cout</code>?</p>{
+	~<code>&gt;&gt;</code>#
+	=<code>&lt;&lt;</code>#
+	~<code>&gt;</code>#
+	~<code>&lt;</code>#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 13 - Versão 001::[html]<p>Em C++, para atribuir um valor lido do terminal para uma variável chamada <code>x</code>, pode-se usar:</p>{
+	~<code>std\:\:cin &lt;&lt; x;</code>#
+	=<code>std\:\:cin &gt;&gt; x;</code>#
+	~<code>std\:\:cout &lt;&lt; x;</code>#
+	~<code>std\:\:cout &gt;&gt; x;</code>#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 14 - Versão 001::[html]<p>Em C++, para escrever o valor de uma variável <code>x</code> no terminal, pode-se usar:</p>{
+	~<code>std\:\:cin &lt;&lt; x;</code>#
+	~<code>std\:\:cin &gt;&gt; x;</code>#
+	=<code>std\:\:cout &lt;&lt; x;</code>#
+	~<code>std\:\:cout &gt;&gt; x;</code>#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 15 - Versão 001::[html]<p>Em C++, <code>\:\:</code> é chamado de operador:</p>{
+	~de conjunto#
+	=de escopo#
+	~relacional#
+	~de contexto.#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 16 - Versão 001::[html]<p>Em C++, se há uma variável global <code>x</code> e uma variável local <code>x</code> em um bloco</p>{
+	~dentro desse bloco somente é possível acessar o <code>x</code> local#
+	~<code>\:\:x</code> corresponde ao <code>x</code> local#
+	=<code>\:\:x</code> corresponde ao <code>x</code> global#
+	~<code>x</code> corresponde ao <code>x</code> global#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 17 - Versão 001::[html]<p>NÃO é um tipo primário da Linguagem C++:</p>{
+	~<code>bool</code>#
+	=<code>string</code>#
+	~<code>float</code>#
+	~<code>char</code>#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 18 - Versão 001::[html]<p>Em C++, em vez de <code>malloc</code> deve-se usar:</p>{
+	~<code>calloc</code>#
+	~<code>create</code>#
+	=<code>new</code>#
+	~<code>push</code>#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 19 - Versão 001::[html]<p>Em C++, para desalocar memória alocada com <code>new</code> usa-se:</p>{
+	~<code>free</code>#
+	=<code>delete</code>#
+	~<code>destroy</code>#
+	~<code>pop</code>#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 20 - Versão 001::[html]<p>Em C++, para ter uma variável constante (que NÃO muda de valor) deve-se</p>{
+	~usar exclusivamente <code>\#define</code>.#
+	~declará-la como <code>static</code>.#
+	=usar o modificador <code>const</code> na sua declaração.#
+	~declará-la como <code>private</code>.#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 21 - Versão 001::[html]<p>Em C e C++, para que o valor de uma variável local de uma função seja preservado deve-se</p>{
+	=declará-la como <code>static</code>.#
+	~transformá-la em constante.#
+	~torná-la global.#
+	~declará-la como <code>const</code>.#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 22 - Versão 001::[html]<p>Sobre as estruturas de controle de C++, qual a novidade em relação a C?</p>{
+	~Há novas estruturas de controle#
+	=O comando <code>for</code> suporta declaração de variável#
+	~O comando <code>do</code>/<code>while</code> foi eliminado#
+	~O comando <code>switch</code>/<code>case</code> foi eliminado#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 23 - Versão 001::[html]<p>A passagem de parâmetros para funções em C++ deve ser feita</p>{
+	=por valor ou por referência.#
+	~apenas por valor.#
+	~apenas por referência.#
+	~através de variáveis globais.#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 24 - Versão 001::[html]<p>Em C e C++, na passagem de parâmetros por referência</p>{
+	=passa-se o endereço do parâmetro na chamada.#
+	~passa-se o valor do parâmetro na chamada.#
+	~NÃO é possível modificar o conteúdo do parâmetro na função.#
+	=É possível modificar o conteúdo do parâmetro na função.#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 25 - Versão 001::[html]<p>Em C++, a substituição da chamada de uma função pelo seu código</p>{
+	=pode ser definida com o modificador <code>inline</code>.#
+	=melhora o desempenho quando a função for muito usada.#
+	~NÃO é recomendada para funções muito pequenas.#
+	~NÃO pode ser feita com <code>\#define</code>.#
+}
+
+::POO - Introdução à Linguagem C++ - Questão 26 - Versão 001::[html]<p>Em C++, pode-se atribuir um valor padrão para um parâmetro de função</p>{
+	~usando o modificador <code>default</code>.#
+	=acrescentando um igual e um valor à sua declaração.#
+	~acrescentando um igual e um valor na chamada.#
+	~atribuindo um valor para este parâmetro no início da função.#
+}

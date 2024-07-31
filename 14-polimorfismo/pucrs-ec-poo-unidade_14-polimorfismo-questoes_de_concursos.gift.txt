@@ -1,0 +1,127 @@
+$CATEGORY: $course$/POO - Polimorfismo - Questões de Concursos
+
+::POO - Polimorfismo - Questões de Concursos - 001::[html]<p align="justify"><b>(PRODAM/AM - 2014 - Programador / Desenvolvedor -  Fundação Professor Carlos Antonio Bittencourt - 26)</b> Entre os princípios da programação orientada a objetos, um possui as características listadas a seguir:</p>
+<ul>
+<li>capacidade de uma variável se referir em tempo de execução a objetos de diversas classes.</li>
+<li>capacidade de abstrair várias implementações diferentes de uma única interface.</li>
+<li>capacidade que objetos diferentes têm de responder a uma mesma mensagem.</li>
+</ul>
+<p align="justify">Esse princípio é conhecido por:</p>{
+	~encapsulamento.#
+	~generalização.#
+	~acoplamento.#
+	=polimorfismo.#
+	~coesão.#
+}
+
+::POO - Polimorfismo - Questões de Concursos - 002::[html]<p align="justify"><b>(AFC/CGU - 2012 - Analista de Finanças e Controle / Tecnologia da Informação / Desenvolvimento de Sistemas da Informação - ESAF - 8)</b> Polimorfismo é</p>{
+	~a multiplicidade de atributos de determinada classe.#
+	~a propriedade de um diagrama de classes ter múltiplas classes possuidoras de atributos.#
+	~a habilidade de um atributo ou variável poder identificar instâncias de classes com atributos dependentes.#
+	~a propriedade de uma instrução poder apontar para múltiplos objetos de uma mesma classe sem implicações de desempenho.#
+	=a habilidade pela qual uma única operação ou nome de atributo pode ser definido em mais de uma classe e assumir implementações diferentes em cada uma dessas classes.#
+}
+
+::POO - Polimorfismo - Questões de Concursos - 003::[html]<p align="justify">Com relação às propriedades da linguagem C++, julgue <u>o item</u><s> os itens</s> a seguir.</p>
+<br/>
+<p><b>(INPE - 2009 - Tecnologista da Carreira de Desenvolvimento Tecnológico / Tecnologista Júnior Padrão I - CESPE - 44)</b> A linguagem C++ suporta polimorfismo, mas apenas estático<s>s</s>, ou seja, em tempo de compilação.</p>{
+	~Certo#
+	=Errado#
+}
+
+::POO - Polimorfismo - Questões de Concursos - 004::[html]<p align="justify"><b>(TSE - 2007 - Analista Judiciário / Apoio Especializado / Análise de Sistemas - CESPE - 40)</b></p>
+<pre>
+class Porta \{
+&nbsp; int numero;
+public:
+&nbsp; Porta(int numero):numero(numero)\{\}
+&nbsp; virtual \~Porta()\{cout &lt;&lt; "Fechar" &lt;&lt; "\\n";\}
+&nbsp; virtual void enviar(char) throw (invalid_argument) \= 0;
+&nbsp; int getNumero() const \{return numero;\}
+\};
+class Serial:public Porta \{
+&nbsp; string nome;
+public:	
+&nbsp; Serial(int numero, string nome):Porta(numero), nome(nome)\{\}
+&nbsp; \~Serial()\{cout &lt;&lt; "Encerrar" &lt;&lt; "\\n";\}
+&nbsp; string getNome() const;
+&nbsp; void enviar(char) throw (invalid_argument);
+\};
+&nbsp;
+inline string Serial::getNome() const \{
+&nbsp; return nome;	
+\}
+&nbsp;
+void Serial::enviar(char dado) throw (invalid_argument)\{
+&nbsp; if (dado \=\= '0')
+&nbsp; &nbsp; throw invalid_argument("Valor nulo");
+&nbsp; cout &lt;&lt; "Enviar " &lt;&lt; dado &lt;&lt; "\\n";
+\}
+</pre>
+<p align="justify">Considerando o trecho de código apresentado, escrito na linguagem C++, assinale a opção correta.</p>{
+	~Ao se instanciar a classe <code>Serial</code>, não há como inicializar o atributo <code>numero</code>.#
+	~Há erro de sintaxe, pois um método não pode ser <code>const</code>.#
+	~Todos os atributos e métodos herdados de <code>Porta</code> tornam-se públicos em <code>Serial</code>.#
+	=Na classe <code>Porta</code> há um método virtual puro.#
+}
+
+
+::POO - Polimorfismo - Questões de Concursos - 005::[html]<p align="justify"><b>(TSE - 2007 - Analista Judiciário / Apoio Especializado / Análise de Sistemas - CESPE - 41)</b></p>
+<pre>
+class Porta \{
+&nbsp; int numero;
+public:
+&nbsp; Porta(int numero):numero(numero)\{\}
+&nbsp; virtual \~Porta()\{cout &lt;&lt; "Fechar" &lt;&lt; "\\n";\}
+&nbsp; virtual void enviar(char) throw (invalid_argument) \= 0;
+&nbsp; int getNumero() const \{return numero;\}
+\};
+class Serial:public Porta \{
+&nbsp; string nome;
+public:	
+&nbsp; Serial(int numero, string nome):Porta(numero), nome(nome)\{\}
+&nbsp; \~Serial()\{cout &lt;&lt; "Encerrar" &lt;&lt; "\\n";\}
+&nbsp; string getNome() const;
+&nbsp; void enviar(char) throw (invalid_argument);
+\};
+&nbsp;
+inline string Serial::getNome() const \{
+&nbsp; return nome;
+\}
+&nbsp;
+void Serial::enviar(char dado) throw (invalid_argument)\{
+&nbsp; if (dado \=\= '0')
+&nbsp; &nbsp; throw invalid_argument("Valor nulo");
+&nbsp; cout &lt;&lt; "Enviar " &lt;&lt; dado &lt;&lt; "\\n";
+\}
+</pre>
+<p align="justify">Ainda considerando o trecho de código apresentado, escrito na linguagem C++, assinale a opção correta.</p>{		
+	~As classes <code>Porta</code> e <code>Serial</code> são abstratas e não podem ser instanciadas.#
+	=Os métodos públicos na classe <code>Porta</code> são públicos na classe <code>Serial</code>.#
+	~Em todo o código, só há um método <i>inline</i	>.#
+	~Na classe <code>Porta</code> há erro de sintaxe pois destrutores não podem ser virtuais.#
+}
+
+::POO - Polimorfismo - Questões de Concurso - 006::[html]<p align="justify"><b>(UFG - 2023 - Técnico de Tecnologia da Informação - Instituto Verbena - 32)</b> Classes abstratas e interfaces são recursos presentes em Java. Sobre o emprego de ambos,</p>{
+	~todos os métodos de uma interface devem ser implementados na própria interface.#
+	~todos os métodos de uma classe abstrata devem ser definidos como abstratos.#
+	=uma classe abstrata permite subclasses abstratas e concretas.#
+	~uma interface permite a definição de atributos (propriedades) na própria interface.#
+}
+
+::POO - Polimorfismo - Questões de Concurso - 007::[html]<p align="justify"><b>(SEFAZ/RR - 2022 - Desenvolvedor de Software/Tipo A - IDECAN - 74)</b> A Programação Orientada a Objetos surge como um paradigma centrado no desenvolvimento de objetos. Selecione a alternativa que mostra o paradigma de desenvolvimento de software que é uma coleção de operações empregadas para especificar o serviço de uma classe ou componente, e que não pode implementar nenhum método, apenas define o método e suas assinaturas.</p>{
+	~Encapsulamento#
+	~Classe abstrata#
+	~Polimorfismo#
+	~Herança#
+	=Interface#
+}
+
+::POO - Polimorfismo - Questões de Concurso - 008::[html]<p align="justify"><b>(MEC - 2009 - Desenvolvedor - FGV - 47)</b> Na Análise Orientada a Objetos, o princípio pelo qual duas ou mais classes derivadas de uma mesma superclasse podem invocar métodos que têm a mesma identificação (assinatura) mas comportamentos distintos, especializados para cada classe derivada, usando para tanto uma referência a um objeto do tipo da superclasse é denominado:</p>{
+	~encapsulamento.#
+	~independência.#
+	~modularidade.#
+	=polimorfismo.#
+	~herança.#
+}
+

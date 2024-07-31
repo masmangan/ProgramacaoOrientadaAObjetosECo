@@ -1,0 +1,31 @@
+digraph "Exercício 1" {
+        rankdir=LR;
+
+        node [shape=record];
+
+        head -> A;
+
+	A [label="{ <data> 10   | <ref0>   | <ref1>   | <ref2>   }"]
+	B [label="{ <data> 9    | <ref0>   | <ref1>   | <ref2>   }"]
+	C [label="{ <data> 2    | <ref0>   | <ref1>   | <ref2>   }"]
+	D [label="{ <data> -15  | <ref0>   | <ref1>   | <ref2>   }"]
+	E [label="{ <data> 22   | <ref0> ∅ | <ref1>   | <ref2>   }"]
+	F [label="{ <data> -122 | <ref0> ∅ | <ref1> ∅ | <ref2> ∅ }"]
+
+        head [shape=plaintext]
+	
+	A:ref0:c -> B:data:n [arrowhead=vee, arrowtail=dot, dir=both, tailclip=false];
+	A:ref1:c -> D:data:s [arrowhead=vee, arrowtail=dot, dir=both, tailclip=false];
+	A:ref2:c -> B:data:w [arrowhead=vee, arrowtail=dot, dir=both, tailclip=false];
+	B:ref0:c -> C:data:n [arrowhead=vee, arrowtail=dot, dir=both, tailclip=false];
+	B:ref1:c -> D:data:s [arrowhead=vee, arrowtail=dot, dir=both, tailclip=false];
+	B:ref2:c -> C:data:w [arrowhead=vee, arrowtail=dot, dir=both, tailclip=false];
+	C:ref0:c -> E:data:n [arrowhead=vee, arrowtail=dot, dir=both, tailclip=false];
+	C:ref1:c -> D:data:s [arrowhead=vee, arrowtail=dot, dir=both, tailclip=false];
+	C:ref2:c -> D:data:w [arrowhead=vee, arrowtail=dot, dir=both, tailclip=false];
+	D:ref0:c -> E:data:n [arrowhead=vee, arrowtail=dot, dir=both, tailclip=false];
+	D:ref1:c -> F:data:s [arrowhead=vee, arrowtail=dot, dir=both, tailclip=false];
+	D:ref2:c -> E:data:w [arrowhead=vee, arrowtail=dot, dir=both, tailclip=false];
+	E:ref1:c -> F:data:s [arrowhead=vee, arrowtail=dot, dir=both, tailclip=false];
+	E:ref2:c -> F:data:w [arrowhead=vee, arrowtail=dot, dir=both, tailclip=false];
+}

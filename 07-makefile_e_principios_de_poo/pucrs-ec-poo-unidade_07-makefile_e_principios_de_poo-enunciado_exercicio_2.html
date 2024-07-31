@@ -1,0 +1,592 @@
+<p style="text-align: justify;">Considere o diagrama de classes UML abaixo, que mostra o relacionamento entre as classes <code>Pessoa</code>, <code>Aluno</code>, <code>Professor</code>, <code>Recurso</code> e <code>Turma</code>, e implemente estas classes em C++.</p>
+<p style="text-align: center;"><img src="https://moodle.pucrs.br/draftfile.php/1331534/user/draft/988633751/pucrs-ec-lp2-unidade_06-makefile_e_principios_de_poo-laminas-modelagem_turma.png" alt="Modelagem para Turma" class="img-fluid atto_image_button_text-bottom" width="1241" height="569"><br></p>
+<p style="text-align: justify;">Considere que:</p>
+<ul>
+    <li>Uma turma pode ter no máximo 30 alunos matriculados.</li>
+    <li>Uma turma pode ter no máximo 5 recursos alocados.</li>
+</ul>
+<p style="text-align: justify;">Utilize os arquivos de cabeçalho listados a seguir, e implemente também um <code>Makefile</code> para compilar todo o projeto. São fornecidas também 2 aplicações que utilizam estas classes: um programa de teste (<code>teste.cpp</code>) e uma aplicação
+    simples (<code>app.cpp</code>).</p>
+
+<p><br/></p><p style="text-align: justify;">Arquivo <code>Pessoa.hpp</code>:</p>
+<pre>// Pessoa.hpp (Roland Teodorowitsch; 12 abr. 2021)
+#ifndef _PESSOA_HPP
+#define _PESSOA_HPP
+
+#include &lt;string&gt;
+
+using namespace std;
+
+class Pessoa {
+  private:
+    string nome;
+  public:
+    Pessoa(string n = "");
+    ~Pessoa();
+    void defineNome(string n);
+    string obtemNome();
+};
+
+#endif
+</pre>
+
+<p align="justify">Na classe <code>Pessoa</code>, há os seguintes métodos:</p>
+<ul>
+<li>construtor: inicializa a variável de instância <code>nome</code>;</li>
+<li>destrutor: não faz nada;</li>
+<li><code>defineNome</code>: inicializa o nome da pessoa;</li>
+<li><code>obtemNome</code>: retorna o nome da pessoa.</li>
+</ul>
+
+<p><br/></p><p style="text-align: justify;">Arquivo <code>Aluno.hpp</code>:</p>
+<pre>// Aluno.hpp (Roland Teodorowitsch; 16 set. 2019)
+#ifndef _ALUNO_HPP
+#define _ALUNO_HPP
+
+#include &lt;string&gt;
+#include "Pessoa.hpp"
+
+using namespace std;
+
+class Aluno {
+  private:
+    int matricula;
+    Pessoa *p;
+  public:
+    Aluno(string n = "", int m=0);
+    ~Aluno();
+    int obtemMatricula();
+    void defineMatricula(int m);
+    string obtemNome();
+    void defineNome(string n);
+    string toString();
+};
+
+#endif
+</pre>
+
+<p align="justify">Na classe <code>Aluno</code>, há os seguintes métodos:</p>
+<ul>
+<li>construtor: cria um objeto da classe <code>Pessoa</code> com o nome recebido e inicializa a variável de instância <code>matrícula</code>;</li>
+<li>destrutor: desaloca o objeto da classe <code>Pessoa</code> criado no construtor;</li>
+<li><code>obtemMatricula</code>: retorna a matrícula do aluno;</li>
+<li><code>defineMatricula</code>: define a matrícula do aluno;</li>
+<li><code>obtemNome</code>: retorna o nome do aluno a partir do objeto <code>Pessoa</code>;</li>
+<li><code>defineNome</code>: define o nome do aluno no objeto <code>Pessoa</code>;</li>
+<li><code>toString</code>: gera uma cadeia de caracteres formada pelo nome do aluno, seguido de espaço, abre-parênteses, matrícula e fecha-parênteses.</li>
+</ul>
+
+<p><br/></p><p style="text-align: justify;">Arquivo <code>Professor.hpp</code>:</p>
+<pre>// Professor.hpp (Roland Teodorowitsch; 12 abr. 2021)
+#ifndef _PROFESSOR_HPP
+#define _PROFESSOR_HPP
+
+#include &lt;string&gt;
+#include "Pessoa.hpp"
+
+using namespace std;
+
+class Professor {
+  private:
+    int matricula;
+    Pessoa *p;
+    double salario;
+  public:
+    Professor(string n = "", int m=0, double s=0.0);
+    ~Professor();
+    int obtemMatricula();
+    void defineMatricula(int m);
+    string obtemNome();
+    void defineNome(string n);
+    double obtemSalario();
+    void defineSalario(double s);
+    string toString();
+};
+
+#endif
+</pre>
+
+<p align="justify">Na classe <code>Professor</code>, há os seguintes métodos:</p>
+<ul>
+<li>construtor: cria um objeto da classe <code>Pessoa</code> com o nome recebido e inicializa as variáveis de instância <code>matrícula</code> e <code>salario</code>;</li>
+<li>destrutor: desaloca o objeto da classe <code>Pessoa</code> criado no construtor;</li>
+<li><code>obtemMatricula</code>: retorna a matrícula do professor;</li>
+<li><code>defineMatricula</code>: define a matrícula do professor;</li>
+<li><code>obtemSalario</code>: retorna o salário do professor;</li>
+<li><code>defineSalario</code>: define o salário do professor;</li>
+<li><code>obtemNome</code>: retorna o nome do professor a partir do objeto <code>Pessoa</code>;</li>
+<li><code>defineNome</code>: define o nome do professor no objeto <code>Pessoa</code>;</li>
+<li><code>toString</code>: gera uma cadeia de caracteres formada pelo nome do professor, seguido de espaço, abre-parênteses, matrícula, ponto-e-vírgula, espaço, salário com 2 casas decimais e fecha-parênteses.</li>
+</ul>
+
+<p><br/></p><p style="text-align: justify;">Arquivo <code>Recurso.hpp</code>:</p>
+<pre>// Recurso.hpp (Roland Teodorowitsch; 12 abr. 2021)
+#ifndef _RECURSO_HPP
+#define _RECURSO_HPP
+
+#include &lt;string&gt;
+
+using namespace std;
+
+class Recurso {
+  private:
+    string nome;
+    int quantidade;
+  public:
+    Recurso(string n="", int q=0);
+    ~Recurso();
+    void defineNome(string n);
+    string obtemNome();
+    void defineQuantidade(int q);
+    int obtemQuantidade();
+    string toString();
+};
+
+#endif
+</pre>
+
+<p align="justify">Na classe <code>Recurso</code>, há os seguintes métodos:</p>
+<ul>
+<li>construtor: inicializa as variáveis de instância <code>nome</code> e <code>quantidade</code>;</li>
+<li>destrutor: não faz nada;</li>
+<li><code>defineNome</code>: define o nome do recurso;</li>
+<li><code>obtemNome</code>: retorna o nome do recurso;</li>
+<li><code>defineQuantidade</code>: define a quantidade do recurso;</li>
+<li><code>obtemQuantidade</code>: retorna a quantidade do recurso;</li>
+<li><code>toString</code>: gera uma cadeia de caracteres formada pelo nome do recurso, seguido de espaço, abre-parênteses, quantidade e fecha-parênteses.</li>
+</ul>
+
+<p><br/></p><p style="text-align: justify;">Arquivo <code>Turma.hpp</code>:</p>
+<pre>// Turma.hpp (Roland Teodorowitsch; 12 abr. 2021)
+#ifndef _TURMA_HPP
+#define _TURMA_HPP
+
+#include &lt;string&gt;
+#include "Professor.hpp"
+#include "Aluno.hpp"
+#include "Recurso.hpp"
+
+#define MAX_ALUNOS   30
+#define MAX_RECURSOS 5
+
+using namespace std;
+
+class Turma {
+private:
+    int codigo;
+    string disciplina;
+    Professor *professor;
+    int numAlunos;
+    Aluno *alunos[MAX_ALUNOS];
+    int numRecursos;
+    Recurso *recursos[MAX_RECURSOS];
+public:
+    Turma(int c = 0, string d = "");
+    ~Turma();
+    void defineCodigo(int c);
+    int obtemCodigo();
+    void defineDisciplina(string d);
+    string obtemDisciplina();
+    void defineProfessor(Professor *p);
+    Professor *obtemProfessor();
+    int obtemNumAlunos();
+    bool incluiAluno(Aluno *a);
+    Aluno *obtemAluno(int i);
+    bool removeAluno(int i);
+    int obtemNumRecursos();
+    bool incluiRecurso(Recurso *r);
+    Recurso *obtemRecurso(int i);
+    bool removeRecurso(int i);
+    string toString();
+};
+
+#endif
+</pre>
+
+<p align="justify">Na classe <code>Turma</code>, há os seguintes métodos:</p>
+<ul>
+<li>construtor: inicializa as variáveis de instância para código e disciplina com os argumentos recebidos, e também inicializa <code>professor</code> com <code>nullptr</code> (nenhum professor definido) e os números de alunos e de recursos com zero;</li>
+<li>destrutor: não faz nada;</li>
+<li><code>defineCodigo</code>: define o código numérico da turma;</li>
+<li><code>obtemCodigo</code>: retorna o código numérico da turma;</li>
+<li><code>defineDisciplina</code>: define a disciplina da turma;</li>
+<li><code>obtemDisciplina</code>: retorna a disciplina da turma;</li>
+<li><code>defineProfessor</code>: define o professor da turma (armazena-se a referência para um objeto Professor que foi recebida como parâmetro);</li>
+<li><code>obtemProfessor</code>: retorna a referência para o professor da turma;</li>
+<li><code>obtemNumAlunos</code>: retorna o número de alunos da turma;</li>
+<li><code>incluiAluno</code>: se chegou no número máximo de alunos (<code>MAX_ALUNOS</code>) retorna <code>false</code>, senão armazena a referência para um objeto <code>Aluno</code>recebida como parâmetro no vetor parcialmente preenchido de alunos, incrementando o número atual de alunos e retornando <code>true</code>;</li>
+<li><code>obtemAluno</code>: retorna a referência para aluno correspondente ao índice <code>i</code> no vetor de alunos, ou <code>nullptr</code> caso o índice seja inválido;</li>
+<li><code>removeAluno</code>: remove a referência para aluno correspondente ao índice <code>i</code> no vetor de alunos, atualizando o número de alunos e retornando <code>true</code> (caso o índice seja inválido, retorna-se <code>false</code>);</li>
+<li><code>obtemNumRecursos</code>: retorna o número de recursos da turma;</li>
+<li><code>incluiRecurso</code>: se chegou no número máximo de recursos (<code>MAX_RECURSOS</code>) retorna <code>false</code>, senão armazena a referência para um objeto <code>Recurso</code>recebida como parâmetro no vetor parcialmente preenchido de recursos, incrementando o número atual de recursos e retornando <code>true</code>;</li>
+<li><code>obtemRecurso</code>: retorna a referência para recurso correspondente ao índice <code>i</code> no vetor de recursos, ou <code>nullptr</code> caso o índice seja inválido;</li>
+<li><code>removeRecurso</code>: remove a referência para recurso correspondente ao índice <code>i</code> no vetor de recursos, atualizando o número de recursos e retornando <code>true</code> (caso o índice seja inválido, retorna-se <code>false</code>);</li>
+<li><code>toString()</code>: gera uma cadeia de caracteres formada pelo texto ``Turma: '', seguido de código da turma, espaço, menos, espaço, disciplina, nova linha. Se houver, professor: texto ``Professor: '', seguido da representação de professor usando o respectivo método <code>toString</code> e nova linha. Se houver, alunos: texto ``Aluno:'' e nova linha, e para cada aluno, menos, espaço, seguido da representação de aluno usando o respectivo método <code>toString</code> e nova linha. Se houver, recursos: texto ``Recursos:'' e nova linha, e para cada recurso, menos, espaço, seguido da representação de recurso usando o respectivo método <code>toString</code> e nova linha.
+</ul>
+
+<p><br/></p><p style="text-align: justify;">Arquivo <code>teste.cpp</code>:</p>
+<pre>// teste.cpp (Roland Teodorowitsch; 13 abr. 2021)
+
+#include &lt;iostream&gt;
+#include "Turma.hpp"
+
+bool testaPessoa() {
+    Pessoa *p;
+    string teste1 = "Teste 1 2 3...";
+    string teste2 = "3 2 1... Teste!";
+    p = new Pessoa();
+    if (p-&gt;obtemNome().compare("")!=0)
+        return false;
+    p-&gt;defineNome(teste1);
+    if (p-&gt;obtemNome().compare(teste1)!=0)
+        return false;
+    delete p;
+    p = new Pessoa(teste1);
+    if (p-&gt;obtemNome().compare(teste1)!=0)
+        return false;
+    p-&gt;defineNome(teste2);
+    if (p-&gt;obtemNome().compare(teste2)!=0)
+        return false;
+    delete p;
+    return true;
+}
+
+bool testaAluno() {
+    Aluno *a;
+    string nom1 = "Teste 1 2 3...";
+    int mat1 = 123;
+    string nom2 = "3 2 1... Teste!";
+    int mat2 = 321;
+    a = new Aluno();
+    if (a-&gt;obtemNome().compare("")!=0 || a-&gt;obtemMatricula()!=0)
+        return false;
+    a-&gt;defineNome(nom1);
+    a-&gt;defineMatricula(mat1);
+    if (a-&gt;toString().compare("Teste 1 2 3... (123)")!=0)
+        return false;
+    delete a;
+    a = new Aluno(nom1,mat1);
+    if (a-&gt;obtemNome().compare(nom1)!=0 || a-&gt;obtemMatricula()!=mat1)
+        return false;
+    a-&gt;defineNome(nom2);
+    a-&gt;defineMatricula(mat2);
+    if (a-&gt;obtemNome().compare(nom2)!=0 || a-&gt;obtemMatricula()!=mat2)
+        return false;
+    delete a;
+    return true;
+}
+
+bool testaProfessor() {
+    Professor *p;
+    string nom1 = "Teste 1 2 3...";
+    int mat1 = 123;
+    double sal1 = 123.45;
+    string nom2 = "3 2 1... Teste!";
+    int mat2 = 321;
+    double sal2 = 543.21;
+    p = new Professor();
+    if (p-&gt;obtemNome().compare("")!=0 || p-&gt;obtemMatricula()!=0 || p-&gt;obtemSalario()!=0.0)
+        return false;
+    p-&gt;defineNome(nom1);
+    p-&gt;defineMatricula(mat1);
+    p-&gt;defineSalario(sal1);
+    if (p-&gt;toString().compare("Teste 1 2 3... (123; R$123.45)")!=0)
+        return false;
+    delete p;
+    p = new Professor(nom1,mat1,sal1);
+    if (p-&gt;obtemNome().compare(nom1)!=0 || p-&gt;obtemMatricula()!=mat1 || p-&gt;obtemSalario()!=sal1)
+        return false;
+    p-&gt;defineNome(nom2);
+    p-&gt;defineMatricula(mat2);
+    p-&gt;defineSalario(sal2);
+    if (p-&gt;obtemNome().compare(nom2)!=0 || p-&gt;obtemMatricula()!=mat2 || p-&gt;obtemSalario()!=sal2)
+        return false;
+    delete p;
+    return true;
+}
+
+bool testaRecurso() {
+    Recurso *r;
+    string nom1 = "Teste 1 2 3...";
+    int qua1 = 123;
+    string nom2 = "3 2 1... Teste!";
+    int qua2 = 321;
+    r = new Recurso();
+    if (r-&gt;obtemNome().compare("")!=0 || r-&gt;obtemQuantidade()!=0)
+        return false;
+    r-&gt;defineNome(nom1);
+    r-&gt;defineQuantidade(qua1);
+    if (r-&gt;toString().compare("Teste 1 2 3... (123)")!=0)
+        return false;
+    delete r;
+    r = new Recurso(nom1,qua1);
+    if (r-&gt;obtemNome().compare(nom1)!=0 || r-&gt;obtemQuantidade()!=qua1)
+        return false;
+    r-&gt;defineNome(nom2);
+    r-&gt;defineQuantidade(qua2);
+    if (r-&gt;obtemNome().compare(nom2)!=0 || r-&gt;obtemQuantidade()!=qua2)
+        return false;
+    delete r;
+    return true;
+}
+
+bool testaTurma() {
+    Turma *t;
+    int cod1 = 123;
+    string dis1 = "Teste 1 2 3...";
+    int cod2 = 321;
+    string dis2 = "3 2 1... Teste!";
+    Professor *p2 = new Professor("Professor 2",2222,2222.22);
+    string r2a = "Turma: 321 - 3 2 1... Teste!\n";
+    string r2b = "Professor: Professor 2 (2222; R$2222.22)\n";
+    
+    t = new Turma();
+    if (t-&gt;toString().compare("Turma: 0 - \n")!=0 || t-&gt;obtemNumAlunos()!=0 || t-&gt;obtemNumRecursos()!=0 || t-&gt;obtemProfessor()!=nullptr)
+        return false;
+    for (int i=-1; i&lt;=MAX_ALUNOS; ++i)
+        if (t-&gt;obtemAluno(i)!=nullptr || t-&gt;removeAluno(i)!=false)
+            return false;
+    for (int i=-1; i&lt;=MAX_RECURSOS; ++i)
+        if (t-&gt;obtemRecurso(i)!=nullptr || t-&gt;removeRecurso(i)!=false)
+            return false;
+    t-&gt;defineCodigo(cod1);
+    t-&gt;defineDisciplina(dis1);
+    if (t-&gt;toString().compare("Turma: 123 - Teste 1 2 3...\n")!=0 || t-&gt;obtemNumAlunos()!=0 || t-&gt;obtemNumRecursos()!=0 || t-&gt;obtemProfessor()!=nullptr)
+        return false;
+    for (int i=-1; i&lt;=MAX_ALUNOS; ++i)
+        if (t-&gt;obtemAluno(i)!=nullptr || t-&gt;removeAluno(i)!=false)
+            return false;
+    for (int i=-1; i&lt;=MAX_RECURSOS; ++i)
+        if (t-&gt;obtemRecurso(i)!=nullptr || t-&gt;removeRecurso(i)!=false)
+            return false;
+    delete t;
+    t = new Turma(cod1, dis1);
+    if (t-&gt;toString().compare("Turma: 123 - Teste 1 2 3...\n")!=0 || t-&gt;obtemNumAlunos()!=0 || t-&gt;obtemNumRecursos()!=0 || t-&gt;obtemProfessor()!=nullptr)
+        return false;
+    for (int i=-1; i&lt;=MAX_ALUNOS; ++i)
+        if (t-&gt;obtemAluno(i)!=nullptr || t-&gt;removeAluno(i)!=false)
+            return false;
+    for (int i=-1; i&lt;=MAX_RECURSOS; ++i)
+        if (t-&gt;obtemRecurso(i)!=nullptr || t-&gt;removeRecurso(i)!=false)
+            return false;
+    t-&gt;defineCodigo(cod2);
+    t-&gt;defineDisciplina(dis2);
+    t-&gt;defineProfessor(p2);
+    if (t-&gt;toString().compare(r2a+r2b)!=0 || t-&gt;obtemNumAlunos()!=0 || t-&gt;obtemNumRecursos()!=0 || t-&gt;obtemProfessor()!=p2)
+        return false;
+    for (int i=-1; i&lt;=MAX_ALUNOS; ++i)
+        if (t-&gt;obtemAluno(i)!=nullptr || t-&gt;removeAluno(i)!=false)
+            return false;
+    for (int i=-1; i&lt;=MAX_RECURSOS; ++i)
+        if (t-&gt;obtemRecurso(i)!=nullptr || t-&gt;removeRecurso(i)!=false)
+            return false;
+    delete t;
+    cout &lt;&lt; "&gt; Subteste 1 para Turma (construtores e métodos básicos): OK" &lt;&lt; endl;
+    
+    t = new Turma(cod2, dis2);
+    t-&gt;defineProfessor(p2);
+    if (t-&gt;toString().compare(r2a+r2b)!=0 || t-&gt;obtemNumAlunos()!=0 || t-&gt;obtemNumRecursos()!=0 || t-&gt;obtemProfessor()!=p2)
+        return false;
+    for (int i=-1; i&lt;=MAX_ALUNOS; ++i)
+        if (t-&gt;obtemAluno(i)!=nullptr || t-&gt;removeAluno(i)!=false)
+            return false;
+    for (int i=-1; i&lt;=MAX_RECURSOS; ++i)
+        if (t-&gt;obtemRecurso(i)!=nullptr || t-&gt;removeRecurso(i)!=false)
+            return false;   
+    Aluno *alunos[MAX_ALUNOS+1];
+    string respostas[MAX_ALUNOS+1];
+    string resp = r2a+r2b+"Alunos:\n";
+    for (int i=0; i&lt;MAX_ALUNOS+1; ++i) {
+        alunos[i] = new Aluno("Aluno "+to_string(i),1000 + i);
+        resp += "- " + alunos[i]-&gt;toString() + "\n";
+        respostas[i] = resp;
+    }
+    for (int i=0; i&lt;MAX_ALUNOS; ++i) {
+        if (t-&gt;obtemNumAlunos() != i)
+            return false;
+        if (t-&gt;incluiAluno(alunos[i])!=true)
+            return false;
+        if (t-&gt;obtemNumAlunos() != i+1)
+            return false;
+        if (t-&gt;obtemAluno(i)!=alunos[i])
+            return false;
+        if (t-&gt;obtemAluno(i+1)!=nullptr)
+            return false;
+        if (t-&gt;toString().compare(respostas[i])!=0)
+            return false;
+    }
+    if (t-&gt;obtemNumAlunos() != MAX_ALUNOS)
+        return false;
+    if (t-&gt;incluiAluno(alunos[MAX_ALUNOS])!=false)
+        return false;
+    if (t-&gt;obtemNumAlunos() != MAX_ALUNOS)
+        return false;
+    if (t-&gt;obtemAluno(MAX_ALUNOS)!=nullptr)
+        return false;
+    if (t-&gt;toString().compare(respostas[MAX_ALUNOS-1])!=0)
+        return false;
+    for (int i=MAX_ALUNOS; i&gt;0; --i) {
+        if (t-&gt;obtemNumAlunos() != i)
+            return false;
+        t-&gt;removeAluno(0);
+        int nAlunos = t-&gt;obtemNumAlunos();
+        if (nAlunos != i-1)
+            return false;
+        for (int j=0; j&lt;nAlunos; ++j) {
+            if (t-&gt;obtemAluno(j) != alunos[MAX_ALUNOS-i+1+j])
+                return false;
+        }
+        if (t-&gt;obtemAluno(nAlunos)!=nullptr)
+            return false;
+    }
+    for (int i=0; i&lt;MAX_ALUNOS+1; ++i)
+        delete alunos[i];
+    delete t;
+    cout &lt;&lt; "&gt; Subteste 2 para Turma (inserção e exclusão de alunos): OK" &lt;&lt; endl;
+
+    t = new Turma(cod2, dis2);
+    t-&gt;defineProfessor(p2);
+    if (t-&gt;toString().compare(r2a+r2b)!=0 || t-&gt;obtemNumAlunos()!=0 || t-&gt;obtemNumRecursos()!=0 || t-&gt;obtemProfessor()!=p2)
+        return false;
+    for (int i=-1; i&lt;=MAX_ALUNOS; ++i)
+        if (t-&gt;obtemAluno(i)!=nullptr || t-&gt;removeAluno(i)!=false)
+            return false;
+    for (int i=-1; i&lt;=MAX_RECURSOS; ++i)
+        if (t-&gt;obtemRecurso(i)!=nullptr || t-&gt;removeRecurso(i)!=false)
+            return false;   
+    Recurso *recursos[MAX_RECURSOS+1];
+    string respostasR[MAX_RECURSOS+1];
+    resp = r2a+r2b+"Recursos:\n";
+    for (int i=0; i&lt;MAX_RECURSOS+1; ++i) {
+        recursos[i] = new Recurso("Recurso "+to_string(i)+" ("+to_string(i+1)+")");
+        resp += "- " + recursos[i]-&gt;toString() + "\n";
+        respostasR[i] = resp;
+    }
+    for (int i=0; i&lt;MAX_RECURSOS; ++i) {
+        if (t-&gt;obtemNumRecursos() != i)
+            return false;
+        if (t-&gt;incluiRecurso(recursos[i])!=true)
+            return false;
+        if (t-&gt;obtemNumRecursos() != i+1)
+            return false;
+        if (t-&gt;obtemRecurso(i)!=recursos[i])
+            return false;
+        if (t-&gt;obtemRecurso(i+1)!=nullptr)
+            return false;
+        if (t-&gt;toString().compare(respostasR[i])!=0)
+            return false;
+    }
+    if (t-&gt;obtemNumRecursos() != MAX_RECURSOS)
+        return false;
+    if (t-&gt;incluiRecurso(recursos[MAX_RECURSOS])!=false)
+        return false;
+    if (t-&gt;obtemNumRecursos() != MAX_RECURSOS)
+        return false;
+    if (t-&gt;obtemRecurso(MAX_RECURSOS)!=nullptr)
+        return false;
+    if (t-&gt;toString().compare(respostasR[MAX_RECURSOS-1])!=0)
+        return false;
+    for (int i=MAX_RECURSOS; i&gt;0; --i) {
+        if (t-&gt;obtemNumRecursos() != i)
+            return false;
+        t-&gt;removeRecurso(0);
+        int nRecursos = t-&gt;obtemNumRecursos();
+        if (nRecursos != i-1)
+            return false;
+        for (int j=0; j&lt;nRecursos; ++j) {
+            if (t-&gt;obtemRecurso(j) != recursos[MAX_RECURSOS-i+1+j])
+                return false;
+        }
+        if (t-&gt;obtemRecurso(nRecursos)!=nullptr)
+            return false;
+    }
+    for (int i=0; i&lt;MAX_RECURSOS+1; ++i)
+        delete recursos[i];
+    delete t;
+    cout &lt;&lt; "&gt; Subteste 3 para Turma (inserção e exclusão de recursos): OK" &lt;&lt; endl;
+
+    delete p2;
+    return true;
+}
+
+int main() {
+    cout &lt;&lt; "Teste para Pessoa: " &lt;&lt; (testaPessoa()?"OK":"FALHOU") &lt;&lt; endl;
+    cout &lt;&lt; "Teste para Aluno: " &lt;&lt; (testaAluno()?"OK":"FALHOU") &lt;&lt; endl;
+    cout &lt;&lt; "Teste para Professor: " &lt;&lt; (testaProfessor()?"OK":"FALHOU") &lt;&lt; endl;
+    cout &lt;&lt; "Teste para Recurso: " &lt;&lt; (testaRecurso()?"OK":"FALHOU") &lt;&lt; endl;
+    cout &lt;&lt; "Teste para Turma: " &lt;&lt; (testaTurma()?"OK":"FALHOU") &lt;&lt; endl;
+    cout &lt;&lt; endl;
+    return 0;
+}
+</pre>
+
+<p><br/></p><p style="text-align: justify;">Arquivo <code>app.cpp</code>:</p>
+<pre>// app.cpp (Roland Teodorowitsch; 13 abr. 2021)
+
+#include &lt;iostream&gt;
+#include "Turma.hpp"
+
+int main() {
+    Professor *p = new Professor("Professor 123", 456, 7891.23);
+    Aluno *a1 = new Aluno("Aluno 1", 1);
+    Aluno *a2 = new Aluno("Aluno 2", 2);
+    Aluno *a3 = new Aluno("Aluno 3", 3);
+    Aluno *a4 = new Aluno("Aluno x", 10);
+    Aluno *a5 = new Aluno("Aluno 4", 4);
+    Recurso *r1 = new Recurso("Retroprojetor",1);
+    Recurso *r2 = new Recurso("Computador",4);
+    Recurso *r3 = new Recurso("Projetor",1);
+    
+    Turma *t = new Turma(590,"Programação Orientada a Objetos");
+    t-&gt;defineProfessor(p);
+    t-&gt;incluiAluno(a1);
+    t-&gt;incluiAluno(a2);
+    t-&gt;incluiAluno(a3);
+    t-&gt;incluiAluno(a4);
+    t-&gt;incluiAluno(a5);
+    t-&gt;removeAluno(3);
+    t-&gt;incluiRecurso(r1);
+    t-&gt;incluiRecurso(r2);
+    t-&gt;incluiRecurso(r3);
+    t-&gt;removeRecurso(0);
+    
+    cout &lt;&lt; t-&gt;toString();
+    
+    delete t;
+    
+    delete r3;
+    delete r2;
+    delete r1;
+    delete a5;
+    delete a4;
+    delete a3;
+    delete a2;
+    delete a1;
+    delete p;
+    
+    return 0;
+}
+</pre>
+
+<p><br/></p><p align="justify">Considere que para a execução do programa principal do arquivo <code>app.cpp</code> a saída gerada seja exatamente a seguinte:</p>
+<pre>Turma: 590 - Programação Orientada a Objetos
+Professor: Professor 123 (456; R$7891.23)
+Alunos:
+- Aluno 1 (1)
+- Aluno 2 (2)
+- Aluno 3 (3)
+- Aluno 4 (4)
+Recursos:
+- Computador (4)
+- Projetor (1)
+</pre>
+
+<p><br/></p><p style="text-align: justify;">Arquivos que devem ser implementados:</p>
+<ul>
+    <li><code>Pessoa.cpp</code></li>
+    <li><code>Aluno.cpp</code></li>
+    <li><code>Professor.cpp</code></li>
+    <li><code>Recurso.cpp</code></li>
+    <li><code>Turma.cpp</code></li>
+    <li><code>Makefile</code></li>
+</ul>

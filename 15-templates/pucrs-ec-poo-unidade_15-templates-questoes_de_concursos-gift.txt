@@ -1,0 +1,47 @@
+$CATEGORY: $course$/POO_EC-15-Templates-QuestoesDeConcursos
+
+::POO_EC - Templates - Questões de Concursos - 001::[html]<p align="justify">Julgue <u>o seguinte item</u><s> os seguintes itens</s> acerca da linguagem C++.</p>
+<br/>
+<p><b>(INPE - 2009 - Tecnologista da Carreira de Desenvolvimento Tecnológico / Tecnologista Pleno 1 Padrão I - CESPE - 42)</b> As especializações de <i>templates</i> de classe, conhecida como programação genérica, é um dos mais poderosos recursos de reutilização de <i>software</i> do C++.</p>{
+	=Certo#
+	~Errado#
+}
+
+::POO_EC - Templates - Questões de Concursos - 002::[html]<p align="justify">Com relação às propriedades da linguagem C++, julgue <u>o item</u><s> os itens</s> a seguir.</p>
+<br/>
+<p><b>(INPE - 2009 - Tecnologista da Carreira de Desenvolvimento Tecnológico / Tecnologista Júnior Padrão I - CESPE - 47)</b> Por meio de <i>templates</i> é possível escrever uma função que pode ser aplicada a diferentes classes.</p>{
+	=Certo#
+	~Errado#
+}
+
+
+::POO_EC - Templates - Questões de Concursos - 003::[html]<p align="justify">As linguagens C e C++ permitem a produção de uma gama de programas bastante abrangente, incluindo desde a programação de elementos de <i>hardware</i> e dispositivos até a expressão de conceitos abstratos em aplicações de tratamento do conhecimento. Acerca dessas linguagens de programação, julgue <u>o item que segue</u><s> os itens que se seguem</s>.</p>
+<br/>
+<p><b>(INPE - 2004 - Tecnologista Pleno I - CESPE - 109)</b> Ao encontrar em determinado ponto do código-fonte de um programa C++ uma função para a qual já exista um gabarito (<i>template</i>), cabe ao pré-processador C++ criar uma função gabarito completa, considerando o tipo dos parâmetros especificados no ponto em que está a função.</p>{
+	~Certo#
+	=Errado#
+}
+
+::POO_EC - Templates - Questões de Concursos - 004::[html]<p align="justify"><b>(TSE - 2007 - Analista Judiciário / Apoio Especializado / Análise de Sistemas - CESPE - 42)</b></p>
+<pre>
+1
+2&nbsp; &nbsp; &nbsp; Elemento&lt;T&gt; *primeiro, *ultimo;
+3&nbsp; &nbsp; public:
+4&nbsp; &nbsp; &nbsp; Fila():primeiro(0), ultimo(0)\{\}
+5&nbsp; &nbsp; &nbsp; void inserir(T dado);
+6&nbsp; &nbsp; \};
+7
+8
+9&nbsp; &nbsp; &nbsp; if(primeiro \=\= 0) primeiro \= elemento;
+10 &nbsp; &nbsp; else ultimo-&gt;prox \= elemento;
+11 &nbsp; &nbsp; ultimo \= elemento;
+12 &nbsp; \}
+</pre>
+<p align="justify">O trecho de código acima está escrito na linguagem C++. Assinale a opção que completa corretamente as linhas 1, 7 e 8 desse trecho de código, respectivamente.</p>{
+	~<pre>template class Fila \{\ntemplate void Fila::inserir(T dado)\{\nElemento *elemento \= new Elemento(dado,0);</pre>#
+	~<pre>template class Fila \{\ntemplate void Fila&lt;T&gt;::inserir(T dado)\{\nElemento *elemento \= new Elemento&lt;T&gt;(dado,0);</pre>#
+	=<pre>template&lt;class T&gt; class Fila \{\ntemplate &lt;class T&gt; void Fila&lt;T&gt;::inserir(T dado)\{\nElemento&lt;T&gt; *elemento \= new Elemento&lt;T&gt;(dado,0);</pre>#
+	~<pre>template&lt;class&gt; class Fila \{\ntemplate &lt;class&gt; void Fila::inserir(T dado)\{\nElemento&lt;T&gt; *elemento \= new Elemento(dado,0);</pre>#	
+}
+
+

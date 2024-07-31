@@ -1,0 +1,36 @@
+$CATEGORY: $course$/Programação Orientada a Objetos - Makefile e Princípios de POO - Questoes
+
+::POO - Makefile e Princípios de POO - Questões - 001 - Versão 001::[html]<p>Qual o nome do rótulo que será considerado no <code>Makefile</code>, quando se executa o comando <code>make</code> sem um alvo?</p>{
+	=<code>all</code>#
+	~<code>main</code>#
+	~<code>run</code>#
+	~<code>default</code>#
+}
+
+::POO - Makefile e Princípios de POO - Questões - 002 - Versão 001::[html]<p>O <code>Makefile</code> é formado por um conjunto de regras que definem como uma aplicação deve ser construída. Qual dos itens a seguir NÃO é encontrado nessas regras?</p>{
+	=<code>lista de códigos de erro</code>#
+	~<code>alvo</code>#
+	~<code>dependências</code>#
+	~<code>comandos para construir o alvo a partir das dependências</code>#
+}
+
+::POO - Makefile e Princípios de POO - Questões - 003 - Versão 001::[html]<p>Quando em um projeto orientado a objetos as classes têm responsabilidades bem focadas, isto significa que tem-se:</p>{
+    =alta coesão.#
+    ~alto encapsulamento.#
+    ~baixo encapsulamento.#
+    ~baixa coesão.#
+}
+
+::POO - Makefile e Princípios de POO - Questões - 004 - Versão 001::[html]<p>Qual das características a seguir NÃO corresponde a um projeto orientado a objetos com alta coesão?</p>{
+    =Classes alteradas com grande frequência#
+    ~Classes especializadas#
+    ~Classes mais fáceis de manter#
+    ~Maior possibilidade de reutilização#
+}
+
+::POO - Makefile e Princípios de POO - Questões - 005 - Versão 001::[html]<p>Qual a característica desejável em Projetos Orientados a Objetos que esconde as estruturas de dados internas usadas na implementação de classes?</p>{
+    =Encapsulamento#
+    ~Coesão#
+    ~Consistência#
+    ~Acoplamento#
+}

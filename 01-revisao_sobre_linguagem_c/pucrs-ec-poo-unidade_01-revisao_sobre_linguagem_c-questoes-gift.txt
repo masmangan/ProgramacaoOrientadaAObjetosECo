@@ -1,0 +1,133 @@
+$CATEGORY: $course$/POO-01-RevisaoSobreALinguagemC
+
+::POO - Revisão sobre a Linguagem C - Questão 01 - Versão 001::[html]<p>Considere as seguintes afirmações:<p>
+<ol type="I">
+<li>Linguagens de Programação de ________ apresentam um nível de abstração mais alto, sem exigir conhecimento do código de máquina.</li>
+<li>Linguagens de Programação de ________ podem ser ou ________ (quando se gera código executável e erros de sintaxe são detectados antes da execução) ou ________ (quando instruções são decodificadas e executadas durante a própria execução).</li>
+<li>Linguagens ________ usam códigos mnemônicos, que possuem uma correspondência direta com as instruções em linguagem de máquina.</li>
+</ol>
+<p>Qual das alternativas abaixo completa correspondentemente e corretamente cada uma das afirmações acima?</p>{
+	~Alto Nível - Alto Nível - virtualizadas - pré-compiladas - de alto nível.#
+	~Baixo Nível - Alto Nível - interpretadas - compiladas - de bancos de dados.#
+	~Baixo Nível - Baixo Nível - interpretadas - compiladas - de baixo nível.#
+	=Alto Nível - Alto Nível - compiladas - interpretadas - de montagem.#
+	~Médio Nível - Baixo Nível - compiladas - interpretadas - virtualizadas.#
+}
+
+::POO - Revisão sobre a Linguagem C - Questão 02 - Versão 001::[html]<p>Qual tipo primitivo de dados deve ser usado em C para armazenar caracteres?</p>{
+	~<code>double</code>#
+	~<code>int</code>#
+	~<code>bool</code>#
+	=<code>char</code>#
+}
+
+::POO - Revisão sobre a Linguagem C - Questão 03 - Versão 001::[html]<p>Qual tipo de dados deve ser usado em C para armazenar a nota de um aluno?</p>{
+	=<code>double</code>#
+	~<code>int</code>#
+	~<code>bool</code>#
+	~<code>char</code>#
+}
+
+::POO - Revisão sobre a Linguagem C - Questão 04 - Versão 001::[html]<p>Qual tipo de dados deve ser usado em C para armazenar a idade de uma pessoa?</p>{
+	~<code>double</code>#
+	=<code>int</code>#
+	~<code>bool</code>#
+	~<code>char</code>#
+}
+
+::POO - Revisão sobre a Linguagem C - Questão 05 - Versão 001::[html]<p>Para que é usada a palavra-reservada <code>unsigned</code> em C?</p>{
+	=Indicar que uma variável numérica inteira é sem sinal.#
+	~Indicar quais valores uma enumeração pode ter.#
+	~Exigir autenticação para acessar uma variável.#
+	~Definir que os valores de uma variável NÃO serão validados.#
+}
+
+::POO - Revisão sobre a Linguagem C - Questão 06 - Versão 001::[html]<p>Em C, qual declaração deve ser usada para criar uma variável para armazenar o nome de uma pessoa com no máximo 30 caracteres?</p>{
+	=<code>char nome[31];</code>#
+	~<code>char nome[30];</code>#
+	~<code>char *nome;</code>#
+	~<code>char nome[];</code>#
+}
+
+::POO - Revisão sobre a Linguagem C - Questão 07 - Versão 001::[html]<p>Em C, qual função serve para imprimir no terminal (tela)?</p>{
+	=<code>printf</code>#
+	~<code>scanf</code>#
+	~<code>cout</code>#
+	~<code>stdout</code>#
+}
+
+::POO - Revisão sobre a Linguagem C - Questão 08 - Versão 001::[html]<p>Qual trecho de código a seguir imprime corretamente uma mensagem no terminal (tela) em C?</p>{
+	=<code>printf("Bom dia!");</code>#
+	~<code>print("Bom dia!");</code>#
+	~<code>scanf("%s", "Bom dia!");</code>#
+	~<code>print("%s", "Bom dia!");</code>#
+}
+
+::POO - Revisão sobre a Linguagem C - Questão 09 - Versão 001::[html]<p>Em C, qual função é utilizada para obter dados do terminal (teclado)?</p>{
+	~<code>printf</code>#
+	=<code>scanf</code>#
+	~<code>cin</code>#
+	~<code>stdin</code>#
+}
+
+::POO - Revisão sobre a Linguagem C - Questão 10 - Versão 001::[html]<p>Em C, o que significa <code>\#include &lt;stdio.h&gt;</code>?</p>{
+	=Incluir arquivo de cabeçalho com definições necessárias para uso da biblioteca padrão de entrada e saída.#
+	~Inserção do código das funções e constantes que fazem parte da biblioteca padrão de entrada e saída.#
+	~Declaração das variáveis necessárias para uso da biblioteca padrão de entrada e saída.#
+	~Solicitar acesso exclusivo ao terminal para impressão e leitura de dados.#
+}
+
+::POO - Revisão sobre a Linguagem C - Questão 11 - Versão 001::[html]<p>Em C, qual o valor da variável <code>resp</code> após o seguinte trecho de código?</p>
+<pre>
+int a=9, b=2, c=3;
+double resp;
+resp = a / b * c;
+</pre>{
+	=<code>12.0</code>#
+	~<code>13.5</code>#
+	~<code>1.5</code>#
+	~<code>1.0</code>#
+}
+
+::POO - Revisão sobre a Linguagem C - Questão 12 - Versão 001::[html]<p>Em C, quais os valores, respectivamente, das variáveis <code>i</code> e <code>j</code> após o seguinte trecho de código?</p>
+<pre>
+int i=10, j;
+j = i++;
+</pre>{
+	=<code>11</code> e <code>10</code>#
+	~<code>10</code> e <code>11</code>#
+	~<code>10</code> e <code>10</code>#
+	~<code>11</code> e <code>11</code>#
+}
+
+::POO - Revisão sobre a Linguagem C - Questão 13 - Versão 001::[html]<p>Em C, quais os valores, respectivamente, das variáveis <code>i</code> e <code>j</code> após o seguinte trecho de código?</p>
+<pre>
+int i=10, j;
+j = --i;
+</pre>{
+	=<code>9</code> e <code>9</code>#
+	~<code>10</code> e <code>9</code>#
+	~<code>9</code> e <code>10</code>#
+	~<code>10</code> e <code>10</code>#
+}
+
+::POO - Revisão sobre a Linguagem C - Questão 14 - Versão 001::[html]<p>Em C, considerando um vetor <code>v</code> de 10 inteiros, qual das afirmações a seguir está ERRADA?</p>{
+	~A sua declaração é feita usando <code>int v[10];</code>.#
+	=A declaração do vetor garante que todos os seus elementos sejam iniciados com <code>0</code>.#
+	~Os índices dos 10 valores inteiros variam de 0 até 9.#
+	~Se algum elemento além do número de elementos especificados na declaração for acessado, poderá ocorrer uma exceção (acesso inválido à memória).#
+}
+
+::POO - Revisão sobre a Linguagem C - Questão 15 - Versão 001::[html]<p>Em C, quando se tem, por exemplo, uma declaração como <code>int *p;</code>, isto significa que:</p>{
+	=trata-se de um ponteiro e ele deve ser inicializado (apontado) para alguma posição de memória para ser utilizado.</code>.#
+	~trata-se de um vetor dinamicamente expansível, para o qual a memória é automaticamente alocada quando necessário.#
+	~trata-se de um ponteiro, que pode armazenar valores de qualquer tipo sem gerar problemas.#
+	~trata-se de um valor inteiro cujo conteúdo não pode ser alterado.#
+}
+
+::POO - Revisão sobre a Linguagem C - Questão 16 - Versão 001::[html]<p>Considerando a declaração de um registro em C, qual das seguintes declarações está correta?</p>{
+	=<code>struct registro \{ int idade; double peso; double altura; \};</code>#
+	~<code>struct registro ( int idade; double peso; double altura; );</code>#
+	~<code>struct registro \{ int idade; double peso; double altura; \}</code>#
+	~<code>struct registro ( int idade; double peso, altura; )</code>#
+}

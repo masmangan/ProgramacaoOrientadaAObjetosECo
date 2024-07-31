@@ -1,0 +1,36 @@
+$CATEGORY: $course$/Programação Orientada a Objetos - Sobrecarga de Operadores - Questões
+
+::POO - Sobrecarga de Operadores - Questões - 001 - Versão 001::[html]<p>Como se chama, em C++, a redefinição do funcionamento de operadores para que eles possam ser usados sobre objetos?</p>{
+	=Sobrecarga.#
+	~Encapsulamento.#
+	~Coesão.#
+	~Sobrescrita.#
+}
+
+::POO - Sobrecarga de Operadores - Questões - 002 - Versão 001::[html]<p>Na nomenclatura usualmente usada em C++, qual é a distinção feita entre métodos e funções?</p>{
+	=Métodos são definidos dentro do escopo de classes e funções fora.#
+	~NÃO há distinção.#
+	~Métodos NÃO têm protótipos, enquanto funções têm.#
+	~Métodos NÃO recebem parâmetros, enquanto funções podem receber parâmetros.#
+}
+
+::POO - Sobrecarga de Operadores - Questões - 003 - Versão 001::[html]<p>Quando a sobrecarga de operadores em C++ for feita fora da classe, esta função:</p>{
+    =deverá ter 2 parâmetros para o caso do operador ser binário.#
+    ~deverá ter 1 parâmetro para o caso do operador ser binário.#
+    ~NÃO terá nenhum parâmetro caso o operador seja unário.#
+    ~SEMPRE terá que ser uma função amiga (<code>friend</code>).#
+}
+
+::POO - Sobrecarga de Operadores - Questões - 004 - Versão 001::[html]<p>Quando a sobrecarga de operadores em C++ fizer parte da definição da classe, será utilizado um método:</p>{
+    =sem nenhum parâmetro caso o operador seja unário.#
+    ~com dois parâmetros caso o perador seja binário.#
+    ~com um parâmetro caso o operador seja unário.#
+    ~necessariamente privado.#
+}
+
+::POO - Sobrecarga de Operadores - Questões - 005 - Versão 001::[html]<p>Em C++, a sobrecarga dos operadores <code>&lt;&lt;</code> e <code>&gt;&gt;</code>:</p>{
+    =é feita usando funções (fora do escopo das classes).#
+    ~NÃO pode ser realizada.#
+    ~usualmente é feita usando métodos (definidos dentro do escopo das classes).#
+    ~exige a sobrescrita de <code>ostream</code> e <code>istream</code>, respectivamente.#
+}

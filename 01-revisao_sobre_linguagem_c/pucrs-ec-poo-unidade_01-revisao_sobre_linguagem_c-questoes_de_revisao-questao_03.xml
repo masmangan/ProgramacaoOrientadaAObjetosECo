@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <question type="category">
+    <category>
+      <text>$module$/top/POO-01-QuestoesDeRevisao-Questao03</text>
+    </category>
+    <info format="moodle_auto_format">
+      <text></text>
+    </info>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Questões de Revisão - Questão 03 - Versão 001</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p align="justify">Escreva um programa em C que leia dois vetores A e B, parcialmente preenchidos, cada um com no máximo 100 elementos. Inicialmente deve-se ler o número de elementos do vetor A (1 a 500), depois cada um dos valores do vetor A. A seguir deve-se ler o número elementos do vetor B (1 a 500), depois cada um dos valores do vetor B. Depois de ler os dois vetores, seu programa deve verificar quantas vezes o vetor A aparece dentro do vetor B, imprimindo este valor. Por exemplo, considerando a seguinte sequência de entrada (observe que as quebras de linha não influenciam o resultado):
+<pre>
+2
+3 4
+
+10
+1 2 3
+4 1 2 3 3 4
+5
+</pre>
+<p align="justify">O resultado será 2.</p>
+<p align="justify">Considerando a seguinte entrada:</p>
+<pre>
+4
+0 0 1 0
+
+500
+0 1 0 0 0 0 0 0 0 0 0
+1 0 0
+1 0 1 0 0
+1 1 1 0 1 0 1 1 1 1 0 0
+1 1 0 1 0 0 0
+1 1 0 1 0 0
+1 1 1 1 1 0 0
+1 1 1 0 0 0 0 0
+1 1 1 0 1 1 1 1 0 1 1 0 1 1 1 1 1 0 1 0 0 0
+1 0 0
+1 1 1 1 1 1 0 0 0
+1 0 1 1 1 0 0 0 0 0
+1 1 1 1 0 1 0 0
+1 0 1 1 1 0 0
+1 1 0 1 1 0 1 0 0
+1 0 0
+1 0 0 0 0
+1 1 1 0 0
+1 1 1 0 0
+1 1 0 1 1 0 0 0
+1 0 0
+1 1 0 0
+1 1 0 1 1 1 0 1 0 1 0 1 0 0 0 0 0 0
+1 0 1 0 1 1 1 1 1 0 1 0 1 0 1 1 1 0 1 0 1 1 1 1 1 1 0 1 1 0 0 0 0
+1 1 0 0
+1 0 0
+1 0 1 0 0
+1 0 1 1 0 1 0 0
+1 1 0 1 0 0 0
+1 1 0 1 1 1 1 1 0 1 0 1 0 1 1 1 0 1 0 0
+1 0 0
+1 0 0
+1 0 1 1 1 0 0 0 0 0 0
+1 1 1 1 0 1 1 0 1 1 1 1 1 1 0 0 0
+1 1 0 0 0
+1 0 1 0 1 0 1 0 1 0 1 1 0 0
+1 1 1 1 0 1 1 0 0 0
+1 1 0 1 1 1 0 1 1 1 0 0
+1 0 1 1 1 1 0 1 0 1 1 0 1 1 1 1 1 1 1 1 1 1 0 1 0 0
+1 1 1 1 0 0 0 0 0 0
+1 1 1 0 0
+1 1 0 0
+1 1 1 1 0 0 0 0 0 0 0 0 0 0 0
+1 0 1 0 0
+1 1 1 1 0 1 1 0 0
+1 0 0
+1 1 0 0 0 0
+1 1 0 1 0 1 0 0
+1 1 1 1 0 1 0 1 0 0 0 0
+1 1 1 0 0 0
+1 1 1 1 1 0 0 0
+1 1 1 1 0 1 1 1 0 0
+1 0 1 0 1 1 0 0 0
+1 0 0 0 0 0
+1 1 1 1 0 1 0 0 0 0
+1 1 0 0 0
+1 1 0 0 0 0
+1 0 1 0
+</pre>
+<p align="justify">Qual o número de ocorrências do primeiro vetor dentro do segundo vetor?</p>
+<p align="justify">{1:SHORTANSWER:=22}</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Questões de Revisão - Questão 03 - Versão 002</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p align="justify">Escreva um programa em C que leia dois vetores A e B, parcialmente preenchidos, cada um com no máximo 100 elementos. Inicialmente deve-se ler o número de elementos do vetor A (1 a 500), depois cada um dos valores do vetor A. A seguir deve-se ler o número elementos do vetor B (1 a 500), depois cada um dos valores do vetor B. Depois de ler os dois vetores, seu programa deve verificar quantas vezes o vetor A aparece dentro do vetor B, imprimindo este valor. Por exemplo, considerando a seguinte sequência de entrada (observe que as quebras de linha não influenciam o resultado):
+<pre>
+2
+3 4
+
+10
+1 2 3
+4 1 2 3 3 4
+5
+</pre>
+<p align="justify">O resultado será 2.</p>
+<p align="justify">Considerando a seguinte entrada:</p>
+<pre>
+4
+1 0 1 0
+
+500
+0 1 0 1
+0 1 1 1 1 1 1 0 1
+1 0 1
+1 1 0 0 0 0 0 0 1 0 1
+0 0 1 0 1
+0 0 1 0 1
+1 1 1 0 1
+1 1 1 1 0 0 0 1 1 0 0 1 1 1 0 1
+0 1 1 0 1
+1 1 0 0 1 0 0 0 0 1 1 1 0 0 0 0 1 1 1 1 1 1 0 0 0 0 1 0 1
+1 1 1 1 1 0 0 0 0 0 1 0 0 1 0 1
+0 1 1 0 0 1 0 1
+0 0 1 1 0 0 0 0 0 0 1 1 1 0 1
+0 1 1 1 0 0 1 1 0 1
+1 0 0 0 1 0 0 0 1 1 1 0 1
+0 0 0 1 0 1
+0 1 0 0 0 0 1 0 0 1 1 0 1
+0 1 0 1
+0 0 0 1 1 1 1 1 0 0 0 1 1 0 0 1 0 1
+0 0 1 0 1
+0 1 0 1
+0 1 1 1 0 1
+1 0 0 1 0 1
+1 1 1 0 0 1 1 1 1 0 1
+0 0 1 1 0 0 1 1 0 1
+0 1 1 1 1 0 0 1 0 1
+0 0 0 1 0 1
+1 0 0 1 0 1
+0 1 1 0 1
+0 0 1 0 1
+1 1 0 1
+0 0 0 1 0 1
+1 1 1 1 1 0 0 0 0 1 0 1
+1 1 0 1
+0 1 1 0 1
+1 0 1
+1 1 0 0 1 0 1
+0 0 0 1 1 1 0 1
+1 1 1 0 0 1 0 1
+0 1 1 0 1
+0 0 0 0 1 1 1 1 1 1 0 0 1 1 1 1 1 0 0 0 0 0 0 0 1 0 0 1 0 1
+0 0 1 0 0 1 0 0 0 0 1 0 1
+1 1 0 0 1 0 0 0 0 1 1 1 0 0 0 1 1 0 1
+1 0 0 1 1 0 1
+1 0 1
+0 1 0 0 1 0 0 1 1 0 1
+1 0 1
+1 0 0 0 0 0 0 1 0 0 1 0 0 0 0 1 1 1 1 1 0 1
+1 0 0 0 0 0 1 1 1 1 1 1 0 0 1 0 1
+1 0 1
+0 1 1 0 0 1 0 1
+0 1 1 0 0 1 0 1
+1 1 1 0 0 1 0 0 1 1 0 1
+1 0 1
+0 1 1 0 0 0 1 1 1 0
+</pre>
+<p align="justify">Qual o número de ocorrências do primeiro vetor dentro do segundo vetor?</p>
+<p align="justify">{1:SHORTANSWER:=33}</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Questões de Revisão - Questão 03 - Versão 003</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p align="justify">Escreva um programa em C que leia dois vetores A e B, parcialmente preenchidos, cada um com no máximo 100 elementos. Inicialmente deve-se ler o número de elementos do vetor A (1 a 500), depois cada um dos valores do vetor A. A seguir deve-se ler o número elementos do vetor B (1 a 500), depois cada um dos valores do vetor B. Depois de ler os dois vetores, seu programa deve verificar quantas vezes o vetor A aparece dentro do vetor B, imprimindo este valor. Por exemplo, considerando a seguinte sequência de entrada (observe que as quebras de linha não influenciam o resultado):
+<pre>
+2
+3 4
+
+10
+1 2 3
+4 1 2 3 3 4
+5
+</pre>
+<p align="justify">O resultado será 2.</p>
+<p align="justify">Considerando a seguinte entrada:</p>
+<pre>
+4
+1 1 1 0
+
+500
+1 0 0 0 1 1 0 0 1 1 1
+0 1 0 0 1 0 0 0 0 1 1 0 1 0 0 1 1 0 1 1 0 1 0 1 0 1 1 0 0 0 1 1 0 1 0 1 0 0 1 1 1
+1 0 0 0 1 1 1
+0 0 1 1 0 1 1 1
+0 0 1 0 1 0 1 0 0 1 0 0 1 1 1
+0 0 0 0 1 1 1
+0 0 0 0 0 0 1 1 1
+0 0 1 0 0 1 1 0 1 0 1 1 0 1 1 1
+0 0 1 1 0 0 0 1 0 0 0 1 0 0 1 0 0 0 1 1 0 0 0 1 1 1
+0 1 0 1 1 0 1 0 0 0 0 1 0 0 0 0 0 0 1 1 1
+0 0 1 1 0
+0 1 0 0 1 0 0 1 0 0 1 0 1 1 0 0 0 0 0 0 1 1 1
+0 0 1 0 0 0 0 1 0 1 0 0 1 1 0 0 0 0 0 1 0 0 1 1 0 1 0 0 0 0 0 0 0 1 1 0 1 0 0 1 0 0 1 1 1
+0 0 1 1 0 1 1 1
+0 0 1 0 1 1 1
+0 0 0 1 0 1 0 1 0 0 0 1 1 1
+1 1 1
+1 1 1
+1 0 1 1 0 1 1 0 1 1 0 0 0 0 1 0 0 1 1 1
+0 1 1 1
+0 1 1 1
+1 1 0 0 0 1 1 1
+1 1 0 1 1 0 0 1 1 0 1 1 1
+1 1 1
+0 0 1 0 1 1 0 1 1 1
+0 1 0 1 1 1
+1 0 0 0 1 1 1
+1 1 1
+1 1 0 0 1 1 1
+0 0 1 0 1 0 0 0 0 1 0 1 1 1
+0 1 0 0 1 0 1 0 1 1 1
+1 1 0 0 0 0 0 1 1 0 1 0 0 1 0 1 1 1
+0 1 0 0 0 0 1 0 1 1 1
+0 0 0 1 0 0 1 1 0 0 0 0 0 0 0 1 0 1 1 1
+0 0 0 1 1 0 0 1 1 1
+1 1 1
+1 0 1 1 0 1 0 1 1 0 1 0 0 0 1 0 1 1 1
+1 1 1
+0 0 1 0 0 0 1 0 1 1 1
+1 0 0 1 1 0 0 1 0 0 0 0 0 0 0 1 0 0 1 1 0 0 1 0 1 1
+</pre>
+<p align="justify">Qual o número de ocorrências do primeiro vetor dentro do segundo vetor?</p>
+<p align="justify">{1:SHORTANSWER:=32}</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Questões de Revisão - Questão 03 - Versão 004</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p align="justify">Escreva um programa em C que leia dois vetores A e B, parcialmente preenchidos, cada um com no máximo 100 elementos. Inicialmente deve-se ler o número de elementos do vetor A (1 a 500), depois cada um dos valores do vetor A. A seguir deve-se ler o número elementos do vetor B (1 a 500), depois cada um dos valores do vetor B. Depois de ler os dois vetores, seu programa deve verificar quantas vezes o vetor A aparece dentro do vetor B, imprimindo este valor. Por exemplo, considerando a seguinte sequência de entrada (observe que as quebras de linha não influenciam o resultado):
+<pre>
+2
+3 4
+
+10
+1 2 3
+4 1 2 3 3 4
+5
+</pre>
+<p align="justify">O resultado será 2.</p>
+<p align="justify">Considerando a seguinte entrada:</p>
+<pre>
+4
+1 1 1
+1
+
+500
+0 1 1 1
+1 0 0 1 1 0 0 0 1 1 0 1 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1
+0 0 0 0 1 0 0 0 0 0 0 1 1 0 1 1 1
+1 0 1 1 0 1 0 1 1 1
+1 1 1
+0 0 0 1 0 1 1 1
+0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 1 1 1
+1 0 1 0 0 1 1 0 0 1 0 1 1 1
+0 1 1 0 1 0 0 1 1 1
+1 1 1
+1 1 1
+0 0 0 0 1 1 0 1 1 1
+1 1 0 1 0 1 1 0 0 1 0 0 0 0 0 0 1 1 0 1 0 0 1 1 0 0 1 0 0 0 0 1 0 0 1 0 1 1 1
+1 1 1
+1 1 1
+0 1 1 1
+1 1 1
+1 1 0 0 0 0 0 1 0 1 1 0 1 1 0 0 1 0 0 1 0 1 0 1 1 1
+1 1 1
+0 0 1 1 0 0 0 1 0 1 0 1 1 0 0 1 1 0 0 1 1 0 0 0 1 0 0 1 0 0 0 0 1 0 1 1 1
+1 1 0 0 0 1 0 0 0 1 1 1
+1 1 0 1 0 0 1 1 0 1 0 0 1 0 0 1 0 1 0 1 0 1 1 1
+0 0 0 1 1 1
+0 0 1 1 1
+0 1 1 1
+1 1 1
+1 1 0 1 1 0 1 1 1
+0 1 0 0 0 0 1 1 1
+1 0 0 0 1 1 1
+1 1 1
+1 0 0 1 1 0 1 1 0 0 0 1 1 1
+0 0 1 0 1 0 1 0 0 0 1 0 0 1 0 0 1 1 1
+0 1 1 1
+0 1 1 0 0 0 1 1 1
+1 1 0 0 1 0 0 0 1 1 0 1 0 1 0 0 1 0 1 1 1
+0 1 0 0 1 1 0 1 0 1 0 0 1 1 0 0 1 1 0 1 1 1
+1 0 0 0 0 1 1 0 0 1 1 0 0 1 1 1
+0 0 1 0 0 0 1 1 1
+1 0 0 0 0 1 1 0 0 1 1 0 1 0 0 0 0 0 1 0 1 1 0 1 1 0 1 0 1 1 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 1 0 1 1 1
+0 0 0 1 0 1 0 0</pre>
+<p align="justify">Qual o número de ocorrências do primeiro vetor dentro do segundo vetor?</p>
+<p align="justify">{1:SHORTANSWER:=46}</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="cloze">
+    <name>
+      <text>POO - Questões de Revisão - Questão 03 - Versão 005</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p align="justify">Escreva um programa em C que leia dois vetores A e B, parcialmente preenchidos, cada um com no máximo 100 elementos. Inicialmente deve-se ler o número de elementos do vetor A (1 a 500), depois cada um dos valores do vetor A. A seguir deve-se ler o número elementos do vetor B (1 a 500), depois cada um dos valores do vetor B. Depois de ler os dois vetores, seu programa deve verificar quantas vezes o vetor A aparece dentro do vetor B, imprimindo este valor. Por exemplo, considerando a seguinte sequência de entrada (observe que as quebras de linha não influenciam o resultado):
+<pre>
+2
+3 4
+
+10
+1 2 3
+4 1 2 3 3 4
+5
+</pre>
+<p align="justify">O resultado será 2.</p>
+<p align="justify">Considerando a seguinte entrada:</p>
+<pre>
+4
+0 0 0 1
+
+500
+1 1 0 0 1 0 1 1 0 1 1 0 0 0
+0 1 0 1 0 1 0 0 0
+0 1 0 0 1 1 1 0 0 1 0 1 0 0 1 0 1 1 0 1 1 0 1 1 1 1 1 1 1 1 1 1 0 0 1 1 0 1 1 1 0 0 1 0 1 0 0 1 0 1 1 0 0 1 1 0 0 1 1 1 1 0 0 0
+1 1 0 1 0 0 0
+0 0 1 1 0 0 0
+0 0 0
+1 1 0 1 1 0 0 0
+0 1 1 1 1 0 1 0 1 1 1 0 0 1 0 1 0 0 0
+1 1 1 0 0 1 0 0 0
+0 0 0
+0 1 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0
+0 0 0
+0 1 1 1 1 1 0 1 0 1 1 1 1 0 1 1 1 1 1 1 0 1 1 1 0 0 0
+0 1 1 1 0 0 0
+1 1 0 0 0
+1 1 0 0 1 1 1 1 1 0 1 1 1 1 0 0 1 1 0 0 0
+0 0 1 1 1 1 1 1 0 1 0 1 0 0 0
+1 0 1 0 1 1 1 0 0 1 0 0 1 1 1 0 1 1 0 0 1 1 1 1 1 1 0 0 0
+1 0 0 1 0 0 1 0 0 0
+1 0 0 1 0 1 1 1 1 0 0 1 0 0 0
+0 0 0
+1 0 1 0 0 0
+0 1 0 1 0 1 1 0 0 1 0 1 1 1 1 0 0 1 0 0 0
+1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 1 1 0 1 1 1 0 1 1 0 0 1 0 0 1 0 0 1 0 0 0
+1 0 0 1 1 0 1 1 0 1 1 0 0 0
+1 0 0 0
+0 0 1 0 0 0
+1 1 0 0 1 1 1 0 1 1 1 0 1 1 1 0 1 0 0 0
+0 1 1 1 0 1 0 1 0 1 0 0 0
+1 0 0 1 0 0 0
+1 1 1 1 1 0 1 0 1 0 0 0
+0 1 1 0 1 1 0 1 0 0 1 1 1 1 0 0 0
+0 1 1 1 1 0 1 1 0 1 0 0 0
+1 1 1 0 0 1 1 0 1 0 1 0 1 0 0 1 1 0 0 0
+1 0 1 1 0 1 0 0 0
+0 1 0 0 1 1 0
+</pre>
+<p align="justify">Qual o número de ocorrências do primeiro vetor dentro do segundo vetor?</p>
+<p align="justify">{1:SHORTANSWER:=31}</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+</quiz>

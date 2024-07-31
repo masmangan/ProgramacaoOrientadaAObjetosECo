@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+      <text>$course$/top/POO-10-Avaliação-Simulado da P1</text>
+    </category>
+    <info format="moodle_auto_format">
+      <text></text>
+    </info>
+    <idnumber></idnumber>
+  </question>
+
+  <question type="essay">
+    <name>
+      <text>POO - Avaliação - Simulado da P1 - Questão 01 - Versão 001</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Variáveis lógicas tradicionais podem assumir dois valores lógicos: verdadeiro ou falso. Implemente uma classe TRISTATE para objetos lógicos que podem assumir três valores correspondentes a verdadeiro, falso ou indeterminado.</p>
+<ul>
+  <li>A classe deverá conter os métodos <code>set()</code>, <code>reset()</code> e <code>dontknow()</code> que colocam o objeto nos estados V, F e I, respectivamente;</li>
+  <li>Sempre que uma variável é criada ela é colocada no estado I. Inclua também um método <code>get()</code> que retorna um caracter 'V', 'F' ou 'I', representando o valor do objeto.</li>
+</ul>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>40</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <maxbytes>0</maxbytes>
+    <filetypeslist></filetypeslist>
+    <graderinfo format="html">
+      <text></text>
+    </graderinfo>
+    <responsetemplate format="html">
+      <text><![CDATA[<pre>// tristate.h
+...
+</pre>
+<p><br></p>
+<pre>// tristate.cpp
+...
+</pre>
+<p><br></p>
+<pre>// main.cpp
+</pre>]]></text>
+    </responsetemplate>
+  </question>
+
+  <question type="essay">
+    <name>
+      <text>POO - Avaliação - Simulado da P1 - Questão 02 - Versão 001</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Implemente uma classe que modele um forno à gas. O botijão de gás do forno armazena no máximo 50 kg de gás. O forno consome 0,1 kg/hora.</p>
+<ul>
+  <li>Ao ser criado, o forno tem seu botijão vazio. (0,3 ponto);</li>
+  <li>A partir da classe deve ser possível:
+    <ul>
+      <li>Abastecer o botijão com uma certa quantidade de gás (0,2 ponto);</li>
+      <li>Acender o forno por um determinado  número de horas. O forno apaga-se automaticamente após este período (0,3 ponto);</li>
+      <li>Obter a quantidade de gás e o tempo de uso do forno desde que o botijão foi abastecido (0,5 ponto);</li>
+    </ul>
+  </li>
+  <li>No programa principal,
+    <ul>
+      <li>Crie 2 fornos (0,2 ponto);</li>
+      <li>Abasteça 10 kg no primeiro e 20 kg no segundo (0,3 ponto);</li>
+      <li>Acenda o primeiro por 2 horas e meia e o segundo por 45 minutos (0,3 ponto);</li>
+      <li>Exiba na tela o total de gás restante para cada botijão e quanto tempo cada forno  esteve aceso desde que foi abastecido (0,4 ponto).</li>
+    </ul>
+  </li>
+</ul>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>40</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <maxbytes>0</maxbytes>
+    <filetypeslist></filetypeslist>
+    <graderinfo format="html">
+      <text></text>
+    </graderinfo>
+    <responsetemplate format="html">
+      <text><![CDATA[<pre>// forno.hpp
+...
+</pre>
+<p><br></p>
+<pre>// forno.cpp
+...
+</pre>
+<p><br></p>
+<pre>// main.cpp
+...
+</pre>]]></text>
+    </responsetemplate>
+  </question>
+
+  <question type="essay">
+    <name>
+      <text>POO - Avaliação - Simulado da P1 - Questão 03 - Versão 001</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Crie um programa que leia um arquivo texto ENTRADA.TXT, contendo linhas de texto. Cada linha é formada por palavras separadas por um espaço em branco. Cada palavra pode ter de 1 a 10 caracteres. Como saída o programa deve gerar um segundo arquivo texto
+    (SAIDA.TXT), com 10 linhas, no qual cada linha "i" contenha a quantidade de palavras de ENTRADA.TXT com tamanho "i". A seguir é apresentado um exemplo de um arquivo SAIDA.TXT geradop ela execução do programa sobre o arquivo ENTRADA.TXT.</p>
+<ul>
+    <li>Para calcular o tamanho de um objeto da classe string, você pode usar o método <code>int string::size()</code>.</li>
+    <li>Para calcular o tamanho de uma string de C, você pode usar a função <code>int strlen(char *)</code>.</li>
+</ul>
+<p><b>Arquivo ENTRADA.TXT</b></p>
+<table cellspacing="5" border="1">
+    <tbody>
+        <tr>
+            <td>Linha 1</td>
+            <td>Como a aurora precursora</td>
+        </tr>
+        <tr>
+            <td>Linha 2</td>
+            <td>do farol da divindade</td>
+        </tr>
+        <tr>
+            <td>Linha 3</td>
+            <td>Foi o vinte de setembro</td>
+        </tr>
+        <tr>
+            <td>Linha 4</td>
+            <td>O precursor da liberdade</td>
+        </tr>
+    </tbody>
+</table>
+<p><b>Arquivo SAIDA.TXT</b></p>
+<table cellspacing="5" border="1">
+    <tbody>
+        <tr>
+            <td>Linha 1</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Linha 2</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>Linha 3</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Linha 4</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Linha 5</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>Linha 6</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Linha 7</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Linha 8</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Linha 9</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Linha 10</td>
+            <td>1</td>
+        </tr>
+    </tbody>
+</table>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>40</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <maxbytes>0</maxbytes>
+    <filetypeslist></filetypeslist>
+    <graderinfo format="html">
+      <text></text>
+    </graderinfo>
+    <responsetemplate format="html">
+      <text><![CDATA[<pre>// main.cpp
+...
+</pre>]]></text>
+    </responsetemplate>
+  </question>
+
+  <question type="essay">
+    <name>
+      <text>POO - Avaliação - Simulado da P1 - Questão 04 - Versão 001</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Crie os cabeçalhos dos métodos que sobrecarreguem os operadores de soma, subtração e multiplicação para objetos da classe "ponto" descrita abaixo. Os métodos devem ser internos à classe "ponto".</p>
+<p>Sobrecargas a serem criadas:</p>
+<ul>
+  <li>Um operador de soma capaz de somar as coordenadas de dois pontos.</li>
+  <li>Um operador de soma capaz de somar um ponto e um número real.</li>
+  <li>Um operador binário de subtração capaz de subtrair as coordenadas de dois pontos.</li>
+  <li>Um operador unário de subtração capaz trocar o sinal das coordenadas do operando.</li>
+  <li>Um operador de multiplicação capaz de multiplicar as coordenadas de dois pontos.</li>
+</ul>
+<pre>class ponto {
+  private:
+    float x,y;
+  public:
+    ponto(float_x=0, float_y=0);
+    float getX();
+    float getY();
+    void setX(float_x);
+    void setY(float_y);
+};
+</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>40</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <maxbytes>0</maxbytes>
+    <filetypeslist></filetypeslist>
+    <graderinfo format="html">
+      <text></text>
+    </graderinfo>
+    <responsetemplate format="html">
+      <text><![CDATA[<pre>// ponto.hpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+class ponto {
+  private:
+    float x,y;
+  public:
+    ponto(float _x=0, float _y=0);
+    float getX();
+    float getY();
+    void setX(float _x);
+    void setY(float _y);
+    ...
+};
+</pre>
+<p><br></p>
+<pre>// ponto.cpp
+#include "ponto.hpp"
+ponto::ponto(float _x, float _y) {x= _x; y= _y;}
+float ponto::getX() {return x;}
+float ponto::getY() {return y;}
+void ponto::setX(float _x) {x= _x;}
+void ponto::setY(float _y) {y= _y;}
+...
+</pre>
+<p><br></p>
+<pre>// main.cpp
+#include "ponto.hpp"
+int main() {
+  pontoa(1,1), b(2,2), c;
+  c=a+b;
+  cout &lt;&lt; c.getX() &lt;&lt; "," &lt;&lt; c.getY() &lt;&lt; endl;
+  c=a+5.5;
+  cout &lt;&lt; c.getX() &lt;&lt; "," &lt;&lt; c.getY() &lt;&lt; endl;
+  c=a-b;
+  cout &lt;&lt; c.getX() &lt;&lt; "," &lt;&lt; c.getY() &lt;&lt; endl;
+  c=-b;
+  cout &lt;&lt; c.getX() &lt;&lt; "," &lt;&lt; c.getY() &lt;&lt; endl;
+  c=(a+b)*b;
+  cout &lt;&lt; c.getX() &lt;&lt; "," &lt;&lt; c.getY() &lt;&lt; endl;
+  return0;
+}
+</pre>]]></text>
+    </responsetemplate>
+  </question>
+
+</quiz> 

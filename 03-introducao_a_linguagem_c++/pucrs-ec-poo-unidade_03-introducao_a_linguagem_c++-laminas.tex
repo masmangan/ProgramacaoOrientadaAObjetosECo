@@ -1,0 +1,566 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{ragged2e}
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{gensymb}
+\usepackage{multirow}
+\usepackage{xcolor,colortbl}
+\definecolor{verde}{rgb}{0,0.5,0}
+\usepackage{listings}
+\lstset{
+  language=C++,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue},
+  stringstyle=\color{verde},
+  commentstyle=\color{red},
+  extendedchars=true,
+  showspaces=false,
+  showstringspaces=false,
+%  numbers=left,
+%  numberstyle=\tiny,
+  breaklines=true,
+  backgroundcolor=\color{green!10},
+  breakautoindent=true,
+  captionpos=b,
+  xleftmargin=0pt
+}
+\newcommand\setItemnumber[1]{\setcounter{enumi}{\numexpr#1-1\relax}}
+
+\usetheme{AnnArbor}
+\usecolortheme{orchid}
+\usefonttheme[onlymath]{serif}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+\title[\sc{Introdução à Linguagem C++}]{Introdução à Linguagem C++}
+\author[Roland Teodorowitsch]{Roland Teodorowitsch}
+%\institute[LP2 - EC - PUCRS]{Laboratório de Programação II - Curso de Engenharia de Computação - PUCRS}
+\institute[POO - EC - PUCRS]{Programação Orientada a Objetos - ECo - Curso de Engenharia de Computação - PUCRS}
+\date{14 de agosto de 2023}
+
+\begin{document}
+\justifying
+
+%-------------------------------------------------------
+\begin{frame}
+	\titlepage
+\end{frame}
+
+%=======================================================
+\section{Visão Geral}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Extensão e Compilação}
+\begin{itemize}
+	\item Arquivos escritos em linguagem C++ são salvos com a extensão .cpp
+	\item O compilador para C++ é o \texttt{g++} (funciona como o \texttt{gcc})
+	\item Uso:\\\texttt{g++ -std=c++11 meu\_programa.cpp -o meu\_programa}
+	\item Se não tiver sido criado nenhum \texttt{Makefile} (ainda), pode-se usar:\\\texttt{make meu\_programa}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Estrutura Básica de um Programa}
+\begin{columns}[T]
+\begin{column}{0.5\linewidth}
+\begin{enumerate}
+	\item Inclusão de arquivos
+	\item Definição do espaço de nomes (opcional)
+	\item Declaração de macros, tipos e variáveis globais (quando houver)
+	\item Métodos, incluindo o método \texttt{main()}
+\end{enumerate}
+\end{column}
+\begin{column}{0.5\linewidth}
+\begin{lstlisting}
+#include <iostream>
+#include <cmath>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+int main(){
+  // Declaracao de variaveis
+  // Comandos da funcao main
+  return 0;
+}
+\end{lstlisting}
+\end{column}
+\end{columns}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Inclusões}
+\begin{itemize}
+	\item Arquivos de cabeçalho das bibliotecas não possuem a extensão \texttt{.h}
+	\item Principais arquivos de cabeçalho:
+	\begin{itemize}
+		\item \texttt{iostream}: funções de entrada e saída
+		\item \texttt{iomanip}: formatação de entrada e saída
+		\item \texttt{cmath}: funções matemáticas
+		\item \texttt{cstdlib}: funções de uso geral
+		\item \texttt{ctime}: funções para manipulação de tempo e data
+		\item \texttt{string}: funções para uso de \emph{strings}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Espaço de Nomes do Compilador}
+\begin{itemize}
+	\item Permite a definição de estruturas, classes, funções, etc.
+	\item Permite duplicidade de identificadores, desde que eles estejam em espaços de nomes diferentes
+	\item Por padrão, a linguagem utiliza o \emph{namespace} \texttt{std}
+	\begin{itemize}
+		\item Por exemplo, em \texttt{std::cout}, \texttt{cout} pertence ao \emph{namespace} \texttt{std}
+	\end{itemize}
+	\item Pode-se simplificar isto usando:
+\begin{lstlisting}
+using std::cout;
+// ou
+using namespace std;
+\end{lstlisting}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Espaço de Nomes -- Exemplo}
+\lstinputlisting[basicstyle=\ttfamily\tiny]{src/namespaces.cpp}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Função principal}
+\begin{itemize}
+	\item É a mesma usada em C
+	\item É formada por declarações de variáveis (não precisam estar no início dos blocos) e comandos
+\end{itemize}
+\begin{lstlisting}
+int main()
+// ou recebendo parametros da linha de comando:
+int main(int argc, char *argv[])
+\end{lstlisting}
+\end{frame}
+
+%=======================================================
+\section{Novos Tipos}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Novos Tipos}
+\begin{itemize}
+	\item C++ trouxe dois novos tipos
+	\begin{itemize}
+		\item \texttt{bool}
+		\begin{itemize}
+			\item Serve para valores lógicos
+			\item Pode receber \texttt{true} ou \texttt{false}
+		\end{itemize}
+		\item \texttt{string}
+		\begin{itemize}
+			\item É uma forma mais prática de armazenar e trabalhar com cadeias de caracteres
+			\item É uma classe e está definida no arquivo de cabeçalho \texttt{string}
+			\item Não é preciso definir o tamanho
+			\item Pode ser usado com operadores como, por exemplo, \texttt{==} ou \texttt{=} (evitando ter que usar métodos como \texttt{strcmp()} ou \texttt{strcpy()})
+			\item Possui uma série de métodos definidos e prontos para serem usados (veja \url{https://cplusplus.com/reference/string/string/})
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{\texttt{bool} e \texttt{string}}
+\lstinputlisting[basicstyle=\ttfamily\scriptsize]{src/bool_e_string.cpp}
+\end{frame}
+
+%=======================================================
+\section{Entrada e Saída}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Saída}
+\begin{itemize}
+	\item \texttt{std::cout} ou \texttt{cout} é o fluxo de saída padrão
+	\item O operador \texttt{\textless{}\textless} (de inserção) é usado para enviar informações para a saída
+\end{itemize}
+\lstinputlisting{src/ola_turma.cpp}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Saída}
+\begin{itemize}
+	\item A quebra de linha é definida pelo manipulador \texttt{endl}
+	\item Este manipulador também esvazia o \emph{buffer} de saída
+	\item O operador \texttt{\textless{}\textless} pode ser encadeado, permitindo uma combinação de constantes, variáveis e expressões
+\end{itemize}
+\begin{lstlisting}
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int x=10, y=20;
+  cout << "Soma de x e y: " << x+y << endl;
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Erro}
+\begin{itemize}
+	\item \texttt{std::cerr} ou \texttt{cerr} é o fluxo de saída de erro padrão
+	\item O operador \texttt{\textless{}\textless} (de inserção) também é usado para enviar informações para a saída de erro
+\lstinputlisting{src/output.cpp}
+	\item Compile (por exemplo: \texttt{g++ -std=c++11 output.cpp -o output}) e execute:\\
+\texttt{./output \textgreater{} arquivo.txt ~ \# ou: ./output 1\textgreater ~ arquivo.txt}\\
+\texttt{./output 2\textgreater{} arquivo.txt}\\
+\texttt{./output \&\textgreater{} arquivo.txt}\\
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Entrada}
+\begin{itemize}
+	\item \texttt{std::cin} ou \texttt{cin} é o fluxo de entrada padrão
+	\item O operador \texttt{\textgreater{}\textgreater} (de extração) é usado para obter informações da entrada
+\end{itemize}
+\begin{lstlisting}
+#include <iostream>
+
+int main() {
+  int x;
+  std::cout << "Lendo um inteiro: ";
+  std::cin >> x;
+  std::cout << "Valor lido: " << x << std::endl;
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Verificando a Consistência da Entrada}
+\begin{lstlisting}[basicstyle=\ttfamily\scriptsize]
+#include <iostream>
+using namespace std;
+int main() {
+  int x;
+  cout << "Digite um inteiro: ";
+  cin >> x;
+  if (cin.bad()) {
+     cerr << "Houve uma falha na leitura!" << endl;
+     return 1;
+  }
+  if (cin.fail()) {
+     cerr << "Dado digitado incompativel com o dado esperado!" << endl;
+     return 1;
+  }
+  cout << endl;
+  cout << "Valor lido: " << x << endl;
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Entrada de \emph{Strings}}
+\begin{itemize}
+	\item O operador de extração ignora carateres como tabulações, espaços em branco e novas linhas
+	\item Para ler \emph{strings} que englobem essas situações, usar \texttt{getline}
+\end{itemize}
+\begin{lstlisting}[basicstyle=\ttfamily\scriptsize]
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  char frase[30];
+  cout << "Digite uma frase: " << endl;
+  cin.getline(frase, 30);
+  cout << "Frase digitada: " << frase << endl;
+  // OU
+  string texto;
+  cout << "Digite algum texto: " << endl;
+  getline(cin, texto);
+  cout << "Texto  digitado: " << texto << endl;
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Manipuladores de Fluxos}
+\begin{itemize}
+	\item Em \texttt{iomanip} estão definidos diversos manipuladores, como, por exemplo:
+	\begin{itemize}
+		\item Para formatos de valores inteiros: \texttt{hex}, \texttt{oct}, \texttt{setbase}
+		\item Para ponto flutuante: \texttt{fixed}, \texttt{setprecision}
+		\item Definição de tamanho: \texttt{setw(int size)}
+		\item Alinhamento: \texttt{left}, \texttt{right}
+		\item Preenchimento: \texttt{setfill(char c)}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Manipuladores de Fluxos (Exemplo)}
+\begin{lstlisting}
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main() {
+  int x = 10;
+  cout << hex << x << endl;
+  cout << oct << x << endl;
+  cout << setbase(10) << x << endl;
+  cout << "Numero = " << setw(10) << right << x << endl;
+  cout << "Numero = " << setw(10) << left << x << endl;
+  double pi = 3.14159265;
+  cout << fixed << setprecision(5);
+  cout << pi << endl;
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+%=======================================================
+\section{Similaridades entre C e C++}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Similaridades entre C e C++}
+\begin{itemize}
+	\item Todas as \textbf{estruturas de controle de fluxo} estudadas para a linguagem C podem ser utilizadas na linguagem C++
+	\item Todas as \textbf{estruturas de dados} estudadas para a linguagem C podem ser utilizadas na linguagem C++
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Estruturas de Seleção: \texttt{if}}
+\begin{lstlisting}
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int x, y;
+  cin >> x >> y;
+  if (x == y)
+     cout << "x = y" << endl;
+  else if (x > y)
+     cout << "x > y" << endl;
+  else
+     cout << "x < y" << endl;
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Estruturas de Seleção: \texttt{switch}}
+\begin{lstlisting}[basicstyle=\ttfamily\scriptsize]
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int dia;
+  cin >> dia;
+  switch (dia){
+     case 1:  cout << "domingo"       << endl; break;
+     case 2:  cout << "segunda-feira" << endl; break;
+     case 3:  cout << "terca-feira"   << endl; break;
+     case 4:  cout << "quarta-feira"  << endl; break;
+     case 5:  cout << "quinta-feira"  << endl; break;
+     case 6:  cout << "sexta-feira"   << endl; break;
+     case 7:  cout << "sabado"        << endl; break;
+     default: cout << "INVALIDO"      << endl;
+  }
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Estruturas de Repetição: \texttt{while}}
+\begin{lstlisting}
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int a = -1;
+  while (a < 0) {
+    cout << "Valor positivo: ";
+    cin >> a;
+  }
+  cout << a << endl;
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Estruturas de Repetição: \texttt{do/while}}
+\begin{lstlisting}
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int a;
+  do {
+    cout << "Valor positivo: ";
+    cin >> a;
+  } while(a < 0);
+  cout << a << endl;
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Estruturas de Repetição: \texttt{for}}
+\begin{lstlisting}
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int x, y;
+  for (x=0, y=10; x<10; x++, y--)
+      cout << "x = " << x << " y = " << y << endl;
+  cout << "Valor de x e y apos o laco: " << x << ", " << y << endl;
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Estruturas de Dados: Vetores e Matrizes}
+\begin{lstlisting}
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int i, j, v[10], m[4][4];
+  for (i=0; i<10; i++)
+      v[i] = i + 1;
+  for (i=0; i<4; i++)
+      for (j=0; j<4; j++)
+          m[i][j] = i + j;
+  // ...
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Estruturas de Dados: Registros}
+\begin{lstlisting}[basicstyle=\ttfamily\scriptsize]
+#include <iostream>
+#include <string.h>
+
+using namespace std;
+
+typedef struct {
+  char nome[41];
+  int altura;
+  double peso;
+} pessoa_t;
+
+int main() {
+  pessoa_t joao;
+  strcpy(joao.nome,"Joao Paulo");
+  joao.altura = 181;
+  joao.peso = 85.4;
+  cout << joao.nome << " (" << joao.altura << "," << joao.peso << ")" << endl;
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Estruturas de Dados: Registros (com \texttt{string})}
+\begin{lstlisting}[basicstyle=\ttfamily\scriptsize]
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+typedef struct {
+  string nome;
+  int altura;
+  double peso;
+} pessoa_t;
+
+int main() {
+  pessoa_t joao;
+  joao.nome = "Joao Paulo";
+  joao.altura = 181;
+  joao.peso = 85.4;
+  cout << joao.nome << " (" << joao.altura << "," << joao.peso << ")" << endl;
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+%=======================================================
+\section{Exercícios}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Exercício 1}
+\begin{enumerate}
+	\setItemnumber{1}
+	\item Usando a linguagem C++, escreva um programa que permita armazenar o nome, a altura e a data de nascimento de até 10 pessoas. Cada pessoa deve ser representada por uma \texttt{struct} dentro de um vetor. A data de nascimento também deve ser uma \texttt{struct} que contém os campos dia, mês e ano. O programa deve iniciar perguntando se o usuário deseja inserir uma pessoa no sistema (respeitando o limite de 10 pessoas), lendo as suas informações em caso positivo. O nome, a altura e a data de nascimento de cada pessoa devem ser informados pelo teclado. Caso o usuário não queira mais inserir pessoas ou caso o limite de 10 pessoas tenha sido atingido, o programa deverá ler a data do dia de hoje e mostrar a lista das pessoas (ordenada pelo nome de forma crescente) com o seu nome, altura e idade (considerando a data fornecida como referência para o dia de hoje).
+\end{enumerate}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}[fragile]\frametitle{Exercícios 2 e 3}
+\begin{enumerate}
+	\setItemnumber{2}
+	\item Usando a linguagem C++, escreva um programa capaz de ler os dados de uma matriz quadrada de inteiros. Ao final da leitura o programa deverá imprimir o número da linha que contém o menor dentre todos os números lidos.
+		\item Usando a linguagem C++, escreva um programa que apresenta a seguinte saída, perguntando ao usuário o número máximo (no exemplo, 9). Este número deve ser sempre ímpar.
+\begin{verbatim}
+1 2 3 4 5 6 7 8 9
+  2 3 4 5 6 7 8
+    3 4 5 6 7
+      4 5 6
+        5
+\end{verbatim}
+\end{enumerate}
+\end{frame}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Exercícios 4, 5 e 6}
+\begin{enumerate}
+	\setItemnumber{4}
+	\item Usando a linguagem C++, escreva um programa capaz de ler dois nomes de pessoas e imprimi-los em ordem alfabética. Dica: \url{http://www.cplusplus.com/reference/string/string/compare/}.
+	\item Usando a linguagem C++, escreva uma função capaz de substituir todos os números negativos de uma matriz por seu módulo.
+	\item Usando a linguagem C++, escreva uma rotina que remova um caracter de uma \emph{string} do tipo \texttt{char str[100]}, dada a posição do caracter.
+\end{enumerate}
+\end{frame}
+
+%=======================================================
+\section{Créditos}
+
+%-------------------------------------------------------
+\begin{frame}\frametitle{Créditos}
+\begin{itemize}
+	\item Estas lâminas contêm trechos de materiais disponibilizados pelos professores Rafael Garibotti e Matheus Trevisan.
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------------
+\end{document}
+

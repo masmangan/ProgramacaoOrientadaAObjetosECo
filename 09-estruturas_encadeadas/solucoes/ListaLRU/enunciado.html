@@ -1,0 +1,280 @@
+<h1>Lista Duplamente Encadeada com Política LRU</h1>
+<p>A política LRU (<i>Least Recently Used</i> - Menos Recentemente Utilizado) é uma política bastante usada e bastante útil em muitos contextos de um sistema computacional. Ela pode, por exemplo, ser utilizada para manter informações as informações mais utilizadas presentes em memória, descartando as informações que estão há muito tempo sem receberem acesso.</p>
+<p>Aplicando esta política sobre uma lista, teríamos o seguinte funcionamento:</p>
+<ul>
+<li>inserções são sempre feitas no início da lista;</li>
+<li>sempre que for necessário remover um elemento, ele será removido do final da lista (será, portanto, necessário ter um ponteiro para ínicio e outro para fim da lista);</li>
+<li>quando um elemento é acessado, ele removido da sua posição atual e recolocado no início da lista.</li>
+</ul>
+<p>Com este funcionamento, os elementos mais acessados estarão sempre no início da lista. E, à medida que um elemento parar de receber acessos, ele vai migrando para o final da lista, passando a ser candidado para ser removido.</p>
+<p>A seguir estão os arquivos de um projeto que implementa e testa uma classe com esta política. A classe chama-se <code>ListaLRU</code> e os arquivos que fazem parte do projeto são:</p>
+<ul>
+<li>arquivo <code>Makefile</code> que realiza compilação da aplicação de teste.</li>
+<li>arquivo <code>main.cpp</code> que realiza vários testes na classe e está completo.</li>
+<li>arquivo <code>ListaLRU.hpp</code> contém o arquivo de cabeçalho da classe e está completo.</li>
+<li>arquivo <code>ListaLRU.cpp</code> contém a implementação parcial da classe. Este arquivo contém o código completo do construtor para nodo, do construtor para lista, do destrutor para a lista (que é um bom exemplo de como os nodos são percorridos e desalocados), mas faltam as implementações de 5 métodos. Seu trabalho é implementar estes 5 métodos.</li>
+</ul>
+<p>Também é fornecida a saída esperada para a aplicação de teste. Se a sua implementação gerar exatamente esta saída, pode-se considerar que ela está correta. Qualquer diferença deve ser corrigida.</p>
+<p>A classe em questão usa uma lista duplamente encadeada para facilitar a exclusão. E também tem ponteiros para início e fim da lista. Cada nodo armazena apenas um valor inteiro.</p>
+<p>Os métodos que devem ser implementados são:</p>
+<ul>
+<li><code>bool ListaLRU::insere(int valor);</code><br/>
+Cria um nodo com o valor especificado e insere-o no início da lista. Retorna <code>true</code> se tudo funcionou sem erros ou <code>false</code> em caso contrário (por exemplo, se não conseguiu alocar um nodo).</li>
+<li><code>bool ListaLRU::remove(int *valor);</code><br/>
+Remove o nodo que está no final da lista e antes de desalocar o seu respectivo nodo, atualiza o campo valor, por referência, com o valor do nodo (basicamente deve-se fazer <code>*valor = nodoFinal->elemento;</code>. Retorna <code>true</code> se tudo funcionou sem erros ou <code>false</code> em caso contrário (por exemplo, se não há nenhum elemento na lista).</li>
+<li><code>bool ListaLRU::acessa(int valor);</code><br/>
+Verifica se o valor está na lista e caso esteja recoloca o seu respectivo nodo no início da lista. Retorna <code>true</code> se tudo funcionou sem erros ou <code>false</code> em caso contrário (por exemplo, se não há o elemento na lista).</li>
+<li><code>bool ListaLRU::possui(int valor);</code><br/>
+Verifica se existe um valor na lista, sem alterá-la. Retorna <code>true</code> se o valor existir ou <code>false</code> em caso contrário.</li>
+<li><code>string ListaLRU::toString();</code><br/>
+Retorna uma cadeia de caracteres com todos os valores inteiros presentes na lista, do início até o final, separados por espaço.s</li>
+</ul>
+<p><br></p>
+<h3><code>Makefile</code></h3>
+<pre>
+# Makefile (Roland Teodorowitsch; 20 maio 2020)
+CC=g++
+CFLAGS=-c -std=c++11
+
+all:		app
+
+app:		main.o ListaLRU.o
+		@$(CC) main.o ListaLRU.o -o app
+
+main.o:		main.cpp ListaLRU.hpp
+		@$(CC) $(CFLAGS) main.cpp
+
+ListaLRU.o:	ListaLRU.cpp ListaLRU.hpp
+		@$(CC) $(CFLAGS) ListaLRU.cpp
+
+clean:
+		@rm -rf *.o app
+</pre>
+<p><br></p>
+<h3><code>main.cpp</code></h3>
+<pre>
+// main.cpp (Roland Teodorowitsch; 20 maio 2020)
+
+#include &lt;iostream&gt;
+#include "ListaLRU.hpp"
+
+using namespace std;
+
+int main(){
+    ListaLRU *lru = new ListaLRU;
+    
+    // Teste para ListaLRU::insere(int valor) e ListaLRU::toString()
+    cout &lt;&lt; lru-&gt;toString() &lt;&lt; endl;
+    for (int i=0; i&lt;5; ++i) {
+        lru-&gt;insere((i+1)*10);
+        cout &lt;&lt; lru-&gt;toString() &lt;&lt; endl;
+    }
+
+    // Teste para ListaLRU::possui(int valor)
+    for (int i=0; i&lt;11; ++i) {
+        int valor = (i+1)*5;
+        cout &lt;&lt; "possui " &lt;&lt; valor &lt;&lt; "? ";
+        if (lru-&gt;possui(valor))
+            cout &lt;&lt; "S" &lt;&lt; endl;
+        else
+            cout &lt;&lt; "N" &lt;&lt; endl;
+    }
+    
+    // Teste para ListaLRU::acessa(int valor) e ListaLRU::toString()
+    for (int i=0; i&lt;11; ++i) {
+        int valor = (i+1)*5;
+        if  (i%2 == 0) {
+            if  (lru-&gt;acessa(valor))
+                return 1;
+        }
+        else {
+            if  (!lru-&gt;acessa(valor))
+                return 1;
+        }
+        cout &lt;&lt; lru-&gt;toString() &lt;&lt; endl;
+    }
+    for (int i=4; i&gt;=0; --i) {
+        int valor = (i+1)*10;
+        if  (!lru-&gt;acessa(valor)) return 1;
+        cout &lt;&lt; lru-&gt;toString() &lt;&lt; endl;
+    }
+
+    // Teste para ListaLRU::remove(int valor) e ListaLRU::toString()
+    for (int i=0; i&lt;5; ++i) {
+        int valor;
+        if  (!lru-&gt;remove(&amp;valor)) return 1;
+        cout &lt;&lt; valor &lt;&lt; endl;
+        cout &lt;&lt; lru-&gt;toString() &lt;&lt; endl;
+    }
+    
+    // Teste para ListaLRU::insere(int valor) e ListaLRU::toString()
+    cout &lt;&lt; lru-&gt;toString() &lt;&lt; endl;
+    for (int i=0; i&lt;8; ++i) {
+        lru-&gt;insere((i+1)*10);
+        cout &lt;&lt; lru-&gt;toString() &lt;&lt; endl;
+    }
+
+    // Teste para ListaLRU::remove(int valor) e ListaLRU::toString()
+    for (int i=0; i&lt;4; ++i) {
+        int valor;
+        if  (!lru-&gt;remove(&amp;valor)) return 1;
+        cout &lt;&lt; valor &lt;&lt; endl;
+        cout &lt;&lt; lru-&gt;toString() &lt;&lt; endl;
+    }
+    
+    // Teste para ListaLRU::~ListaLRU()
+    delete lru;
+    
+    return 0;
+}
+</pre>
+<p><br></p>
+<h3><code>ListaLRU.hpp</code></h3>
+<pre>
+// ListaLRU.hpp (Roland Teodorowitsch; 20 maio 2020)
+
+#ifndef _LISTALRU_HPP
+#define _LISTALRU_HPP
+
+#include &lt;string&gt;
+
+using namespace std;
+
+class ListaLRU{
+  private:
+    class Nodo {
+        public:
+            int elemento;
+            Nodo *ant;
+            Nodo *prox;
+            Nodo (int e);
+    };
+    Nodo *inicio;
+    Nodo *fim;
+
+public:
+    ListaLRU();
+    ~ListaLRU();
+    bool insere(int valor);
+    bool remove(int *valor);
+    bool acessa(int valor);
+    bool possui(int valor);
+    string toString();
+};
+
+#endif
+</pre>
+<p><br></p>
+<h3><code>ListaLRU.cpp</code></h3>
+<pre>
+// ListaLRU.cpp (Roland Teodorowitsch; 20 maio 2020)
+
+#include &lt;sstream&gt;
+#include "ListaLRU.hpp"
+
+ListaLRU::Nodo::Nodo (int e) {
+    elemento = e;
+    prox = nullptr;
+}
+
+ListaLRU::ListaLRU() {
+    inicio = nullptr;
+    fim = nullptr;
+}
+
+ListaLRU::~ListaLRU() {
+    Nodo *aux;
+    aux = inicio;
+    while (aux != nullptr) {
+        Nodo *n = aux;
+        aux = aux-&gt;prox;
+        delete n;
+    }
+}
+
+bool ListaLRU::insere(int valor) {
+    // IMPLEMENTAR
+}
+
+bool ListaLRU::remove(int *valor) {
+    // IMPLEMENTAR
+}
+
+bool ListaLRU::acessa(int valor) {
+    // IMPLEMENTAR
+}
+
+bool ListaLRU::possui(int valor) {
+    // IMPLEMENTAR
+}
+
+string ListaLRU::toString() {
+    // IMPLEMENTAR
+}
+</pre>
+<p><br></p>
+<h3><code>Saída esperada para execução da aplicação</code></h3>
+<pre>
+
+10
+20 10
+30 20 10
+40 30 20 10
+50 40 30 20 10
+possui 5? N
+possui 10? S
+possui 15? N
+possui 20? S
+possui 25? N
+possui 30? S
+possui 35? N
+possui 40? S
+possui 45? N
+possui 50? S
+possui 55? N
+50 40 30 20 10
+10 50 40 30 20
+10 50 40 30 20
+20 10 50 40 30
+20 10 50 40 30
+30 20 10 50 40
+30 20 10 50 40
+40 30 20 10 50
+40 30 20 10 50
+50 40 30 20 10
+50 40 30 20 10
+50 40 30 20 10
+40 50 30 20 10
+30 40 50 20 10
+20 30 40 50 10
+10 20 30 40 50
+50
+10 20 30 40
+40
+10 20 30
+30
+10 20
+20
+10
+10
+
+
+10
+20 10
+30 20 10
+40 30 20 10
+50 40 30 20 10
+60 50 40 30 20 10
+70 60 50 40 30 20 10
+80 70 60 50 40 30 20 10
+10
+80 70 60 50 40 30 20
+20
+80 70 60 50 40 30
+30
+80 70 60 50 40
+40
+80 70 60 50
+</pre>
+
+

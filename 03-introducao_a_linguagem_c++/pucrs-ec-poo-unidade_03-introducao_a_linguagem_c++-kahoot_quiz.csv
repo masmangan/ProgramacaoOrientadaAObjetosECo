@@ -1,0 +1,26 @@
+NÃO é uma característica da Orientação a Objetos:	Permite organização modular e independente do código	É fortemente relacionada à Engenharia de Software	Favorece a manutenção do código	Baixa reutilização de componentes	20	4
+Qual das afirmações a seguir sobre Orientação a Objetos está correta?	Há alta dependência entre componentes	A manutenibilidade dos programas é mais complexa	Há um significativo aumento no tempo de implementação	Favorece a reutilização de componentes	20	4
+Quem criou a Linguagem C++?	Bjarne Stroustrup	Brian Kernighan	Dennis Ritchie	Ken Thompson	20	1
+Sobre a Linguagem C++, pode-se dizer que	suporta Orientação a Objetos	é imperativa	suporta o paradigma funcional ou declarativo	é restritiva	20	1,2
+Qual das seguintes informações NÃO corresponde à Linguagem C++?	Acrescenta Orientação a Objetos à Linguagem C	NÃO possui recursos procedimentais	Possui construtores adicionais para Orientação a Objetos	É extensível	20	2
+Sobre a programação em C++, qual afirmação está correta?	Suporta apenas comentários de uma linha iniciados com //	Headers das bibliotecas padrão NÃO têm a extensão .h	Usa-se apenas printf e variantes para impressão	std::endl sinaliza o final de um arquivo	20	2
+Em C++, para imprimir na saída padrão, usa-se	std::cout	std::cin	std::endl	std::cerr	20	1
+Em C++, para ler da entrada padrão, usa-se	std::cout	std::cin	std::endl	std::cerr	20	2
+Em C++, quando se usa, por exemplo, std::cout ou std::cin, std:: corresponde:	a um arquivo de cabeçalho da biblioteca	ao nome da biblioteca	a uma diretiva de compilação	a um espaço de nomes (namespace)	20	4
+Em C++, para usar apenas cout, em vez de std::cout, deve-se usar:	using std::cout;	using std::all;	using std;	using namespace std;	20	1,4
+Em C++ qual operador de redirecionamento é usado com std::cin?	>>	<<	>	<	20	1
+Em C++ qual operador de redirecionamento é usado com std::cout?	>>	<<	>	<	20	2
+Em C++, para atribuir um valor lido do terminal para uma variável chamada x, pode-se usar:	std::cin << x;	std::cin >> x;	std::cout << x;	std::cout >> x;	20	2
+Em C++, para escrever o valor de uma variável x no terminal, pode-se usar:	std::cin << x;	std::cin >> x;	std::cout << x;	std::cout >> x;	20	3
+Em C++, :: é chamado de operador:	de conjunto	de escopo	relacional	de contexto.	20	2
+Em C++, se há uma variável global x e uma variável local x em um bloco	dentro desse bloco somente é possível acessar o x local	::x corresponde ao x local	::x corresponde ao x global	x corresponde ao x global	20	3
+NÃO é um tipo primário da Linguagem C++:	bool	string	float	char	20	2
+Em C++, em vez de malloc deve-se usar:	calloc	create	new	push	20	3
+Em C++, para desalocar memória alocada com new usa-se:	free	delete	destroy	pop	20	2
+Em C++, para ter uma variável constante (que NÃO muda de valor) deve-se	usar exclusivamente #define.	declará-la como static.	usar o modificador const na sua declaração.	declará-la como private.	20	3
+Em C e C++, para que o valor de uma variável local de uma função seja preservado deve-se	declará-la como static.	transformá-la em constante.	torná-la global.	declará-la como const.	20	1
+Sobre as estruturas de controle de C++, qual a novidade em relação a C?	Há novas estruturas de controle	O comando for suporta declaração de variável	O comando do/while foi eliminado	O comando switch/case foi eliminado	20	2
+A passagem de parâmetros para funções em C++ deve ser feita	por valor ou por referência.	apenas por valor.	apenas por referência.	através de variáveis globais.	20	1
+Em C e C++, na passagem de parâmetros por referência	passa-se o endereço do parâmetro na chamada.	passa-se o valor do parâmetro na chamada.	NÃO é possível modificar o conteúdo do parâmetro na função.	É possível modificar o conteúdo do parâmetro na função.	20	1,4
+Em C++, a substituição da chamada de uma função pelo seu código	pode ser definida com o modificador inline.	melhora o desempenho quando a função for muito usada.	NÃO é recomendada para funções muito pequenas.	NÃO pode ser feita com #define.	20	1,2
+Em C++, pode-se atribuir um valor padrão para um parâmetro de função	usando o modificador default.	acrescentando um igual e um valor à sua declaração.	acrescentando um igual e um valor na chamada.	atribuindo um valor para este parâmetro no início da função.	20	2

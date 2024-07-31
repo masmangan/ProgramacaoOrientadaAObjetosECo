@@ -1,0 +1,17 @@
+$CATEGORY: $course$/Programação Orientada a Objetos - Makefile e Princípios de POO - Questoes de Concursos
+
+::POO - Makefile e Princípios de POO - Questões de Concursos - 001::[html]<p align="justify"><b>(Ministério do Desenvolvimento Agrário - 2014 - Analista de Negócios -  FUNCAB - 33)</b> Um dos princípios da Orientação a Objetos se baseia nas premissas listadas a seguir.</p>
+<ol type="I">
+<li>Separa os aspectos externos de um objeto, que são acessíveis a outros, dos detalhes internos da implementação, que estão escondidos de outros objetos.</li>
+<li>Evita que partes de um programa se tornem interdependentes e que uma pequena mudança tenha grandes efeitos em cascata.</li>
+<li>Pode-se mudar a implementação de um objeto sem afetar as aplicações que o utilizam.</li>
+</ol>
+<p align="justify">O princípio caracterizado acima é conhecido como:</p>{
+	=encapsulamento.#
+	~polimorfismo.#
+	~herança.#
+	~coesão.#
+	~acoplamento.#
+}
+
+
